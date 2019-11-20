@@ -12,15 +12,15 @@
     </header>
     <nav>
         <div id="signup">
-            <a href="register.html">Register</a>
-            <a href="login.html">Login</a>
+            <a href="register.php">Register</a>
+            <a href="login.php">Login</a>
           </div>
     </nav>
     <section id="houses">
         <ul>
             <li>
                 <article>
-                    <h3> <a href="house.html">Sample House</a> </h3>
+                    <h3> <a href="house.php">Sample House</a> </h3>
                     <img src="sampleHouse.png" alt="the damn house" />
                     <p> Some house info? </p>
                 </article>
