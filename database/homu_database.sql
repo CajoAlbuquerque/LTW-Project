@@ -33,3 +33,13 @@ CREATE TABLE Reservation (
     FOREIGN KEY (user) REFERENCES User(userID),
     FOREIGN KEY (house) REFERENCES House(houseID)
 );
+
+CREATE TABLE Comment (
+    commentID INTEGER PRIMARY KEY,
+    user INTEGER,
+    house INTEGER,
+    comment TEXT,
+    stars REAL,
+    FOREIGN KEY (user) REFERENCES User(userID),
+    FOREIGN KEY (house) REFERENCES House(houseID)
+);
