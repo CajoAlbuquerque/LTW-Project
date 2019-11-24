@@ -11,12 +11,12 @@
     <header><img src="#" alt="Homu logo, a japanese arch over in over the Fuji mountain in red"></header>
     <section id="main">
         <p> <strong>Register Now!</strong> </p>
-        <form action="">
-            <label for="email">Email: <input type="text" id="email"></label>
-            <label for="name">Name: <input type="text" id="name"></label>
-            <label for="date">Date of Birth: <input type="date" id="date"></label>
-            <label for="pass">Password: <input type="password" id="pass"></label>
-            <label for="confirm">Confirm Password: <input type="password" id="confirm"></label>
+        <form action="#" method="GET"> <!-- ../actions/resgister_action.php -->
+            <label>Email: <input type="email" name="email"></label>
+            <label>First and Last Name: <input type="text" name="name"></label>
+            <label>Date of Birth: <input type="date" name="date"></label>
+            <label>Password: <input type="password" name="pass"></label>
+            <label>Confirm Password: <input type="password" name="confirm"></label>
             <input type="submit" value="Register">
         </form>
     </section>
