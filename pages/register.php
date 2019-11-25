@@ -1,24 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Homu Register</title>
-</head>
-<body>
-    <nav></nav>
-    <header><img src="#" alt="Homu logo, a japanese arch over in over the Fuji mountain in red"></header>
+<?php 
+    include('../templates/temp_common.php');
+
+    draw_header();
+?>
     <section id="main">
-        <p> <strong>Register Now!</strong> </p>
-        <form action="#" method="GET"> <!-- ../actions/resgister_action.php -->
-            <label>Email: <input type="email" name="email"></label>
-            <label>First and Last Name: <input type="text" name="name"></label>
-            <label>Date of Birth: <input type="date" name="date"></label>
-            <label>Password: <input type="password" name="pass"></label>
-            <label>Confirm Password: <input type="password" name="confirm"></label>
+        <p><strong>Register</strong> now to find the vacation stay</p>
+        <p>that makes you feel like <strong>home</strong>.</p>
+        <form action="/actions/resgister_action.php" method="POST">
+            <!-- ../actions/resgister_action.php -->
+            <label>Username: <input type="text" name="username" placeholder="USERNAME"></label>
+            <label>First and Last Name: <input type="text" name="name" placeholder="NAME"></label>
+            <label>Email: <input type="email" name="email" placeholder="EMAIL"></label>
+            <label>Password: <input type="password" name="pass" placeholder="PASSWORD"></label>
+            <label>Confirm Password: <input type="password" name="confirm" placeholder="CONFIRM PASSWORD"></label>
             <input type="submit" value="Register">
         </form>
     </section>
-</body>
-</html>
+    <section id="images">
+        <img src="#" alt="A pretty home" id="base">
+        <img src="#" alt="A prettier one" id="medium">
+        <img src="#" alt="The prettiest of them all" id="highlighted">
+    </section>
+<?php 
+    draw_footer();
+?>
