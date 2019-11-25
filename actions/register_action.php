@@ -9,7 +9,11 @@
 
     //Validate fields
 
-    if( $pass != $confirm) {
+    if($pass != $confirm) {
         //Warn the user the passwords do not match
+    } else if ( false/* email already in database*/ ) {
+
+    } else {
+
     }
 ?>

@@ -7,7 +7,6 @@
         <p><strong>Register</strong> now to find the vacation stay</p>
         <p>that makes you feel like <strong>home</strong>.</p>
         <form action="/actions/resgister_action.php" method="POST">
-            <!-- ../actions/resgister_action.php -->
             <label>Username: <input type="text" name="username" placeholder="USERNAME"></label>
             <label>First and Last Name: <input type="text" name="name" placeholder="NAME"></label>
             <label>Email: <input type="email" name="email" placeholder="EMAIL"></label>
@@ -17,7 +16,7 @@
         </form>
     </section>
     <section id="images">
-        <img src="#" alt="A pretty home" id="base">
+        <img src="#" alt="A pretty home" id="small">
         <img src="#" alt="A prettier one" id="medium">
         <img src="#" alt="The prettiest of them all" id="highlighted">
     </section>
