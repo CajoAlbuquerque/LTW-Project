@@ -7,6 +7,7 @@ DROP TABLE IF EXISTS User;
 CREATE TABLE User (
     userID INTEGER PRIMARY KEY,
     username TEXT UNIQUE NOT NULL,
+    email TEXT NOT NULL,
     password TEXT NOT NULL,
     name TEXT,
     nationality TEXT,
