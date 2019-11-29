@@ -7,10 +7,10 @@
     <div>
         <section id="loginMain">
             <p id="firstSentence">Find the best deal...<span>... for the perfect <a>house</a>.</p>
-            <form id="loginForm" action="/actions/login_action.php" method="POST">
-                <input type="text" name="USER" placeholder="USERNAME/EMAIL">
-                <input type="password" name="PASSWORD" placeholder="PASSWORD">
-                <input id="loginButton" type="submit" value="LOGIN">
+            <form action="/actions/login_action.php" method="POST">
+                <input id="username" type="text" name="USER" placeholder="USERNAME/EMAIL">
+                <input id="password" type="password" name="PASSWORD" placeholder="PASSWORD">
+                <input id="submit" id="loginButton" type="submit" value="LOGIN">
             </form>
             <p id="else">Are you new here? <span>
                 <a href="register.php">Register</a> now to find the perfect stay!</p>
