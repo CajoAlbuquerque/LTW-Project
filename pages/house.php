@@ -1,6 +1,6 @@
 <?php 
     include_once('../database/db_house_info.php');
-    include_once('../database/db_user_info.php');
+    include_once('../database/db_user.php');
     include_once('../database/db_comments.php');
     include('../templates/temp_common.php');
 

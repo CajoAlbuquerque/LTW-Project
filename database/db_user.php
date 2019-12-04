@@ -11,7 +11,7 @@
         return $hash !== false && password_verify($password, $hash);
     }
 
-    function getEmail($email) {
+    function getUserByEmail($email) {
         global $db;
 
         $stmt = $db->prepare('SELECT username FROM User WHERE email = ?');
@@ -30,4 +30,11 @@
         $stmt->execute(array($username, $email, $hash, $name));
     }
 
+    function getUser($id) {
+        global $dbh;
+    
+        $stmt = $dbh->prepare('SELECT * FROM User WHERE userID = ?');
+        $stmt->execute(array($id));
+        return $stmt->fetch();
+    }
 ?>

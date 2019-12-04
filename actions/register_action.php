@@ -18,7 +18,7 @@
     if($pass !== $confirm) {
         $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Passwords do not match!');
         die(header('Location: ../pages/register.php'));
-    } else if ( getEmail($email) != FALSE) {
+    } else if ( getUserByEmail($email) != FALSE) {
         $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Email already exists!');
         die(header('Location: ../pages/register.php'));
     }
