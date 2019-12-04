@@ -13,11 +13,11 @@
         <p><strong>Register</strong> now to find the vacation stay</p>
         <p>that makes you feel like <strong>home</strong>.</p>
         <form action="../actions/register_action.php" method="POST">
-            <label>Username: <input type="text" name="username" placeholder="USERNAME"></label>
+            <label>Username: <input type="text" name="username" placeholder="USERNAME" required></label>
             <label>First and Last Name: <input type="text" name="name" placeholder="NAME"></label>
-            <label>Email: <input type="email" name="email" placeholder="EMAIL"></label>
-            <label>Password: <input type="password" name="pass" placeholder="PASSWORD"></label>
-            <label>Confirm Password: <input type="password" name="confirm" placeholder="CONFIRM PASSWORD"></label>
+            <label>Email: <input type="email" name="email" placeholder="EMAIL" required></label>
+            <label>Password: <input type="password" name="pass" placeholder="PASSWORD" required></label>
+            <label>Confirm Password: <input type="password" name="confirm" placeholder="CONFIRM PASSWORD" required></label>
             <input type="submit" value="Register">
         </form>
     </section>
