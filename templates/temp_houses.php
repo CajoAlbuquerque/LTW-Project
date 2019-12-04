@@ -7,9 +7,9 @@
     </a>
     <section class="info">
         <ul>
-            <li><a> <?=$house['priceDay']?>€\day </a></li>
-            <li><a> <?=$house['location']?></a></li>
-            <li><a> Add more tags </a></li>
+            <li> <?=$house['priceDay']?>€\day </li>
+            <li> <?=$house['location']?></li>
+            <li> Add more tags </li>
         </ul>
     </section>
     <section class="description">
@@ -25,8 +25,8 @@
         <ul>
             <?php foreach ($comments as $comment) { ?>
                 <li><p><?=$comment['comment']?></p> 
-                    <a class="rating"> <?=$comment['stars']?> stars </a>
-                    <footer class="commenter"> <?=$comment['username']?> </footer>
+                    <span class="rating"> <?=$comment['stars']?> stars </span>
+                    <a class="commenter" href="#"> <?=$comment['username']?> </a>
                     <!-- TODO: add href to owner -->
                 </li>
             <?php } ?>
