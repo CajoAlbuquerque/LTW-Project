@@ -26,6 +26,7 @@
             <?php foreach ($comments as $comment) { ?>
                 <li><p><?=$comment['comment']?></p> 
                     <a class="rating"> <?=$comment['stars']?> stars </a>
+                    <footer class="commenter"> <?=$comment['username']?> </footer>
                     <!-- TODO: add href to owner -->
                 </li>
             <?php } ?>
