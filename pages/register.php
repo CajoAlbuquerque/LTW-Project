@@ -3,6 +3,10 @@
     include_once('../templates/temp_common.php');
     include_once('../templates/temp_message.php');
 
+    if(isset($_SESSION['username'])) {
+        die(header('Location: ../pages/homepage.php')); //TODO: change to profile page
+    }
+
     draw_header();
 ?>
     <section id="main">

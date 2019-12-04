@@ -1,19 +1,33 @@
-<?php 
-    include('../templates/temp_common.php');
+<?php
+    include_once('../session.php');
+    include_once('../templates/temp_common.php');
+    include_once('../templates/temp_message.php');
+
+    if(isset($_SESSION['username'])) {
+        die(header('Location: ../pages/homepage.php')); //TODO: change to profile page
+    }
 
     draw_header();
 ?>
     <section id="main">
         <p>Find the best deal...</p>
         <p>... for the perfect <strong>house</strong>.</p>
-        <form action="/actions/login_action.php" method="POST">
-            <label>Username/Email: <input type="text" name="USER" placeholder="USERNAME/EMAIL"></label>
-            <label>Password: <input type="password" name="pa    ss" placeholder="PASSWORD"></label>
+        <form action="../actions/login_action.php" method="POST">
+            <label>Username/Email: <input type="text" name="user" placeholder="USERNAME/EMAIL"></label>
+            <label>Password: <input type="password" name="pass" placeholder="PASSWORD"></label>
             <input type="submit" value="Login">
         </form>
         <p>Are you new here?</p>
         <p><a href="register.php">Register now</a> to find the perfect stay!</p>
     </section>
+<?php
+    if(isset($_SESSION['messages'])) {
+        $type = $_SESSION['messages'][0]['type'];
+        $content = $_SESSION['messages'][0]['content'];
+
+        draw_message($type, $content);
+    }
+?>
     <section id="images">
         <img src="#" alt="A pretty home" id="medium">
         <img src="#" alt="A prettier one" id="medium">
