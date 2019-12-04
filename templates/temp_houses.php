@@ -48,6 +48,7 @@ function draw_new_house_form() { ?>
         <label>Price per Day:<input type="number" name="house_price"></label>
         <label>Location:<input type="text" name="house_location"></label>
         <label>Description:<input type="text" name="house_description"></label>
+        <!-- <label>Images:<input type="file" name="house_images" accept="image/png, image/jpeg" multiple></label> -->
         <input type="submit" value="Add">
     </form>
 </section>
