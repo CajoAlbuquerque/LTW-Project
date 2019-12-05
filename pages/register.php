@@ -36,6 +36,5 @@
     </section>
 <?php 
     draw_footer();
-
-    
+    unset($_SESSION['messages']);
 ?>

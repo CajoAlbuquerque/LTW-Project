@@ -18,8 +18,8 @@
     if($pass !== $confirm) {
         $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Passwords do not match!');
         die(header('Location: ../pages/register.php'));
-    } else if ( getUserByEmail($email) != FALSE || getUserByName($username) != FALSE ) {
-        $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Email already exists!');
+    } else if ( getUserByEmail($email) !== false || getUserByName($username) !== false ) {
+        $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Email or username already exist!');
         die(header('Location: ../pages/register.php'));
     }
     
@@ -27,7 +27,7 @@
         insertUser($username, $email, $pass, $name);
         $_SESSION['username'] = $username;
         $_SESSION['messages'][] = array('type' => 'success', 'content' => 'Registered successfully!');
-        die(header('Location: ../pages/homepage.php'));
+        header('Location: ../pages/homepage.php');
     }
     catch(PDOException $excpt) {
         die($excpt->getMessage());

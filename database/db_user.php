@@ -31,17 +31,17 @@
     }
 
     function getUser($id) {
-        global $dbh;
+        global $db;
     
-        $stmt = $dbh->prepare('SELECT * FROM User WHERE userID = ?');
+        $stmt = $db->prepare('SELECT * FROM User WHERE userID = ?');
         $stmt->execute(array($id));
         return $stmt->fetch();
     }
 
     function getUserByName($username) {
-        global $dbh;
+        global $db;
     
-        $stmt = $dbh->prepare('SELECT * FROM User WHERE username = ?');
+        $stmt = $db->prepare('SELECT * FROM User WHERE username = ?');
         $stmt->execute(array($username));
         return $stmt->fetch();
     }

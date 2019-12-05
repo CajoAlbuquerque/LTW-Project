@@ -4,7 +4,7 @@
     include_once('../templates/temp_message.php');
 
     if(isset($_SESSION['username'])) {
-        die(header('Location: ../pages/homepage.php')); //TODO: change to profile page
+        die(header('Location: ../pages/profile.php'));
     }
 
     draw_header();
@@ -29,10 +29,11 @@
     }
 ?>
     <section id="images">
-        <img src="#" alt="A pretty home" id="medium">
+        <img src="#" alt="A pretty home" id="small">
         <img src="#" alt="A prettier one" id="medium">
         <img src="#" alt="The prettiest of them all" id="highlighted">
     </section>
 <?php 
     draw_footer();
+    unset($_SESSION['messages']);
 ?>
