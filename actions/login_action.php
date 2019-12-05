@@ -1,6 +1,6 @@
 <?php
     include_once('../session.php');
-    include_once('../database/user_db.php');
+    include_once('../database/db_user.php');
 
     $username = strtolower($_POST['user']);
     $password = $_POST['pass'];

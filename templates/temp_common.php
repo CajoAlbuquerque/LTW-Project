@@ -8,14 +8,14 @@
             <title>Hömu - Find your place</title>
         </head>
         <body>
-            <nav>
+            <header>
                 <ul>
                     <li><a href="../pages/homepage.php"><img src="#" alt="Hömu logo"></a></li>
                     <li><a href="../pages/about.php"><img src="#" alt="About us"></a></li>
                     <li><a href="../pages/search.php"><img src="#" alt="Search"></a></li>
                     <li><a href="../pages/profile.php"><img src="#" alt="Profile"></a></li>
                 </ul>
-            </nav>
+            </header>
 <?php } ?>
 
 <?php function draw_footer() { ?>

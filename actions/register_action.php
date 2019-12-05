@@ -1,6 +1,6 @@
 <?php
     include_once('../session.php');
-    include_once('../database/user_db.php');
+    include_once('../database/db_user.php');
 
     // Usernames all stored in lower case
     $username = strtolower($_POST['username']);
@@ -18,7 +18,7 @@
     if($pass !== $confirm) {
         $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Passwords do not match!');
         die(header('Location: ../pages/register.php'));
-    } else if ( getUserByEmail($email) != FALSE) {
+    } else if ( getUserByEmail($email) != FALSE || getUserByName($username) != FALSE ) {
         $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Email already exists!');
         die(header('Location: ../pages/register.php'));
     }
@@ -32,6 +32,6 @@
     catch(PDOException $excpt) {
         die($excpt->getMessage());
         $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Failed to register!');
-        die(header('Location: ../pages/register.php'));
+        header('Location: ../pages/register.php');
     }
 ?>

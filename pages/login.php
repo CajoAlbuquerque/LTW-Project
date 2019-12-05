@@ -13,7 +13,7 @@
         <p>Find the best deal...</p>
         <p>... for the perfect <strong>house</strong>.</p>
         <form action="../actions/login_action.php" method="POST">
-            <label>Username/Email: <input type="text" name="user" placeholder="USERNAME/EMAIL" required></label>
+            <label>Username/Email: <input type="text" name="user" placeholder="USERNAME" required></label>
             <label>Password: <input type="password" name="pass" placeholder="PASSWORD" required></label>
             <input type="submit" value="Login">
         </form>
