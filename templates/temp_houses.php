@@ -36,4 +36,21 @@
 </article>
 
 
-<?php } ?>
+<?php } 
+
+function draw_new_house_form() { ?>
+
+<h2> Please insert the information of the house you wish to rent below. </h2>
+<section id="new_house_form">
+    <form action="add_house_action.php" method="post">
+        <input type="hidden" name="username" value="<?=$_SESSION['username']?>">
+        <label>Title:<input type="text" name="house_title"></label>
+        <label>Price per Day:<input type="number" name="house_price"></label>
+        <label>Location:<input type="text" name="house_location"></label>
+        <label>Description:<input type="text" name="house_description"></label>
+        <!-- <label>Images:<input type="file" name="house_images" accept="image/png, image/jpeg" multiple></label> -->
+        <input type="submit" value="Add">
+    </form>
+</section>
+ 
+ <?php  } ?>
