@@ -6,9 +6,9 @@
 
         $stmt = $db->prepare('SELECT password FROM User WHERE username = ?');
         $stmt->execute(array($username));
-        $hash = $stmt->fetch();
+        $user = $stmt->fetch();
 
-        return $hash !== false && password_verify($password, $hash);
+        return $user !== false && password_verify($password, $user['password']);
     }
 
     function getUserByEmail($email) {
