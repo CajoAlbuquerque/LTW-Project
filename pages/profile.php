@@ -8,7 +8,13 @@
         die(header('Location: ../pages/login.php'));
     }
 
-    $user = getUserByName($_SESSION['username']);
+    $username = $_SESSION['username'];
+
+    if(isset($_GET['username'])) {
+        $username = $_GET['username'];
+    }
+
+    $user = getUserByName($username);
 
     draw_header();
     draw_sidebar();

@@ -1,7 +1,7 @@
 <?php function draw_house($house, $owner, $comments) { ?>
 
 <article class="house">
-    <a href="pages/house.php?houseID=<?=$house['houseID']?>">
+    <a href="../pages/house.php?houseID=<?=$house['houseID']?>">
         <h2><?=$house['title']?></h2>
         <!-- TODO: display all images of the house -->
     </a>
@@ -18,7 +18,7 @@
         </p>
     </section>
     <section class="owner">
-        <a> <!-- href to owner profile --> <?=$owner['name']?> </a>
+        <a href="../pages/profile.php?username=<?=$owner['username']?>"><?=$owner['name']?> </a>
     </section>
     <section class="comments">
         <h3> Comments </h3>
@@ -26,8 +26,7 @@
             <?php foreach ($comments as $comment) { ?>
                 <li><p><?=$comment['comment']?></p> 
                     <span class="rating"> <?=$comment['stars']?> stars </span>
-                    <a class="commenter" href="#"> <?=$comment['username']?> </a>
-                    <!-- TODO: add href to owner -->
+                    <a class="commenter" href="../pages/profile.php?username=<?=$comment['username']?>"> <?=$comment['username']?> </a>
                 </li>
             <?php } ?>
                 <!-- TODO: add option to add comment -->
@@ -54,3 +53,21 @@ function draw_new_house_form() { ?>
 </section>
  
  <?php  } ?>
+
+<?php function draw_house_card($house) { ?>
+    <article class="house_card">
+        <!-- TODO: display main image of the house -->
+        <a href="../pages/house.php?houseID=<?=$house['houseID']?>">
+            <h2><?=$house['title']?></h2>
+        </a>
+        <section class="info">
+            <ul>
+                <li> <?=$house['priceDay']?>€\day </li>
+                <li> <?=$house['location']?></li>
+            </ul>
+        </section>
+        <section class="description">
+            <p><?=$house['description']?></p>
+        </section>
+    </article>
+<?php } ?>

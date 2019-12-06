@@ -1,6 +1,7 @@
 <?php
     include_once('../session.php');
     include_once('../database/db_house.php');
+    include_once('../database/db_user.php');
     include_once('../templates/temp_message.php');
 
     $username = $_POST['username'];
@@ -27,14 +28,15 @@
     }
 
     try {
-        insertHouse($username, $title, $price, $location, $description);
+        $user = getUserByName($username);
+        insertHouse($user['userID'], $title, $price, $location, $description);
         $_SESSION['messages'][] = array('type' => 'success', 'content' => 'Registered house successfully.');
-        die(header('Location: ../pages/homepage.php'));
+        header('Location: ../pages/homepage.php');
     }
     catch(PDOException $excpt) {
-        //die($excpt->getMessage());
+        die($excpt->getMessage());
         $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Failed to register house.');
-        die(header('Location: ../pages/add_house.php'));
+        header('Location: ../pages/add_house.php');
     }
 
 ?>

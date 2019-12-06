@@ -15,4 +15,6 @@
 
     draw_new_house_form();
     draw_footer();
+
+    unset($_SESSION['messages']);
 ?>
