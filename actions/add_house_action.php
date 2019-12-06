@@ -4,10 +4,10 @@
     include_once('../templates/temp_message.php');
 
     $username = $_POST['username'];
-    $title = $_POST['house_title'];
-    $price = $_POST['house_price'];
-    $location = $_POST['house_location'];
-    $description = $_POST['house_description'];
+    $title = $_POST['title'];
+    $price = $_POST['price'];
+    $location = $_POST['location'];
+    $description = $_POST['description'];
 
     //Data validation
     //title validation
@@ -29,7 +29,7 @@
     try {
         insertHouse($username, $title, $price, $location, $description);
         $_SESSION['messages'][] = array('type' => 'success', 'content' => 'Registered house successfully.');
-        die(header('Location: ../pages/index.php'));
+        die(header('Location: ../pages/homepage.php'));
     }
     catch(PDOException $excpt) {
         //die($excpt->getMessage());
