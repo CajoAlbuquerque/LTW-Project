@@ -1,5 +1,6 @@
 html {
     height: 99%;
+    width: 100%;
 }
 
 body {
@@ -8,6 +9,7 @@ body {
     --color-red: rgb(237, 61, 61);
 
     height: 100%;
+    width: 100%;
     margin: 0;
     padding: 0;
     
@@ -18,6 +20,7 @@ body {
 }
 
 body > header {
+    width: 100%;
     height: 8%;
     min-height: 8%;
     margin: 10px 0px;
@@ -47,45 +50,6 @@ body > header li {
 body > header li:first-child {
     flex-grow: 2;
     padding-left: calc(50% - 85px);
-}
-
-#main {
-    height: 75%;
-
-    display: grid;
-    grid-template-columns: [start] 1fr [sidebar] 2fr [photo] 2fr [end];
-}
-
-#main > * {
-    justify-self: center;
-    align-self: center;
-}
-
-#sidebar {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-}
-
-#sidebar > a {
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    font-size: 1.5em;
-
-    flex-grow: 1;
-    padding: 10px 0;
-
-    border-bottom: solid 1px var(--color-red);
-}
-
-#main > form > label {
-    visibility: hidden;
-}
-
-#main > form input {
-    visibility: visible;
-    display: block;
 }
 
 body > footer {

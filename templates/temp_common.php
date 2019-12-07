@@ -9,6 +9,10 @@
             <link rel="stylesheet" href="../css/<?=$style?>.css">
 <?php } ?>
 
+<?php function draw_style($filename) { ?>
+            <link rel="stylesheet" href="../css/<?=$filename?>.css">
+<?php } ?>
+
 <?php function draw_header() { ?>
         </head>
         <body>

@@ -1,0 +1,84 @@
+#main {
+    height: 75%;
+    width: 75%;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: [start] 1fr [sidebar] 4fr [end];
+}
+
+#main > * {
+    justify-self: center;
+    align-self: center;
+}
+
+#sidebar {
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+#sidebar > a {
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.5em;
+
+    flex-grow: 1;
+    padding: 10px 0;
+
+    border-bottom: solid 1px var(--color-red);
+}
+
+#info {
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#fields {
+    width: 100%;
+    margin: 10px 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#info img {
+    width: 250px;
+    height: 250px;
+    
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+
+#fields p {
+    width: 50%;
+
+    margin: 5px 0;
+    padding: 0.5em;
+    border: none;
+
+    font-size: 1.5em;
+    text-align: center;
+    text-shadow: 1px 1px 3px black;
+    color: white;
+    border-radius: 15px;
+    border-bottom: solid 1px var(--color-red);
+}
+
+#fields :nth-child(1) {
+    text-transform: uppercase;
+}
+
+#fields :nth-child(2) {
+    text-transform: capitalize;
+}
