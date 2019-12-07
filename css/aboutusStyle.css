@@ -1,0 +1,59 @@
+html{
+    min-height: 100%;
+}
+
+body {
+    background-color: #ffffff;
+    height: 100%;
+}
+
+body > div{
+    margin-top: 4em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#Title{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom:0.5em;
+    font-size: 18pt;
+    color: #3d3c53;
+    width: 78.5%;
+}
+
+#OutBorder{
+    padding: 1em;
+    border: solid;
+    border-color: #ed3d3d;
+    border-width: 0.1em;
+    width: 75%;
+}
+
+#InnerBorder{
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid;
+    border-color: #3d3c53;
+    border-width: 0.1em;
+}
+
+#InnerBorder > p{
+    font-size: 11pt;
+    text-align: center;
+    color: #3d3c53;
+}
+
+#logo > img{
+    height: 10em;
+    margin:0;
+}
+
+
+

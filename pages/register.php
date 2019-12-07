@@ -4,23 +4,34 @@
     draw_SecondaryHeader();
 ?>
     <link href="../css/loginregisterStyle.css" rel="stylesheet" >
-
-    <section id="registerMain">
-        <p><strong>Register</strong> now to find the vacation stay</p>
-        <p>that makes you feel like <strong>home</strong>.</p>
-        <form action="/actions/resgister_action.php" method="POST">
-            <input type="text" name="username" placeholder="USERNAME"> <br>
-            <input type="text" name="name" placeholder="NAME"> <br>
-            <input type="email" name="email" placeholder="EMAIL"> <br>
-            <input type="password" name="password" placeholder="PASSWORD"> <br>
-            <input type="submit" value="REGISTER">
-        </form>
-    </section>
-    <section id="images">
-        <img src="#" alt="A pretty home" id="small">
-        <img src="#" alt="A prettier one" id="medium">
-        <img src="#" alt="The prettiest of them all" id="highlighted">
-    </section>
+    <div id="registerDiv">
+        <section id="Main">
+            <p id="firstSentence"><a>Register</a> now to find the vacation stay
+                <span>that makes you feel like <a>home</a>.</span></p>
+            <form action="/actions/resgister_action.php" method="POST">
+                <input id="username" type="text" name="username" placeholder="USERNAME"> <br>
+                <input id="name" type="text" name="name" placeholder="NAME"> <br>
+                <input id="email" type="email" name="email" placeholder="EMAIL"> <br>
+                <input id="password" type="password" name="password" placeholder="PASSWORD"> <br>
+                <input id="submit" type="submit" value="REGISTER">
+            </form>
+            <p id="else">Already have an account?<span>
+                <a href="login.php">Login</a> now to continue your search!</span></p>
+        </section>
+        <section id="Images">
+                <div id="highlighted">
+                    <img src="../Icons/housemock2.jpg">
+                </div>
+                <div id="lessImportant">
+                    <div id="small">
+                        <img src="../Icons/housemock1.jpeg">
+                    </div>
+                    <div id="medium">
+                        <img src="../Icons/housemock.jpg">
+                    </div>
+                </div>
+        </section>
+    </div>
 <?php 
     draw_footer();
 ?>

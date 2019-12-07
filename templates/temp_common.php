@@ -11,7 +11,7 @@
         <body>
             <nav id="mainHeader">
                 <ul>
-                    <li><a href="pages/homepage.php"><img src="../Icons/logo.png" alt="Hömu logo"></a></li>
+                    <li id="logo"><a href="pages/homepage.php"><img src="../Icons/logo.png" alt="Hömu logo"></a></li>
                     <li><a href="pages/search.php"><img src="../Icons/search_black.png" alt="Search"></a></li>
                     <li><a href="pages/profile.php"><img src="../Icons/profile_icon_black.png" alt="Profile"></a></li>
                 </ul>
@@ -31,7 +31,7 @@
         <body>
             <nav id="secondaryHeader">
                 <ul>
-                    <li><a href="pages/homepage.php"><img src="../Icons/brand_white.png" alt="Hömu"></a></li>
+                    <li id="logo"><a href="pages/homepage.php"><img src="../Icons/brand_white.png" alt="Hömu"></a></li>
                     <li><a href="pages/search.php"><img src="../Icons/search.png" alt="Search"></a></li>
                     <li><a href="pages/profile.php"><img src="../Icons/profile_icon.png" alt="Profile"></a></li>
                 </ul>
@@ -39,7 +39,7 @@
 <?php } ?>
 
 <?php function draw_footer() { ?>
-            <footer class="footer" id="mainFooter">hömu @ LTW 2019</footer>
+            <footer id="footer">hömu @ LTW 2019</footer>
         </body>
     </html>
 <?php } ?>
