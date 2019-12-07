@@ -4,16 +4,23 @@ html {
 
 #mainHeader, #secondaryHeader{
     position: absolute;
+    padding: 1em;
     top: 0;
     left: 0;
     right: 0;
     display:flex;
     justify-content: flex-end;
     align-items: center;
-    height: 2em;
-    padding: 1em;
+}
+
+#mainHeader{
+    background-color: #ffffff;
+}
+#secondaryHeader{
+    background-color: #3d3c53;
     border-bottom: solid;
     border-bottom-color: #ed3d3d;
+    height: 2em;
 }
 
 #mainHeader ul, #secondaryHeader ul{
@@ -23,8 +30,7 @@ html {
     flex-basis: 54%;
     flex-direction: row;
     justify-content: flex-end;
-    align-content: center;
-    align-items: baseline;
+    align-items: center;
 }
 
 #mainHeader li, #secondaryHeader li{
@@ -42,12 +48,14 @@ html {
     padding: 0.5em;
 }
 
-#mainHeader img, #secondaryHeader img{
+#secondaryHeader img{
     height: 2em;
 }
-
-#secondaryHeader{
-    background-color: #3d3c53;
+#mainHeader img{
+    height: 2em;
+}
+#mainHeader #logo img{
+    height: 4em;
 }
 
 #footer{
