@@ -1,4 +1,4 @@
-<?php function draw_header() { ?> <!-- TODO: change profile icon according to login status-->
+<?php function draw_boilerplate($style) { ?> <!-- TODO: change profile icon according to login status-->
     <!DOCTYPE html>
     <html lang="en">
         <head>
@@ -6,14 +6,17 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta http-equiv="X-UA-Compatible" content="ie=edge">
             <title>Hömu - Find your place</title>
+            <link rel="stylesheet" href="../css/<?=$style?>.css">
+<?php } ?>
+
+<?php function draw_header() { ?>
         </head>
         <body>
             <header>
                 <ul>
-                    <li><a href="../pages/homepage.php"><img src="#" alt="Hömu logo"></a></li>
-                    <li><a href="../pages/about.php"><img src="#" alt="About us"></a></li>
-                    <li><a href="../pages/search.php"><img src="#" alt="Search"></a></li>
-                    <li><a href="../pages/profile.php"><img src="#" alt="Profile"></a></li>
+                    <li><a href="../pages/homepage.php"><img src="../icons/homu_white.png" alt="Hömu logo"></a></li>
+                    <li><a href="../pages/search.php"><img src="../icons/search_white.png" alt="Search"></a></li>
+                    <li><a href="../pages/profile.php"><img src="../icons/profile_white.png" alt="Profile"></a></li>
                 </ul>
             </header>
 <?php } ?>

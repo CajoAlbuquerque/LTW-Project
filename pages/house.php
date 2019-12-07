@@ -11,6 +11,7 @@
     $owner = getUser($house['owner']);
     $comments = getAllCommentsOfHouse($houseID);
 
+    draw_boilerplate('dark');
     draw_header();
     draw_house($house, $owner, $comments);
     draw_footer();

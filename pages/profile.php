@@ -16,8 +16,8 @@
 
     $user = getUserByName($username);
 
+    draw_boilerplate('dark');
     draw_header();
-    draw_sidebar();
     draw_profile($user);
     draw_footer();
 ?>

@@ -7,6 +7,7 @@
         die(header('Location: ../pages/profile.php'));
     }
 
+    draw_boilerplate('dark');
     draw_header();
 ?>
     <section id="main">

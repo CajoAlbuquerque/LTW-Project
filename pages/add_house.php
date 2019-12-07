@@ -4,6 +4,7 @@
     include('../templates/temp_common.php');
     include('../templates/temp_houses.php');
 
+    draw_boilerplate('dark');
     draw_header();
 
     if(isset($_SESSION['messages'])) {
