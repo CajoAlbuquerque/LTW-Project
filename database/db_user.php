@@ -45,4 +45,13 @@
         $stmt->execute(array($username));
         return $stmt->fetch();
     }
+
+    function updateUser($id, $username, $email, $name, $nationality, $age) {
+        global $db;
+    
+        $stmt = $db->prepare('UPDATE User SET username = ?, email = ?, name = ?, nationality = ?, age = ? WHERE userID = ?');
+        $stmt->execute(array($username, $email, $name, $nationality, $age, $id));
+
+        return;
+    }
 ?>

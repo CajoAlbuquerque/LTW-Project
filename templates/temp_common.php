@@ -13,6 +13,10 @@
             <link rel="stylesheet" href="../css/<?=$filename?>.css">
 <?php } ?>
 
+<?php function draw_script($filename) { ?>
+            <script src="../js/<?=$filename?>.js" defer></script>
+<?php } ?>
+
 <?php function draw_header() { ?>
         </head>
         <body>

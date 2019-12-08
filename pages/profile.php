@@ -18,6 +18,7 @@
 
     draw_boilerplate('dark');
     draw_style('profile');
+    draw_script('edit_profile');
     draw_header();
     draw_profile($user);
     draw_footer();
