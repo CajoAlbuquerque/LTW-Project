@@ -7,6 +7,8 @@ body {
     --color-grey: rgb(61, 60, 83);
     --color-grey-text: rgb(136, 136, 153);
     --color-red: rgb(237, 61, 61);
+    --color-message-green: rgb(181, 255, 179);
+    --color-message-red: rgb(255, 181, 181);
 
     height: 100%;
     width: 100%;

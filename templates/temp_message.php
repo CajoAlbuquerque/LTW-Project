@@ -1,5 +1,5 @@
 <?php function draw_message($type, $content) { ?>
     <div class="<?=$type?>">
-        <p><?=$content?></p>
+        <?=$content?>
     </div>
 <?php } ?>

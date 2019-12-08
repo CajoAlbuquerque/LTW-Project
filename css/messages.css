@@ -1,0 +1,21 @@
+.error,
+.success {
+    display: inline-block;
+    padding: 10px;
+
+    text-align: center;
+    font-size: 1.5em;
+    
+    border-radius: 30px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.error {
+    background-color: var(--color-message-red);
+    color: red;
+}
+
+.success {
+    background-color: var(--color-message-green);
+    color: green;
+}

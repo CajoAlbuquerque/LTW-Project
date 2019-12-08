@@ -1,9 +1,14 @@
-<?php function draw_profile($user) { ?>
+<?php 
+    include_once('../templates/temp_message.php');
+
+function draw_profile($user, $editable, $message) { ?>
     <section id="main"> 
         <nav id="sidebar">
             <a href="../pages/profile.php?username=<?=$user['username']?>">Profile</a>
             <a href="../pages/reservations.php">Reservations</a>
-            <a id="edit" href="#">Edit Profile</a>
+            <?php if($editable) {?>
+                <a id="edit" href="#">Edit Profile</a>
+            <?php }?>
             <a href="../actions/logout_action.php">Log Out</a>
         </nav>
         <section id="info">
@@ -16,18 +21,21 @@
                     $age = $user['age'];
                     $name = $user['name'];
 
-                    if($name != NULL){ ?>
+                    if($name !== '' && $nationality !== null){ ?>
                         <p><?=$name?></p>
                 <?php
                     }
 
-                    if($nationality != NULL){ ?>
+                    if($nationality !== '' && $nationality !== null){ ?>
                         <p><?=$nationality?></p>
                 <?php
                     }
-                    if($age != NULL){ ?>
+                    if($age !== '' && $nationality !== null){ ?>
                         <p><?=$age?></p>
                 <?php
+                    }
+                    if(!empty($message)){ 
+                        draw_message($message['type'], $message['content']);
                     }
                 ?>
             </div>
