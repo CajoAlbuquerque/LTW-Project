@@ -45,7 +45,7 @@
     }
     catch(PDOException $excpt) {
         die($excpt->getMessage());
-        $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Failed to register!');
+        $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Failed to update profile!');
     }
 
     header('Location: ../pages/profile.php');
