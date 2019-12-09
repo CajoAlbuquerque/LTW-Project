@@ -45,4 +45,21 @@
         $stmt->execute(array($username));
         return $stmt->fetch();
     }
+
+    function updateUser($id, $username, $email, $name, $nationality, $age) {
+        global $db;
+    
+        $stmt = $db->prepare('UPDATE User SET username = ?, email = ?, name = ?, nationality = ?, age = ? WHERE userID = ?');
+        $stmt->execute(array($username, $email, $name, $nationality, $age, $id));
+    }
+    
+    function updatePassword($username, $pass) {
+        global $db;
+
+        $options = ['cost' => 12];
+        $hash = password_hash($pass, PASSWORD_DEFAULT, $options);
+
+        $stmt = $db->prepare('UPDATE User SET password = ? WHERE username = ?');
+        $stmt->execute(array($hash, $username));
+    }
 ?>

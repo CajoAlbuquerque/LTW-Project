@@ -4,7 +4,7 @@
     include_once('../templates/temp_message.php');
 
     if(isset($_SESSION['username'])) {
-        die(header('Location: ../pages/homepage.php')); //TODO: change to profile page
+        die(header('Location: ../pages/profile.php'));
     }
 
     draw_black_header();
@@ -26,14 +26,14 @@
         </section>
         <section id="Images">
                 <div id="highlighted">
-                    <img src="../Icons/housemock2.jpg">
+                    <img src="../icons/housemock2.jpg">
                 </div>
                 <div id="lessImportant">
                     <div id="small">
-                        <img src="../Icons/housemock1.jpeg">
+                        <img src="../icons/housemock1.jpeg">
                     </div>
                     <div id="medium">
-                        <img src="../Icons/housemock.jpg">
+                        <img src="../icons/housemock.jpg">
                     </div>
                 </div>
         </section>

@@ -11,9 +11,9 @@
         <body>
             <nav id="mainHeader">
                 <ul>
-                    <li id="logo"><a href="homepage.php"><img src="../Icons/logo.png" alt="Hömu logo"></a></li>
-                    <li><a href="search.php"><img src="../Icons/search_black.png" alt="Search"></a></li>
-                    <li><a href="profile.php"><img src="../Icons/profile_icon_black.png" alt="Profile"></a></li>
+                    <li id="logo"><a href="homepage.php"><img src="../icons/logo.png" alt="Hömu logo"></a></li>
+                    <li><a href="search.php"><img src="../icons/search_black.png" alt="Search"></a></li>
+                    <li><a href="profile.php"><img src="../icons/profile_black.png" alt="Profile"></a></li>
                 </ul>
             </nav>
 <?php } ?>
@@ -31,11 +31,19 @@
         <body>
             <nav id="secondaryHeader">
                 <ul>
-                    <li id="logo"><a href="homepage.php"><img src="../Icons/brand_white.png" alt="Hömu"></a></li>
-                    <li><a href="search.php"><img src="../Icons/search.png" alt="Search"></a></li>
-                    <li><a href="profile.php"><img src="../Icons/profile_icon.png" alt="Profile"></a></li>
+                    <li id="logo"><a href="homepage.php"><img src="../icons/brand_white.png" alt="Hömu"></a></li>
+                    <li><a href="search.php"><img src="../icons/search_white.png" alt="Search"></a></li>
+                    <li><a href="profile.php"><img src="../icons/profile_white.png" alt="Profile"></a></li>
                 </ul>
             </nav>
+<?php } ?>
+
+<?php function draw_style($filename) { ?>
+            <link rel="stylesheet" href="../css/<?=$filename?>.css">
+<?php } ?>
+
+<?php function draw_script($filename) { ?>
+            <script src="../js/<?=$filename?>.js" defer></script>
 <?php } ?>
 
 <?php function draw_footer() { ?>
