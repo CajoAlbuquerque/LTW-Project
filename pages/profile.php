@@ -7,6 +7,11 @@
 
     // Only logged in users can see other users page
     if(!isset($_SESSION['username'])) {
+        if(isset($_GET['username'])){
+            $_SESSION['redirect'] = array( 'page' => 'profile.php', 'username' => $_GET['username']);
+        } else {
+            $_SESSION['redirect'] = array( 'page' => 'profile.php');
+        }
         die(header('Location: ../pages/login.php'));
     }
 

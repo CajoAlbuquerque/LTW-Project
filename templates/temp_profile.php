@@ -9,8 +9,8 @@
                 <?php if($editable) {?>
                     <a id="edit" href="#">Edit Profile</a>
                     <a id="pass" href="#">Change Password</a>
+                    <a href="../actions/logout_action.php">Log Out</a>
                 <?php }?>
-                <a href="../actions/logout_action.php">Log Out</a>
             </nav>
             <section id="info">
                 <img src="https://i.pravatar.cc/500" alt="Profile Photo">

@@ -4,7 +4,7 @@
     include_once('../templates/temp_message.php');
 
     if(isset($_SESSION['username'])) {
-        die(header('Location: ../pages/homepage.php')); //TODO: change to profile page
+        die(header('Location: ../pages/profile.php'));
     }
 
     draw_boilerplate('dark');

@@ -8,6 +8,19 @@
     $email = $_POST['email'];
     $pass = $_POST['pass'];
     $confirm = $_POST['confirm'];
+    $destination = 'homepage.php';
+
+    if(isset($_SESSION['redirect'])) {
+        $redirect = $_SESSION['redirect'];
+        $destination = $redirect['page'] . '?';
+        foreach($redirect as $key => $value) {
+            if($key != 'page') {
+                $destination .= $key . '=' . $value . '&';
+            }
+        }
+        
+        unset($_SESSION['redirect']);
+    }
 
     // Validating username
     if( !preg_match('/^[a-zA-Z0-9 _-]+$/', $username) ){
@@ -27,7 +40,7 @@
         insertUser($username, $email, $pass, $name);
         $_SESSION['username'] = $username;
         $_SESSION['messages'][] = array('type' => 'success', 'content' => 'Registered successfully!');
-        header('Location: ../pages/homepage.php');
+        header('Location: ../pages/' . $destination);
     }
     catch(PDOException $excpt) {
         die($excpt->getMessage());
