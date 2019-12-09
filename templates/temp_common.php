@@ -1,32 +1,45 @@
-<?php function draw_boilerplate($style) { ?> <!-- TODO: change profile icon according to login status-->
+<?php function draw_white_header() { ?> <!-- TODO: change profile icon according to login status-->
     <!DOCTYPE html>
     <html lang="en">
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta http-equiv="X-UA-Compatible" content="ie=edge">
-            <title>Hömu - Find your place</title>
-            <link rel="stylesheet" href="../css/<?=$style?>.css">
-<?php } ?>
-
-<?php function draw_style($filename) { ?>
-            <link rel="stylesheet" href="../css/<?=$filename?>.css">
-<?php } ?>
-
-<?php function draw_header() { ?>
+            <link href="../css/templateStyle.css" rel="stylesheet" >
+            <title>hömu - Find your place</title>
         </head>
         <body>
-            <header>
+            <nav id="mainHeader">
                 <ul>
-                    <li><a href="../pages/homepage.php"><img src="../icons/homu_white.png" alt="Hömu logo"></a></li>
-                    <li><a href="../pages/search.php"><img src="../icons/search_white.png" alt="Search"></a></li>
-                    <li><a href="../pages/profile.php"><img src="../icons/profile_white.png" alt="Profile"></a></li>
+                    <li id="logo"><a href="homepage.php"><img src="../Icons/logo.png" alt="Hömu logo"></a></li>
+                    <li><a href="search.php"><img src="../Icons/search_black.png" alt="Search"></a></li>
+                    <li><a href="profile.php"><img src="../Icons/profile_icon_black.png" alt="Profile"></a></li>
                 </ul>
-            </header>
+            </nav>
+<?php } ?>
+
+<?php function draw_black_header() { ?> <!-- TODO: change profile icon according to login status-->
+    <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <link href="../css/templateStyle.css" rel="stylesheet" >
+            <title>hömu - Find your place</title>
+        </head>
+        <body>
+            <nav id="secondaryHeader">
+                <ul>
+                    <li id="logo"><a href="homepage.php"><img src="../Icons/brand_white.png" alt="Hömu"></a></li>
+                    <li><a href="search.php"><img src="../Icons/search.png" alt="Search"></a></li>
+                    <li><a href="profile.php"><img src="../Icons/profile_icon.png" alt="Profile"></a></li>
+                </ul>
+            </nav>
 <?php } ?>
 
 <?php function draw_footer() { ?>
-            <footer>Hömu @ LTW 2019</footer>
+            <footer id="footer">hömu @ LTW 2019</footer>
         </body>
     </html>
 <?php } ?>

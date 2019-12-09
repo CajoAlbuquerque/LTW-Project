@@ -7,21 +7,37 @@
         die(header('Location: ../pages/homepage.php')); //TODO: change to profile page
     }
 
-    draw_boilerplate('dark');
-    draw_header();
+    draw_black_header();
 ?>
-    <section id="main">
-        <p><strong>Register</strong> now to find the vacation stay</p>
-        <p>that makes you feel like <strong>home</strong>.</p>
-        <form action="../actions/register_action.php" method="POST">
-            <label>Username: <input type="text" name="username" placeholder="USERNAME" required></label>
-            <label>First and Last Name: <input type="text" name="name" placeholder="NAME"></label>
-            <label>Email: <input type="email" name="email" placeholder="EMAIL" required></label>
-            <label>Password: <input type="password" name="pass" placeholder="PASSWORD" required></label>
-            <label>Confirm Password: <input type="password" name="confirm" placeholder="CONFIRM PASSWORD" required></label>
-            <input type="submit" value="Register">
-        </form>
-    </section>
+    <link href="../css/loginregisterStyle.css" rel="stylesheet" >
+    <div id="registerDiv">
+        <section id="Main">
+            <p id="firstSentence"><a>Register</a> now to find the vacation stay
+                <span>that makes you feel like <a>home</a>.</span></p>
+            <form action="/actions/resgister_action.php" method="POST">
+                <input id="username" type="text" name="username" placeholder="USERNAME"> <br>
+                <input id="name" type="text" name="name" placeholder="NAME"> <br>
+                <input id="email" type="email" name="email" placeholder="EMAIL"> <br>
+                <input id="password" type="password" name="password" placeholder="PASSWORD"> <br>
+                <input id="submit" type="submit" value="REGISTER">
+            </form>
+            <p id="else">Already have an account?<span>
+                <a href="login.php">Login</a> now to continue your search!</span></p>
+        </section>
+        <section id="Images">
+                <div id="highlighted">
+                    <img src="../Icons/housemock2.jpg">
+                </div>
+                <div id="lessImportant">
+                    <div id="small">
+                        <img src="../Icons/housemock1.jpeg">
+                    </div>
+                    <div id="medium">
+                        <img src="../Icons/housemock.jpg">
+                    </div>
+                </div>
+        </section>
+    </div>
 <?php
     if(isset($_SESSION['messages'])) {
         $type = $_SESSION['messages'][0]['type'];
@@ -30,11 +46,6 @@
         draw_message($type, $content);
     }
 ?>
-    <section id="images">
-        <img src="#" alt="A pretty home" id="small">
-        <img src="#" alt="A prettier one" id="medium">
-        <img src="#" alt="The prettiest of them all" id="highlighted">
-    </section>
 <?php 
     draw_footer();
     unset($_SESSION['messages']);

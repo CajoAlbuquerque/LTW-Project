@@ -1,0 +1,124 @@
+html{
+    min-height: 100%;
+}
+
+body {
+    background-color: #3d3c53;
+    height: 100%;
+}
+
+body > div{
+    display: flex;
+    align-items: center;
+}
+
+#loginDiv{
+    margin: 8em 2em 2em 2em;
+}
+
+#registerDiv{
+    margin: 4em 2em 1em 2em;
+}
+
+#Main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-basis: 50%;
+}
+#Images{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-basis: 50%;
+}
+
+#Main > #firstSentence{
+    padding-left: 1em;
+    font-size: 15pt;
+} 
+
+#Main > #firstSentence span{
+    padding-top: 0.5em;
+    padding-left: 3em;
+}
+
+#Main > #firstSentence a{
+    font-weight: bold;
+    font-size: 18pt;
+}
+
+#Main > #else a{
+    font-weight: bold;
+}
+
+#Main > #else{
+    font-size: 10pt;
+} 
+
+#Main > form{
+    display: flex;
+    flex-direction: column;
+}
+
+#username, #password, #email, #name{
+    margin-top: 1em;
+    padding: 0.5em 1em 0.5em 1em;
+    width: 20em;
+    height: 2.5em;
+    border:none;
+}
+
+#username::placeholder, #password::placeholder, #email::placeholder, #name::placeholder{
+    color: #3d3c53;
+}
+
+#submit{
+    margin-top: 1em;
+    width: 22em;
+    height: 3.5em;
+    background-color: #ed3d3d;
+    color: white;
+    border:none;
+}
+
+#Main p, #Main a{
+    color: white;
+    text-decoration: none;
+}
+
+#Main p, #Main p span{
+    display:block;
+}
+
+#lessImportant{
+    display: flex;
+    flex-direction: row;
+}
+
+#medium{
+    margin-left: 1em;
+}
+
+#highlighted > img, #medium > img, #small > img{
+    border: solid;
+    border-radius: 50%;
+    border-color: #ed3d3d;
+    background-repeat: no-repeat;
+    background-size: 50% 50%;
+}
+
+#highlighted > img{
+    height: 12em;
+    width: 12em;
+}
+
+#medium > img{
+    height: 9em;
+    width: 9em;
+}
+
+#small > img{
+    height: 7em;
+    width: 7em;
+}
