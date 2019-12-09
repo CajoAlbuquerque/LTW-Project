@@ -4,8 +4,7 @@
     include('../templates/temp_common.php');
     include('../templates/temp_houses.php');
 
-    draw_boilerplate('dark');
-    draw_header();
+    draw_black_header();
 
     if(isset($_SESSION['messages'])) {
         $type = $_SESSION['messages'][0]['type'];

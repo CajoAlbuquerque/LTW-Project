@@ -15,8 +15,8 @@
         <section id="Main">
             <p id="firstSentence">Find the best deal...<span>... for the perfect <a>house</a>.</span></p>
             <form action="../actions/login_action.php" method="POST">
-                <input id="username" type="text" name="USER" placeholder="USERNAME/EMAIL">
-                <input id="password" type="password" name="PASSWORD" placeholder="PASSWORD">
+                <input id="username" type="text" name="user" placeholder="USERNAME/EMAIL">
+                <input id="password" type="password" name="pass" placeholder="PASSWORD">
                 <input id="submit" id="loginButton" type="submit" value="LOGIN">
             </form>
             <p id="else">Are you new here? <span>

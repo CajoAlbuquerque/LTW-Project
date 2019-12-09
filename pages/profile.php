@@ -33,13 +33,12 @@
     $user = getUserByName($username);
     $editable = $username == $_SESSION['username'];
 
-    draw_boilerplate('dark');
+    draw_black_header();
     draw_style('profile');
     draw_style('messages');
     if($editable){
         draw_script('edit_user');
     }
-    draw_header();
     draw_profile($user, $editable, $message);
     draw_footer();
 
