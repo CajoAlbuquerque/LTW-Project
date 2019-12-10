@@ -3,7 +3,7 @@ html{
 }
 
 body {
-    background-color: #3d3c53;
+    background-color: var(--color-grey);
     height: 100%;
 }
 
@@ -13,7 +13,8 @@ body > div{
 }
 
 #loginDiv{
-    margin: 8em 2em 2em 2em;
+    margin: 8em auto 2em auto;
+    width: 75%;
 }
 
 #registerDiv{
@@ -21,6 +22,7 @@ body > div{
 }
 
 #Main{
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -70,14 +72,14 @@ body > div{
 }
 
 #username::placeholder, #password::placeholder, #email::placeholder, #name::placeholder{
-    color: #3d3c53;
+    color: var(--color-grey);
 }
 
 #submit{
     margin-top: 1em;
     width: 22em;
     height: 3.5em;
-    background-color: #ed3d3d;
+    background-color: var(--color-red);
     color: white;
     border:none;
 }
@@ -103,7 +105,7 @@ body > div{
 #highlighted > img, #medium > img, #small > img{
     border: solid;
     border-radius: 50%;
-    border-color: #ed3d3d;
+    border-color: var(--color-red);
     background-repeat: no-repeat;
     background-size: 50% 50%;
 }
