@@ -45,8 +45,8 @@
 <?php function draw_form() { ?>
     <form action="#" id="search-form">
         <label>Where <input type="text" name="location" placeholder="Choose a city"></label>
-        <label>Check-In <input type="text" name="check_in" placeholder="dd/mm/yy"></label>
-        <label>Check-Out <input type="text" name="check_out" placeholder="dd/mm/yy"></label>
+        <label>Check-In <input type="text" name="check_in" placeholder="yyyy-mm-dd"></label>
+        <label>Check-Out <input type="text" name="check_out" placeholder="yyyy-mm-dd"></label>
         <input type="submit" value="Search">
     </form>
 <?php } ?>

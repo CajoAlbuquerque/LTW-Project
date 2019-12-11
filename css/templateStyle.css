@@ -79,7 +79,11 @@ body {
 
 #search-form{
     align-self: flex-end;
-    display: none;
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+    -webkit-transition: visibility 0s, opacity 0.5s linear;
 
     flex-direction: column;
     position: fixed;
@@ -121,8 +125,7 @@ body {
     border:none;
 }
 
-input[type="date"]::-webkit-inner-spin-button,
-input[type="date"]::-webkit-calendar-picker-indicator {
-    
+input[type="date"]::-webkit-inner-spin-button{
+    display: none;
     -webkit-appearance: none;
 }
