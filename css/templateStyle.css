@@ -76,3 +76,53 @@ body {
     color: white;
     background-color: var(--color-grey);
 }
+
+#search-form{
+    align-self: flex-end;
+    display: none;
+
+    flex-direction: column;
+    position: fixed;
+    top: 1.5em;
+    right: 4.6em;
+    z-index: 9;
+
+    background-color: white;
+    box-shadow: 0 6px 10px rgba(0,0,0,0.19), 0 2px 6px rgba(0,0,0,0.23);
+    /* border: solid 1px black; */
+    padding: 1.5em;
+}
+
+#search-form label {
+    display: block;
+}
+
+#search-form input {
+    display: block;
+    text-align: center;
+
+    margin: 0.5em 0;
+    padding: 0.5em 1em 0.5em 1em;
+    width: 20em;
+    height: 2.5em;
+    border: solid 1px rgba(0, 0, 0, 0.322);
+}
+
+#search-form input::placeholder {
+    color: var(--color-grey-text);
+}
+
+#search-form input[type=submit]{
+    margin-top: 1em;
+    width: 22em;
+    height: 3.5em;
+    background-color: var(--color-red);
+    color: white;
+    border:none;
+}
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    
+    -webkit-appearance: none;
+}
