@@ -69,10 +69,12 @@ body > div{
     width: 20em;
     height: 2.5em;
     border:none;
+    text-align: center;
 }
 
-#username::placeholder, #password::placeholder, #email::placeholder, #name::placeholder{
-    color: var(--color-grey);
+#Main > form input::placeholder{
+    color: var(--color-grey-text);
+    text-align: center;
 }
 
 #submit{
