@@ -43,8 +43,8 @@
 } ?>
 
 <?php function draw_form() { ?>
-    <form action="#" id="search-form">
-        <label>Where <input type="text" name="location" placeholder="Choose a city"></label>
+    <form action="../pages/search.php" method="post" id="search-form">
+        <label>Where <input type="text" name="location" placeholder="Choose a city" required></label>
         <label>Check-In <input type="text" name="check_in" placeholder="yyyy-mm-dd"></label>
         <label>Check-Out <input type="text" name="check_out" placeholder="yyyy-mm-dd"></label>
         <input type="submit" value="Search">
