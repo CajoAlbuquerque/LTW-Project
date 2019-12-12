@@ -39,11 +39,12 @@
                     <li><a href="profile.php"><img src="../icons/profile_white.png" alt="Profile"></a></li>
                 </ul>
             </nav>
-            <?php draw_form();
+            <?php
+            draw_form();
 } ?>
 
 <?php function draw_form() { ?>
-    <form action="../pages/search.php" method="post" id="search-form">
+    <form action="../pages/search.php" method="get" id="search-form">
         <label>Where <input type="text" name="location" placeholder="Choose a city"></label>
         <label>Check-In <input type="text" name="check_in" placeholder="yyyy-mm-dd"></label>
         <label>Check-Out <input type="text" name="check_out" placeholder="yyyy-mm-dd"></label>

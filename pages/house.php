@@ -3,7 +3,7 @@
     include_once('../database/db_user.php');
     include_once('../database/db_comments.php');
     include('../templates/temp_common.php');
-    include('../templates/temp_houses.php');
+    include('../templates/temp_house.php');
 
     $houseID = $_GET['houseID'];
 

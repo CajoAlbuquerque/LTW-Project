@@ -2,7 +2,7 @@
     include_once('../session.php');
     include_once('../templates/temp_message.php');
     include('../templates/temp_common.php');
-    include('../templates/temp_houses.php');
+    include('../templates/temp_house.php');
 
     draw_black_header();
 

@@ -1,7 +1,7 @@
 <?php
     include_once('../database/db_house.php');
     include_once('../templates/temp_common.php');
-    include_once('../templates/temp_houses.php');
+    include_once('../templates/temp_house.php');
 
     draw_white_header();
 
