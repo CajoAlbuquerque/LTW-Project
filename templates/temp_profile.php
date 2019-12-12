@@ -5,7 +5,7 @@
         <section id="main"> 
             <nav id="sidebar">
                 <a href="../pages/profile.php?username=<?=$user['username']?>">Profile</a>
-                <a href="../pages/reservations.php?username=<?=$user['username']?>">Reservations</a>
+                <a id="reservations" href="#">Reservations</a>
                 <?php if($editable) {?>
                     <a id="edit" href="#">Edit Profile</a>
                     <a id="pass" href="#">Change Password</a>
@@ -13,9 +13,9 @@
                 <?php }?>
             </nav>
             <section id="info">
-                <img src="https://i.pravatar.cc/500" alt="Profile Photo">
+                <img id="profile_img" src="https://i.pravatar.cc/500" alt="Profile Photo">
                 <div id="fields">
-                    <p><?=$user['username']?></p>
+                    <p id="username"><?=$user['username']?></p>
                     <p><?=$user['email']?></p>
                     <?php 
                         $nationality = $user['nationality'];

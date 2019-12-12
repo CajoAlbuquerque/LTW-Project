@@ -36,6 +36,7 @@
     draw_black_header();
     draw_style('profile');
     draw_style('messages');
+    draw_script('get_reservations');
     if($editable){
         draw_script('edit_user');
     }

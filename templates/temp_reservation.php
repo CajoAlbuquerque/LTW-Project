@@ -1,6 +1,6 @@
 <?php
 
-include_once('../database/bd_house.php');
+include_once('../database/db_house.php');
 
 function draw_reservation_card($reservation) { 
     
