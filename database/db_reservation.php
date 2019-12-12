@@ -33,7 +33,7 @@
         global $db;
 
         $stmt = $db->prepare('SELECT * FROM Reservation WHERE house = ?');
-        $stmt->execute(array($user));
+        $stmt->execute(array($house));
         $reservations = $stmt->fetchAll();
         foreach($reservations as $reservation) {
             $resStart = $reservation['startDate'];
