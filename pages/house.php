@@ -2,8 +2,10 @@
     include_once('../database/db_house.php');
     include_once('../database/db_user.php');
     include_once('../database/db_comments.php');
+    include_once('../session.php');
     include('../templates/temp_common.php');
     include('../templates/temp_houses.php');
+    include('../templates/temp_reservation.php');
 
     $houseID = $_GET['houseID'];
 
@@ -16,7 +18,7 @@
     if(isset($_SESSION['username'])){
         $username = $_SESSION['username'];
         $user = getUserByName($username);
-        draw_reservation_form($house, $user);
+        draw_reservation_form($house, $user); //FIXME: desformata a página, help
     }
     draw_footer();
 ?>
