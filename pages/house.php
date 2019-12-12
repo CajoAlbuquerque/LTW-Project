@@ -13,5 +13,10 @@
 
     draw_black_header();
     draw_house($house, $owner, $comments);
+    if(isset($_SESSION['username'])){
+        $username = $_SESSION['username'];
+        $user = getUserByName($username);
+        draw_reservation_form($house, $user);
+    }
     draw_footer();
 ?>

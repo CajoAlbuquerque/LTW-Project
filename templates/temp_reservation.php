@@ -19,4 +19,18 @@ function draw_reservation_card($reservation) {
             </ul>
         </section>
     </article>
+<?php } 
+
+function draw_reservation_form($house, $user) { ?>
+    <article class="reservation_form">
+        <form action="../actions/make_reservation_action.php" method="post">
+            <input type="hidden" name="userID" value="<?=$user['userID']?>">
+            <input type="hidden" name="houseID" value="<?=$house['houseID']?>">
+            <input type="hidden" name="priceDay" value="<?=$house['priceDay']?>">
+            <label>Check-In <input type="text" name="check_in" placeholder="yyyy-mm-dd"></label>
+            <label>Check-Out <input type="text" name="check_out" placeholder="yyyy-mm-dd"></label>
+            <!-- calculate price somehow? -->
+            <input type="submit" value="Reserve">
+        </form>
+
 <?php } ?>
