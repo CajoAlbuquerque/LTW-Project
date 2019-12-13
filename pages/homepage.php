@@ -40,10 +40,10 @@
         </section>
     </section>
     <section id="aboutus">
-        <img src="../icons/brand_white.png">
+        <a href="aboutus.php"><img src="../icons/brand_white.png"></a>
     </section>
     <section id="login">
-        <img src="../icons/profile_white.png">
+        <a href="login.php"><img src="../icons/profile_white.png"></a>
         <p>Register or login to start your demand for the vacation of your dreams.</p>
     </section>
 </div>
