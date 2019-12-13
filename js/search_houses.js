@@ -3,6 +3,10 @@
 let results = document.getElementById('search_result');
 let check_in_filter = document.querySelector('#filters input[name="check_in"]');
 let check_out_filter = document.querySelector('#filters input[name="check_out"]');
+let min_output = document.getElementById('min_output');
+let max_output = document.getElementById('max_output');
+let min_price = document.querySelector('#filters input[name="min_price"]');
+let max_price = document.querySelector('#filters input[name="max_price"]');
 let get_url = window.location.search.substr(1);
 let get_url_parsed = get_url.split('&');
 let get_params = {};
@@ -28,6 +32,12 @@ check_in_filter.addEventListener('change', function () {
 check_out_filter.addEventListener('change', function () {
     check_in_filter.max = check_out_filter.value;
 })
+
+min_output.value = min_price.value;
+max_output.value = max_price.value;
+
+min_price.addEventListener('input', () => min_output.value = min_price.value);
+max_price.addEventListener('input', () => max_output.value = max_price.value);
 
 function encode_for_ajax(data) {
     return Object.keys(data).map(function(k){

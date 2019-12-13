@@ -1,7 +1,7 @@
 #main {
     height: 85%;
     width: 90%;
-    margin: auto;
+    margin: auto auto auto 5em;
 
     display: grid;
     grid-template-columns: [start] 1fr [filters] 4fr [end];
@@ -91,4 +91,31 @@
     
     background: var(--color-red);
     cursor: pointer;
+}
+
+#filters output {
+    float: right;
+    width: 2em;
+
+    text-align: center;
+    border: solid 1px var(--color-grey-text);
+    opacity: 0.5;
+
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    -webkit-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+#filters output:hover, #filters output:focus {
+    opacity: 1;
+}
+
+#search_result {
+    padding: 2em 1em;
+
+    display: grid;
+    grid-template-columns: [start] 1fr [mid-left] 1fr [mid-right] 1fr [end];
+}
+
+#search_result > * {
+    justify-self: center;
 }
