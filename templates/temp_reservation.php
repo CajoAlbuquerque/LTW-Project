@@ -29,8 +29,8 @@ function draw_reservation_form($house, $user) { ?>
             <input type="hidden" name="priceDay" value="<?=$house['priceDay']?>">
             <label>Check-In <input type="text" name="check_in" placeholder="yyyy-mm-dd"></label>
             <label>Check-Out <input type="text" name="check_out" placeholder="yyyy-mm-dd"></label>
-            <!-- calculate price somehow? -->
+            <label>Total Price <output>0</output></label>
             <input type="submit" value="Reserve">
         </form>
-
+    </article>
 <?php } ?>

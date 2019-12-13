@@ -4,7 +4,7 @@
     include_once('../database/db_comments.php');
     include_once('../session.php');
     include('../templates/temp_common.php');
-    include('../templates/temp_houses.php');
+    include('../templates/temp_house.php');
     include('../templates/temp_reservation.php');
 
     $houseID = $_GET['houseID'];
