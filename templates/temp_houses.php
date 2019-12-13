@@ -48,7 +48,7 @@ function draw_new_house_form() { ?>
 <section id="new_house_form">
     <form action="../actions/add_house_action.php" method="post">
         <input type="hidden" name="username" value="<?=$_SESSION['username']?>">
-        <label>Title:<input type="text" name="title"></label>
+        <label>Title:<input type="text" name="title" maxlength="36" required></label>
         <label>Price per Day:<input type="number" name="price"></label>
         <label>Location:<input type="text" name="location"></label>
         <label>Description:<input type="text" name="description"></label>
