@@ -4,7 +4,7 @@
 let fields = document.getElementById('fields')
 let image = document.getElementById('profile_img')
 let reservations_link = document.getElementById('reservations')
-let username = document.getElementById('username') //o cajo é puta
+let username = document.getElementById('username')
 
 let reservations
 
