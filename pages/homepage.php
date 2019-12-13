@@ -4,6 +4,7 @@
     include_once('../templates/temp_houses.php');
 
     draw_white_header();
+    draw_script('house_card');
 ?>
     <link href="../css/homepageStyle.css" rel="stylesheet" >
 
