@@ -9,12 +9,6 @@ let pass_link = document.getElementById('pass')
 //let username = document.getElementById('username')
 let user
 
-function encode_for_ajax(data) {
-    return Object.keys(data).map(function(k){
-      return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
-    }).join('&');
-}
-
 function null_or_empty(value) {
     return value === null || value === ''
 }

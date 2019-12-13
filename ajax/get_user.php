@@ -1,5 +1,4 @@
 <?php
-    include_once('../database/connection.php');
     include_once('../database/db_user.php');
 
     if(isset($_GET['username'])){

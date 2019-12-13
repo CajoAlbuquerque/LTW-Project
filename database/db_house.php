@@ -23,4 +23,13 @@
         $stmt = $db->prepare('INSERT INTO House(title, priceDay, location, description, owner) VALUES (?,?,?,?,?)');
         $stmt->execute(array($title, $price, $location, $description, $userID));
     }
+
+    function filterHouse($location) {
+        global $db;
+
+        $stmt = $db->prepare("SELECT * FROM House WHERE location LIKE ?");
+        $stmt->execute(array('%' . $location . '%'));
+
+        return $stmt->fetchAll();
+    }
 ?>

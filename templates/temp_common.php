@@ -17,7 +17,7 @@
                     <li><a href="profile.php"><img src="../icons/profile_black.png" alt="Profile"></a></li>
                 </ul>
             </nav>
-            <?php draw_form();
+<?php draw_form();
 } ?>
 
 <?php function draw_black_header() { ?> <!-- TODO: change profile icon according to login status-->
@@ -39,16 +39,16 @@
                     <li><a href="profile.php"><img src="../icons/profile_white.png" alt="Profile"></a></li>
                 </ul>
             </nav>
-            <?php draw_form();
+<?php draw_form();
 } ?>
 
 <?php function draw_form() { ?>
-    <form action="#" id="search-form">
-        <label>Where <input type="text" name="location" placeholder="Choose a city"></label>
-        <label>Check-In <input type="text" name="check_in" placeholder="yyyy-mm-dd"></label>
-        <label>Check-Out <input type="text" name="check_out" placeholder="yyyy-mm-dd"></label>
-        <input type="submit" value="Search">
-    </form>
+            <form action="../pages/search.php" method="get" id="search-form">
+                <label>Where <input type="text" name="location" placeholder="Choose a city"></label>
+                <label>Check-In <input type="text" name="check_in" placeholder="yyyy-mm-dd"></label>
+                <label>Check-Out <input type="text" name="check_out" placeholder="yyyy-mm-dd"></label>
+                <input type="submit" value="Search">
+            </form>
 <?php } ?>
 
 <?php function draw_style($filename) { ?>
