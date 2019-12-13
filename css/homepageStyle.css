@@ -1,0 +1,102 @@
+body p{
+    color: var(--color-grey);
+}
+
+#top{
+    padding: 10%;
+    background-image: url('../icons/mainpage2.jpg');
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+.box{
+    border-top-left-radius: 20%;
+    border-top-right-radius: 20%;
+    border-bottom-right-radius: 20%;
+}
+#box{
+    opacity: 0.7;
+    height: 20em;
+    width: 20em;
+    background-color: white;
+    padding: 0.5em;
+}
+#outterline{
+    border:solid;
+    border-color: var(--color-grey);
+    padding: 0.5em;
+    border-width: 0.15em;
+    box-sizing: border-box;
+    height: 100%;
+}
+#innerline{
+    padding: 5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-grow: unset;
+
+    border:solid;
+    border-color: var(--color-red);
+    border-width: 0.15em;
+    box-sizing: border-box;
+    height: 100%;
+}
+#innerline > p{
+    margin: 0;
+    font-family: 'Pacifico', cursive;
+    font-size: 3em;
+}
+
+#middle{
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    margin: 2em;
+
+    border-top: solid;
+    border-bottom: solid;
+    border-width: 0.1em;
+    border-color: var(--color-lightgrey);
+}
+#middle > p{
+    font-size: xx-large;
+    color: var(--color-lightgrey);
+}
+#houseSet{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-basis: 100%;
+}
+
+
+#bottom{
+    display: flex;
+    padding: 1.5em 2em 1em 2em;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--color-grey);
+}
+#bottom img{
+    height: 3em;
+    margin: 0.5em;
+}
+#bottom > section{
+    display: flex;
+    flex-direction: row;
+    flex-basis: 33.333%;
+    justify-content: center;
+    align-items: center;
+}
+#bottom p{
+    font-size: small;
+    color: white;
+    display:block;
+}
+#bottom p > span{
+    display:block;
+}

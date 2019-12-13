@@ -1,3 +1,5 @@
+<link href="https://fonts.googleapis.com/css?family=Montserrat|Pacifico&display=swap" rel="stylesheet"> 
+
 <?php function draw_white_header() { ?> <!-- TODO: change profile icon according to login status-->
     <!DOCTYPE html>
     <html lang="en">

@@ -12,13 +12,9 @@ body > div{
     align-items: center;
 }
 
-#loginDiv{
-    margin: 8em auto 2em auto;
+#loginDiv, #registerDiv{
+    margin: auto auto 2em auto;
     width: 75%;
-}
-
-#registerDiv{
-    margin: 4em 2em 1em 2em;
 }
 
 #Main{
