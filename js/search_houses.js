@@ -19,6 +19,7 @@ check_in_filter.addEventListener('blur', () => check_in_filter.type = 'text');
 check_out_filter.addEventListener('blur', () => check_out_filter.type = 'text');
 
 check_in_filter.min = todayDate();
+check_out_filter.min = todayDate();
 
 check_in_filter.addEventListener('change', function () {
     check_out_filter.min = check_in_filter.value;

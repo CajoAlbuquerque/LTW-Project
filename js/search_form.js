@@ -35,6 +35,7 @@ document.addEventListener('click', function (ev) {
 });
 
 check_in.min = todayDate();
+check_out.min = todayDate();
 
 check_in.addEventListener('change', function () {
     check_out.min = check_in.value;
