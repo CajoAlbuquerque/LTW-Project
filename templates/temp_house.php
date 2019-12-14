@@ -60,22 +60,19 @@ function draw_new_house_form() { ?>
  <?php  } ?>
 
 <?php function draw_house_card($house) { ?>
-    <link rel="stylesheet" href="../css/templateHouseStyle.css">
-    <article id="house_card">
-        <div>
-            <!-- this is a mock picture -->
-            <img src="https://picsum.photos/400/200">
-        </div>
+    <article class="house_card">
+        <!-- this is a mock picture -->
+        <img src="https://picsum.photos/400/200">
         <section>
             <a href="../pages/house.php?houseID=<?=$house['houseID']?>">
                 <?=$house['title']?>
             </a>
-            <section id="info">
+            <section class="info">
                 <ul>
                     <li> <?=$house['priceDay']?>€\day </li>
                     <li> <?=$house['location']?></li>
                 </ul>
-            </section>        
+            </section>
         </section>
     </article>
 <?php } ?>

@@ -4,6 +4,7 @@
 
     draw_black_header();
     draw_style('search');
+    draw_style('templateHouseStyle');
     draw_script('search_houses');
     draw_search();
     draw_footer();

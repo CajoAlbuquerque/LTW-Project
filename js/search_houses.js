@@ -72,20 +72,20 @@ function updateResults() {
 
 function printHouse(house) {
     return '<article class="house_card">' +
-        //TODO: display main image of the house
-        '<a href="../pages/house.php?houseID=' + house['houseID'] + '">' +
-            '<h2>' + house['title'] + '</h2>' +
-        '</a>' +
-        '<section class="info">' +
-            '<ul>' +
-                '<li>' + house['priceDay'] + '€\\day </li>' +
-                '<li>' + house['location'] + '</li>' +
-            '</ul>' +
-        '</section>' +
-        '<section class="description">' +
-            '<p>' + house['description'] + '</p>' +
-        '</section>' +
-    '</article>';
+            //TODO: display main image of the house
+            '<img src="https://picsum.photos/400/200">' +
+                '<section>' +
+                    '<a href="../pages/house.php?houseID=' + house['houseID'] + '">' +
+                        house['title'] +
+                    '</a>' +
+                    '<section class="info">' +
+                        '<ul>' +
+                            '<li>' + house['priceDay'] + '€\\day </li>' +
+                            '<li>' + house['location'] + '</li>' +
+                        '</ul>' +
+                    '</section>' +
+                '</section>' +
+            '</article>';
 }
 
 function setupFilters() {
