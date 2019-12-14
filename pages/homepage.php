@@ -24,8 +24,14 @@
     <div id="houseSet">
         <?php
             $houses = getAllHouses();
-
+            $i = 0;
             foreach($houses as $house) {
+                if($i == 3){
+                break;
+                }
+                
+                $i = $i + 1;
+                
                 draw_house_card($house);
             }
         ?>

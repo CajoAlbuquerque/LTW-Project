@@ -37,13 +37,16 @@
 
 #info{
     display: flex;
+    justify-content: flex-start;
 }
 
 #info > ul{
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+
+    height: 100%;
     margin: 0;
-    padding: 0.2em 1em;
     list-style: none;
 }
 

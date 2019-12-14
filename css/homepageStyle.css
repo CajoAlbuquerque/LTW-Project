@@ -52,7 +52,6 @@ body p{
 #middle{
     display: flex;
     flex-direction: column;
-    padding: 2em;
     margin: 2em;
 
     border-top: solid;
@@ -66,6 +65,7 @@ body p{
 }
 #houseSet{
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
     flex-basis: 100%;
