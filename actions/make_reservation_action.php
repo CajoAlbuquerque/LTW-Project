@@ -9,6 +9,10 @@ $priceDay = $_POST['priceDay'];
 $startDate = $_POST['check_in'];
 $endDate = $_POST['check_out'];
 
+if( !preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/', $startDate) || !preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/', $endDate) ){
+    $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Invalid dates were inserted.');
+    die(header("Location: ../pages/house.php?houseID=$houseID"));
+}
 
 try {
     insertReservation($userID, $houseID, $startDate, $endDate, $priceDay); //TODO: calculate total price
