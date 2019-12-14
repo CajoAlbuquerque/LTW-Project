@@ -13,12 +13,12 @@ $endDate = $_POST['check_out'];
 try {
     insertReservation($userID, $houseID, $startDate, $endDate, $priceDay); //TODO: calculate total price
     $_SESSION['messages'][] = array('type' => 'success', 'content' => 'Reserved house successfully.');
-    header('Location: ../pages/house.php');
+    header("Location: ../pages/house.php?houseID=$houseID");
 }
 catch(PDOException $excpt) {
     die($excpt->getMessage());
     $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Failed to reserve house.');
-    header('Location: ../pages/house.php');
+    header("Location: ../pages/house.php?houseID=$houseID");
 }
 
 

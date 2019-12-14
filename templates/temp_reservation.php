@@ -18,6 +18,9 @@ function draw_reservation_card($reservation) {
                 <li> Price: <?=$reservation['totalPrice']?></li>
             </ul>
         </section>
+        <section class="reservation_cancel">
+            <a href="../actions/cancel_reservation_action.php?reservationID=<?=$reservation['reservationID']?>"> Cancel </a>
+        </section>
     </article>
 <?php } 
 

@@ -46,4 +46,11 @@
         return true;
     }
 
+    function removeReservation($reservationID) {
+        global $db;
+
+        $stmt = $db->prepare('DELETE FROM Reservation WHERE reservationID = ?');
+        $stmt->execute(array($reservationID));
+    }
+
 ?>
