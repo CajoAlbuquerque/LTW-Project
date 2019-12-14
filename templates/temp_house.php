@@ -1,3 +1,8 @@
+<?php     
+    include_once('../templates/temp_common.php');
+?>
+
+
 <?php function draw_house($house, $owner, $comments) { ?>
 
 <article class="house">
@@ -43,7 +48,7 @@ function draw_new_house_form() { ?>
 <section id="new_house_form">
     <form action="../actions/add_house_action.php" method="post">
         <input type="hidden" name="username" value="<?=$_SESSION['username']?>">
-        <label>Title:<input type="text" name="title"></label>
+        <label>Title:<input type="text" name="title" maxlength="36" required></label>
         <label>Price per Day:<input type="number" name="price"></label>
         <label>Location:<input type="text" name="location"></label>
         <label>Description:<input type="text" name="description"></label>
@@ -55,19 +60,22 @@ function draw_new_house_form() { ?>
  <?php  } ?>
 
 <?php function draw_house_card($house) { ?>
-    <article class="house_card">
-        <!-- TODO: display main image of the house -->
-        <a href="../pages/house.php?houseID=<?=$house['houseID']?>">
-            <h2><?=$house['title']?></h2>
-        </a>
-        <section class="info">
-            <ul>
-                <li> <?=$house['priceDay']?>€\day </li>
-                <li> <?=$house['location']?></li>
-            </ul>
-        </section>
-        <section class="description">
-            <p><?=$house['description']?></p>
+    <link rel="stylesheet" href="../css/templateHouseStyle.css">
+    <article id="house_card">
+        <div>
+            <!-- this is a mock picture -->
+            <img src="https://picsum.photos/400/200">
+        </div>
+        <section>
+            <a href="../pages/house.php?houseID=<?=$house['houseID']?>">
+                <?=$house['title']?>
+            </a>
+            <section id="info">
+                <ul>
+                    <li> <?=$house['priceDay']?>€\day </li>
+                    <li> <?=$house['location']?></li>
+                </ul>
+            </section>        
         </section>
     </article>
 <?php } ?>

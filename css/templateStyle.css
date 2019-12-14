@@ -1,16 +1,21 @@
+html{
+    font-family: 'Montserrat', sans-serif;
+
+
+    --color-grey: rgb(61, 60, 83);
+    --color-lightgrey: rgb(160, 160, 160);
+    --color-grey-text: rgb(136, 136, 153);
+    --color-red: rgb(237, 61, 61);
+    --color-message-green: rgb(181, 255, 179);
+    --color-message-red: rgb(255, 181, 181);
+}
+
 html , body{
     height: 100%;
     margin: 0;
 }
 
 body {
-    --color-grey: rgb(61, 60, 83);
-    --color-grey-text: rgb(136, 136, 153);
-    --color-red: rgb(237, 61, 61);
-    --color-message-green: rgb(181, 255, 179);
-    --color-message-red: rgb(255, 181, 181);
-
-    font-family: 'Montserrat', sans-serif;
     display: flex;
     flex-direction: column;
 }
@@ -25,7 +30,6 @@ body {
 
 #mainHeader{
     background-color: white;
-    border-bottom: solid 1px var(--color-grey);
 }
 #secondaryHeader{
     background-color: var(--color-grey);

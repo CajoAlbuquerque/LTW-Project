@@ -4,14 +4,57 @@
     include_once('../templates/temp_house.php');
 
     draw_white_header();
+    draw_script('house_card');
+?>
+    <link href="../css/homepageStyle.css" rel="stylesheet" >
 
-    $houses = getAllHouses();
-    
-   
+<div id="top">
+    <div id="box" class="box">
+        <div id="outterline" class="box">
+            <div id="innerline" class="box">
+                <p>Welcome</p>
+                <p>hömu!</p>
+            </div>
+        </div>
+    </div>
+</div>
 
-    foreach($houses as $house) {
-        draw_house_card($house);
-    }
+<div id="middle">
+    <p>Best offers</p>
+    <div id="houseSet">
+        <?php
+            $houses = getAllHouses();
+            $i = 0;
+            foreach($houses as $house) {
+                if($i == 3){
+                break;
+                }
+                
+                $i = $i + 1;
+                
+                draw_house_card($house);
+            }
+        ?>
+    </div>
+</div>
 
+<div id="bottom">
+    <section id="help">
+        <img src="../icons/help_icon.png">
+        <section>
+            <p>Is this your first time? Do not worry!<span>Our sellers' and services' are 100% legit.</span></p>
+            <p>For any doubt or existencial question, contact us:<span>thisisafake@email.com</span></p>
+        </section>
+    </section>
+    <section id="aboutus">
+        <a href="aboutus.php"><img src="../icons/brand_white.png"></a>
+    </section>
+    <section id="login">
+        <a href="login.php"><img src="../icons/profile_white.png"></a>
+        <p>Register or login to start your demand for the vacation of your dreams.</p>
+    </section>
+</div>
+
+<?php
     draw_footer();
 ?>
