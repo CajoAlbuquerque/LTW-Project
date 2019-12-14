@@ -1,11 +1,10 @@
 <?php 
     include('../templates/temp_common.php');
     draw_black_header();
-?>
-    <link href="../css/aboutusStyle.css" rel="stylesheet" >
-  
+    draw_style('aboutusStyle');
+?>  
     <div>
-        <p id="Title">About us</p>
+        <h1>About us</h1>
         <section id="OutBorder">
             <section id="InnerBorder">
                 <div id="logo">
