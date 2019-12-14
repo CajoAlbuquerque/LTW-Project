@@ -44,3 +44,9 @@ CREATE TABLE Comment (
     FOREIGN KEY (user) REFERENCES User(userID),
     FOREIGN KEY (house) REFERENCES House(houseID)
 );
+
+CREATE TABLE Images {
+    imageID INTEGER PRIMARY KEY,
+    date TEXT,
+    hash TEXT
+};
