@@ -14,11 +14,12 @@
     $comments = getAllCommentsOfHouse($houseID);
 
     draw_black_header();
+    draw_script('house_reservation');
     draw_house($house, $owner, $comments);
     if(isset($_SESSION['username'])){
         $username = $_SESSION['username'];
         $user = getUserByName($username);
-        draw_reservation_form($house, $user); //FIXME: desformata a página, help
+        draw_reservation_form($house, $user);
     }
     draw_footer();
 ?>
