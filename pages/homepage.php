@@ -39,7 +39,7 @@
             </div>
         </div>
 
-        <div id="bottom">
+        <footer>
             <section id="help">
                 <img src="../icons/help_icon.png">
                 <section>
@@ -52,8 +52,8 @@
             </section>
             <section id="login">
                 <a href="login.php"><img src="../icons/profile_white.png"></a>
-                <p>Register or login to start your demand for the vacation of your dreams.</p>
+                <p><a href="register.php">Register</a> or <a href="login.php">login</a> to start your demand for the vacation of your dreams.</p>
             </section>
-        </div>
+        </footer>
     </body>
 </html>

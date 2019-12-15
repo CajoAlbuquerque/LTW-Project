@@ -71,8 +71,7 @@ body p{
     flex-basis: 100%;
 }
 
-
-#bottom{
+footer{
     display: flex;
     padding: 1.5em 2em 1em 2em;
     flex-direction: row;
@@ -81,22 +80,30 @@ body p{
 
     background-color: var(--color-grey);
 }
-#bottom img{
+
+footer img{
     height: 3em;
     margin: 0.5em;
 }
-#bottom > section{
+
+footer > section{
     display: flex;
     flex-direction: row;
     flex-basis: 33.333%;
     justify-content: center;
     align-items: center;
 }
-#bottom p{
+
+footer p{
     font-size: small;
     color: white;
     display:block;
 }
-#bottom p > span{
+
+footer a{
+    color: white;
+}
+
+footer p > span{
     display:block;
 }
