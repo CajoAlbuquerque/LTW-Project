@@ -6,8 +6,7 @@
     $username = strtolower($_POST['username']);
     $name = $_POST['name'];
     $email = $_POST['email'];
-    $pass = $_POST['pass'];
-    $confirm = $_POST['confirm'];
+    $pass = $_POST['password'];
     $destination = 'homepage.php';
 
     if(isset($_SESSION['redirect'])) {
@@ -27,11 +26,8 @@
         $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Username can only contain letters, numbers, spaces or underscores!');
         die(header('Location: ../pages/register.php'));
     }
-    // Checking if password and confirm match
-    if($pass !== $confirm) {
-        $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Passwords do not match!');
-        die(header('Location: ../pages/register.php'));
-    } else if ( getUserByEmail($email) !== false || getUserByName($username) !== false ) {
+    // Checking if username or email already exist
+    if ( getUserByEmail($email) !== false || getUserByName($username) !== false ) {
         $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Email or username already exist!');
         die(header('Location: ../pages/register.php'));
     }

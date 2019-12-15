@@ -18,7 +18,7 @@
                 <input id="username" type="text" name="username" placeholder="USERNAME"> <br>
                 <input id="name" type="text" name="name" placeholder="NAME"> <br>
                 <input id="email" type="email" name="email" placeholder="EMAIL"> <br>
-                <input id="password" type="password" name="password" placeholder="PASSWORD"> <br>
+                <input id="password" type="password" name="password" placeholder="PASSWORD" minlength="6"> <br>
                 <input id="submit" type="submit" value="REGISTER">
             </form>
             <p id="else">Already have an account?<span>
