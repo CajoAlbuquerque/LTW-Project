@@ -11,7 +11,7 @@
     draw_style('loginregisterStyle');
     draw_style('inputStyle');
 ?>  
-    <div id="loginDiv">
+    <div>
         <section id="Main">
             <p id="firstSentence">Find the best deal...<span>... for the perfect <a>house</a>.</span></p>
             <form action="../actions/login_action.php" method="POST">

@@ -13,7 +13,6 @@ form input{
     width: 22em;
     height: 3em;
     border:none;
-    text-align: center;
 }
 
 form input::placeholder{
@@ -22,8 +21,6 @@ form input::placeholder{
 }
 
 form input[type="submit"]{
-    width: 22em;
-    height: 3em;
     background-color: var(--color-red);
     color: white;
     border:none;
@@ -77,4 +74,11 @@ input[type="date"]::-webkit-inner-spin-button{
 
 .whiteBack input:not([type="submit"]){
     border: solid 1px rgba(0, 0, 0, 0.322);
+}
+
+@media only screen and (max-width: 800px) {
+    form input{
+        width: 18em;
+        height: 2.5em;
+    }
 }
