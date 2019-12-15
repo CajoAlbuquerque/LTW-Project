@@ -11,7 +11,8 @@ CREATE TABLE User (
     password TEXT NOT NULL,
     name TEXT,
     nationality TEXT,
-    age INTEGER
+    age INTEGER,
+    photo INTEGER REFERENCES Images.imageID
 );
 
 CREATE TABLE House (
@@ -47,6 +48,7 @@ CREATE TABLE Comment (
 
 CREATE TABLE Images {
     imageID INTEGER PRIMARY KEY,
+    title TEXT,
     date TEXT,
     hash TEXT
 };
