@@ -6,6 +6,7 @@
     draw_white_header();
     draw_style('homepageStyle');
     draw_style('templateHouseStyle');
+    draw_style('inputStyle');
     draw_script('house_card');
 ?>
 

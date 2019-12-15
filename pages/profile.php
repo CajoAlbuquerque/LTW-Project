@@ -5,6 +5,7 @@
     include_once('../templates/temp_profile.php');
     include_once('../database/db_user.php');
 
+
     // Only logged in users can see other users page
     if(!isset($_SESSION['username'])) {
         if(isset($_GET['username'])){
@@ -34,8 +35,11 @@
     $editable = $username == $_SESSION['username'];
 
     draw_black_header();
+
     draw_style('profile');
+    draw_style('inputStyle');
     draw_style('messages');
+    
     draw_script('get_reservations');
     if($editable){
         draw_script('edit_user');

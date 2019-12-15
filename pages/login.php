@@ -8,16 +8,16 @@
     }
 
     draw_black_header();
-?>
-    <link href="../css/loginregisterStyle.css" rel="stylesheet" >
-  
+    draw_style('loginregisterStyle');
+    draw_style('inputStyle');
+?>  
     <div id="loginDiv">
         <section id="Main">
             <p id="firstSentence">Find the best deal...<span>... for the perfect <a>house</a>.</span></p>
             <form action="../actions/login_action.php" method="POST">
-                <input id="username" type="text" name="user" placeholder="USERNAME">
-                <input id="password" type="password" name="pass" placeholder="PASSWORD">
-                <input id="submit" id="loginButton" type="submit" value="LOGIN">
+                <input type="text" name="user" placeholder="USERNAME">
+                <input type="password" name="pass" placeholder="PASSWORD">
+                <input type="submit" value="LOGIN">
             </form>
             <p id="else">Are you new here? <span>
                 <a href="register.php">Register</a> now to find the perfect stay! </span></p>

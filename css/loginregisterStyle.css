@@ -54,35 +54,8 @@ body > div{
     font-size: 10pt;
 } 
 
-#Main > form{
-    display: flex;
-    flex-direction: column;
-}
-
-#username, #password, #email, #name{
-    margin-top: 1em;
-    padding: 0.5em 1em 0.5em 1em;
-    width: 20em;
-    height: 2.5em;
-    border:none;
-    text-align: center;
-}
-
-#Main > form input::placeholder{
-    color: var(--color-grey-text);
-    text-align: center;
-}
-
-#submit{
-    margin-top: 1em;
-    width: 22em;
-    height: 3.5em;
-    background-color: var(--color-red);
-    color: white;
-    border:none;
-}
-
 #Main p, #Main a{
+    margin: 0em;
     color: white;
     text-decoration: none;
 }
