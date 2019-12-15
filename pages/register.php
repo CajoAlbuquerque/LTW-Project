@@ -14,7 +14,7 @@
         <section id="Main">
             <p id="firstSentence"><a>Register</a> now to find the vacation stay
                 <span>that makes you feel like <a>home</a>.</span></p>
-            <form action="/actions/resgister_action.php" method="POST">
+            <form action="/actions/register_action.php" method="POST">
                 <input id="username" type="text" name="username" placeholder="USERNAME"> <br>
                 <input id="name" type="text" name="name" placeholder="NAME"> <br>
                 <input id="email" type="email" name="email" placeholder="EMAIL"> <br>
