@@ -101,6 +101,10 @@ body > div{
         padding-left: 1em;
         font-size: 11pt;
     } 
+
+    #Main{
+        margin: 1em;
+    }
     
     #Main > #firstSentence a{
         font-size: 13pt;
