@@ -8,10 +8,9 @@
     }
 
     draw_black_header();
-    draw_style(inputStyle);
-?>
-    <link href="../css/loginregisterStyle.css" rel="stylesheet" >
-  
+    draw_style('loginregisterStyle');
+    draw_style('inputStyle');
+?>  
     <div id="loginDiv">
         <section id="Main">
             <p id="firstSentence">Find the best deal...<span>... for the perfect <a>house</a>.</span></p>

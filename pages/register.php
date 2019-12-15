@@ -8,9 +8,9 @@
     }
 
     draw_black_header();
-    draw_style(inputStyle);
+    draw_style('loginregisterStyle');
+    draw_style('inputStyle');
 ?>
-    <link href="../css/loginregisterStyle.css" rel="stylesheet" >
     <div id="registerDiv">
         <section id="Main">
             <p id="firstSentence"><a>Register</a> now to find the vacation stay
