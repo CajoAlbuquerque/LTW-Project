@@ -68,6 +68,13 @@ function updateResults() {
     houses.forEach(function (house) {
         results.innerHTML += printHouse(house);
     });
+
+    let cards = document.querySelectorAll('.house_card');
+    let links = document.querySelectorAll('.house_card a');
+
+    cards.forEach(function (card, index) {
+        card.addEventListener('click', () => window.location.href = links[index].href);
+    });
 }
 
 function printHouse(house) {
