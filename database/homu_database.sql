@@ -12,7 +12,7 @@ CREATE TABLE User (
     name TEXT,
     nationality TEXT,
     age INTEGER,
-    photo INTEGER REFERENCES Images.imageID
+    photo INTEGER REFERENCES Images(imageID)
 );
 
 CREATE TABLE House (
@@ -45,6 +45,12 @@ CREATE TABLE Comment (
     FOREIGN KEY (user) REFERENCES User(userID),
     FOREIGN KEY (house) REFERENCES House(houseID)
 );
+
+CREATE TABLE HouseImages {
+    house INTEGER REFERENCES House(houseID),
+    image INTEGER REFERENCES Images(imageID),
+    PRIMARY KEY (house, image)
+};
 
 CREATE TABLE Images {
     imageID INTEGER PRIMARY KEY,
