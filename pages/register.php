@@ -8,6 +8,7 @@
     }
 
     draw_black_header();
+    draw_style(inputStyle);
 ?>
     <link href="../css/loginregisterStyle.css" rel="stylesheet" >
     <div id="registerDiv">
@@ -15,11 +16,11 @@
             <p id="firstSentence"><a>Register</a> now to find the vacation stay
                 <span>that makes you feel like <a>home</a>.</span></p>
             <form action="/actions/resgister_action.php" method="POST">
-                <input id="username" type="text" name="username" placeholder="USERNAME"> <br>
-                <input id="name" type="text" name="name" placeholder="NAME"> <br>
-                <input id="email" type="email" name="email" placeholder="EMAIL"> <br>
-                <input id="password" type="password" name="password" placeholder="PASSWORD"> <br>
-                <input id="submit" type="submit" value="REGISTER">
+                <input type="text" name="username" placeholder="USERNAME"> <br>
+                <input type="text" name="name" placeholder="NAME"> <br>
+                <input type="email" name="email" placeholder="EMAIL"> <br>
+                <input type="password" name="password" placeholder="PASSWORD"> <br>
+                <input type="submit" value="REGISTER">
             </form>
             <p id="else">Already have an account?<span>
                 <a href="login.php">Login</a> now to continue your search!</span></p>
