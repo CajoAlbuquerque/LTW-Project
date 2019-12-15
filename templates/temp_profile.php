@@ -22,7 +22,7 @@
                         $age = $user['age'];
                         $name = $user['name'];
 
-                        if($name !== '' && $nationality !== null){ ?>
+                        if($name !== '' && $name !== null){ ?>
                             <p><?=$name?></p>
                     <?php
                         }
@@ -31,7 +31,7 @@
                             <p><?=$nationality?></p>
                     <?php
                         }
-                        if($age !== '' && $nationality !== null){ ?>
+                        if($age !== '' && $age !== null){ ?>
                             <p><?=$age?></p>
                     <?php
                         }
