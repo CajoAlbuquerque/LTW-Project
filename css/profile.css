@@ -62,7 +62,8 @@
 }
 
 #fields p {
-    width: 50%;
+    width: 65%;
+    overflow: hidden;
 
     margin: 5px 0;
     padding: 0.5em;
