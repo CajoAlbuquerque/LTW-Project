@@ -9,13 +9,20 @@
 
     $houseID = $_GET['houseID'];
 
+    $editable = false;
+
     $house = getHouse($houseID);
     $owner = getUser($house['owner']);
     $comments = getAllCommentsOfHouse($houseID);
 
+    if(isset($_SESSION['username'])){
+        $editable = $owner['username'] == $_SESSION['username'];
+    }
+
     draw_black_header();
     draw_script('house_reservation');
-    draw_house($house, $owner, $comments);
+    draw_script('edit_house');
+    draw_house($house, $owner, $comments, $editable);
     if(isset($_SESSION['username'])){
         $username = $_SESSION['username'];
         $user = getUserByName($username);

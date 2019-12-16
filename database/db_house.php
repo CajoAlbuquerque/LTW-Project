@@ -32,4 +32,11 @@
 
         return $stmt->fetchAll();
     }
+
+    function updateHouse($houseID, $title, $price, $location, $description) {
+        global $db;
+
+        $stmt = $db->prepare('UPDATE House SET title = ?, priceDay = ?, location =  ?, description = ? WHERE houseID = ? ');
+        $stmt->execute(array($title, $price, $location, $description, $houseID));
+    }
 ?>

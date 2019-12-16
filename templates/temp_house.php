@@ -3,27 +3,32 @@
 ?>
 
 
-<?php function draw_house($house, $owner, $comments) { ?>
+<?php function draw_house($house, $owner, $comments, $editable) { ?>
 
 <article class="house">
-    <a href="../pages/house.php?houseID=<?=$house['houseID']?>">
-        <h2><?=$house['title']?></h2>
-        <!-- TODO: display all images of the house -->
-    </a>
-    <section class="info">
-        <ul>
-            <li> <?=$house['priceDay']?>€\day </li>
-            <li> <?=$house['location']?></li>
-            <li> Add more tags </li>
-        </ul>
-    </section>
-    <section class="description">
-        <p>
-            <?=$house['description']?>
-        </p>
-    </section>
-    <section class="owner">
-        <a href="../pages/profile.php?username=<?=$owner['username']?>"><?=$owner['name']?> </a>
+    <section id="house_info">
+        <a href="../pages/house.php?houseID=<?=$house['houseID']?>">
+            <h2><?=$house['title']?></h2>
+            <!-- TODO: display all images of the house -->
+        </a>
+        <section class="info">
+            <ul>
+                <li> <?=$house['priceDay']?>€\day </li>
+                <li> <?=$house['location']?></li>
+                <li> Add more tags </li>
+            </ul>
+        </section>
+        <section class="description">
+            <p>
+                <?=$house['description']?>
+            </p>
+        </section>
+        <section class="owner">
+            <a href="../pages/profile.php?username=<?=$owner['username']?>"><?=$owner['name']?> </a>
+            <?php if($editable) {?>
+                    <a id="edit" href="#">Edit House</a>
+            <?php }?>
+        </section>
     </section>
     <section class="comments">
         <h3> Comments </h3>
