@@ -1,6 +1,6 @@
 'use strict'
 
-let button = document.querySelector('#new_house_form button');
+let button = document.querySelector('#new_house_form input[type="button"]');
 let file_input = document.querySelector('#new_house_form input[type="file"]');
 let preview = document.getElementById('preview');
 

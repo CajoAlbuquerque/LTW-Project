@@ -49,7 +49,7 @@
 
 function draw_new_house_form() { ?>
 
-<h2> Please insert the information of the house you wish to rent below. </h2>
+<h2> Please insert the information of the house you wish to rent below </h2>
 <div id="main">
     <form id="new_house_form" action="../actions/add_house_action.php" method="post" enctype="multipart/form-data">
         <input type="hidden" name="username" value="<?=$_SESSION['username']?>">
