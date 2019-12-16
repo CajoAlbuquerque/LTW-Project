@@ -49,15 +49,15 @@ CREATE TABLE Comment (
     FOREIGN KEY (house) REFERENCES House(houseID)
 );
 
-CREATE TABLE HouseImages {
-    house INTEGER REFERENCES House(houseID),
+CREATE TABLE HouseImages (
+    house INTEGER REFERENCS House(houseID),
     image INTEGER REFERENCES Images(imageID),
     PRIMARY KEY (house, image)
-};
+);
 
-CREATE TABLE Images {
+CREATE TABLE Images (
     imageID INTEGER PRIMARY KEY,
     title TEXT,
     date TEXT,
     hash TEXT
-};
+);
