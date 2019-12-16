@@ -5,6 +5,8 @@ include_once('../database/db_house.php');
 function draw_reservation_card($reservation, $editable) { 
     
     $house = getHouse($reservation['house']);
+    $d = strtotime("+2 days");
+    $cancelLimit = date("Y-m-d", $d);
     
     ?>
     <article class="reservation_card">
@@ -19,8 +21,13 @@ function draw_reservation_card($reservation, $editable) {
             </ul>
         </section>
         <?php if($editable) { ?>
-        <section class="reservation_cancel">
-            <a href="../actions/cancel_reservation_action.php?reservationID=<?=$reservation['reservationID']?>"> Cancel </a>
+        <section class="reservation_button">
+            <?php if($reservation['startDate'] > $cancelLimit) {?>
+                <a class="reservation_cancel" href="../actions/cancel_reservation_action.php?reservationID=<?=$reservation['reservationID']?>"> Cancel </a>
+            <?php } 
+            elseif($reservation['endDate'] < date("Y-m-d")){ ?>
+                <a class="reservation_add_comment" href="../pages/house.php?houseID=<?=$reservation['house']?>&commenting=yes"> Comment house </a>
+            <?php } ?>
         </section>
         <?php } ?>
     </article>
