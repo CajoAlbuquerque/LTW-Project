@@ -2,7 +2,7 @@
 
 //uncomment lets if get_reservations.js is not run before this one
 
-//let fields = document.getElementById('fields')
+//let fields = document.getElementsByClassName('fields')[0]
 //let image = document.getElementById('profile_img')
 let edit_link = document.getElementById('edit')
 let pass_link = document.getElementById('pass')
@@ -14,7 +14,7 @@ function null_or_empty(value) {
 }
 
 function swap_to_edit() {
-    fields.outerHTML = '<form id="fields" action="../actions/edit_profile_action.php">' +
+    fields.outerHTML = '<form class="fields" action="../actions/edit_profile_action.php">' +
         '<input type="hidden" name="userID" value="' + user['userID'] + '">' +
         '<input type="text" name="username" value="' + user['username'] + '">' +
         '<input type="email" name="email" value="' + user['email'] + '">' +
@@ -25,12 +25,12 @@ function swap_to_edit() {
 
     image.style.display = "inline";
 
-    fields = document.getElementById('fields')
+    fields = document.getElementsByClassName('fields')[0]
 }
 
 
 function swap_to_pass() {
-    fields.outerHTML = '<form id="fields" action="../actions/change_password_action.php" method="post">' +
+    fields.outerHTML = '<form class="fields" action="../actions/change_password_action.php" method="post">' +
         '<input type="hidden" name="username" value="' + user['username'] + '">' +
         '<input type="password" name="current" placeholder="CURRENT PASSWORD">' +
         '<input type="password" name="new" placeholder="NEW PASSWORD">' +
@@ -39,7 +39,7 @@ function swap_to_pass() {
 
     image.style.display = "inline";
 
-    fields = document.getElementById('fields')
+    fields = document.getElementsByClassName('fields')[0]
 }
 
 function user_received() {
