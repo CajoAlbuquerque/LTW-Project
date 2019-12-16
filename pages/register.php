@@ -8,6 +8,7 @@
     }
 
     draw_black_header();
+    draw_style('messages');
     draw_style('loginregisterStyle');
     draw_style('inputStyle');
 ?>
@@ -22,8 +23,16 @@
                 <input type="password" name="password" placeholder="PASSWORD"> <br>
                 <input type="submit" value="REGISTER">
             </form>
+            <?php
+                if(isset($_SESSION['messages'])) {
+                    $type = $_SESSION['messages'][0]['type'];
+                    $content = $_SESSION['messages'][0]['content'];
+
+                    draw_message($type, $content);
+                }
+            ?>  
             <p id="else">Already have an account?<span>
-                <a href="login.php">Login</a> now to continue your search!</span></p>
+                <a href="login.php">Login</a> now to continue your search!</span></p>  
         </section>
         <section id="Images">
                 <div id="highlighted">
@@ -39,14 +48,6 @@
                 </div>
         </section>
     </div>
-<?php
-    if(isset($_SESSION['messages'])) {
-        $type = $_SESSION['messages'][0]['type'];
-        $content = $_SESSION['messages'][0]['content'];
-
-        draw_message($type, $content);
-    }
-?>
 <?php 
     draw_footer();
     unset($_SESSION['messages']);
