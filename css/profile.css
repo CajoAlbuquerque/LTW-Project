@@ -45,6 +45,10 @@
 #info img {
     width: 250px;
     height: 250px;
+
+    background-image: none;
+    background-position: center;
+    background-size: cover;
     
     object-fit: cover;
     object-position: center;
