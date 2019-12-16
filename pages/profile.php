@@ -41,6 +41,7 @@
     draw_style('messages');
     draw_style('templateHouseStyle');
     
+    draw_script('house_card');
     draw_script('profile_displays');
     if($editable){
         draw_script('edit_user');

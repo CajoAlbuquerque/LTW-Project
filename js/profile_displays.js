@@ -17,6 +17,8 @@ function swap_to_reservations() {
 
     image.style.display = "none"
     fields = document.getElementsByClassName('fields')[0]
+
+    //add_card_links() -> Uncomment to add the click on card feature
 }
 
 function swap_to_houses() {
@@ -34,6 +36,8 @@ function swap_to_houses() {
 
     image.style.display = "none"
     fields = document.getElementsByClassName('fields')[0]
+
+    add_card_links()
 }
 
 function reservations_received() {
