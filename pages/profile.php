@@ -36,8 +36,6 @@
     $photo = getUserImage($user['username']);
     $editable = $username == $_SESSION['username'];
 
-    error_log("PHOTO IS : " . $photo);
-
     draw_black_header();
 
     draw_style('profile');

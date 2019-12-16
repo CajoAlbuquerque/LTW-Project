@@ -13,8 +13,6 @@
     $age = $_POST['age'];
     $image = $_FILES['img_file'];
 
-    error_log("IMAGE IS: " . $image['name']);
-
     // Checking for invalid null values
     if($id === '' || $username === '' || $email === ''){
         $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Username and Email cannot be empty!');
@@ -44,9 +42,15 @@
 
     try {
         if($image !== null && $image !== '') {
-            $info = insertImage($username);
-            save_profile_photo($image, $info['destination']);
-            updateUserImage($id, $info['photoId']);
+            $user = getUser($id);
+            if($user['photo'] === null) {
+                $info = insertImage($username);
+                updateUserImage($id, $info['photoId']);
+                save_profile_photo($image, $info['destination']);
+            } else {
+                $destination = updateImage($user['photo']);
+                save_profile_photo($image, $destination);
+            }
         }
         updateUser($id, $username, $email, $name, $nationality, $age);
         $_SESSION['username'] = $username;
