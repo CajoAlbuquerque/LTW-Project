@@ -1,7 +1,7 @@
 
 'use strict'
 
-let fields = document.getElementById('fields')
+let fields = document.getElementsByClassName('fields')[0]
 let image = document.getElementById('profile_img')
 let reservations_link = document.getElementById('reservations')
 let houses_link = document.getElementById('houses')
@@ -11,21 +11,21 @@ let reservations
 let houses
 
 function swap_to_reservations() {
-    fields.outerHTML = '<div id="fields">' +
+    fields.outerHTML = '<div class="fields">' +
         reservations +
         '</div>'
 
     image.style.display = "none"
-    fields = document.getElementById('fields')
+    fields = document.getElementsByClassName('fields')[0]
 }
 
 function swap_to_houses() {
-    fields.outerHTML = '<div id="fields">' +
+    fields.outerHTML = '<div class="fields">' +
         houses +
         '</div>'
 
     image.style.display = "none"
-    fields = document.getElementById('fields')
+    fields = document.getElementsByClassName('fields')[0]
 }
 
 function reservations_received() {

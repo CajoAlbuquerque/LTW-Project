@@ -15,7 +15,7 @@
             </nav>
             <section id="info">
                 <img id="profile_img" src="https://i.pravatar.cc/500" alt="Profile Photo">
-                <div id="fields">
+                <div class="fields">
                     <p id="username"><?=$user['username']?></p>
                     <p><?=$user['email']?></p>
                     <?php 
