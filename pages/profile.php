@@ -6,7 +6,6 @@
     include_once('../database/db_user.php');
     include_once('../database/db_images.php');
 
-
     // Only logged in users can see other users page
     if(!isset($_SESSION['username'])) {
         if(isset($_GET['username'])){
@@ -35,6 +34,8 @@
     $user = getUserByName($username);
     $photo = getUserImage($user['username']);
     $editable = $username == $_SESSION['username'];
+
+    error_log("PHOTO IS : " . $photo);
 
     draw_black_header();
 
