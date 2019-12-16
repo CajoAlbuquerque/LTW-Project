@@ -6,6 +6,7 @@
 //let image = document.getElementById('profile_img')
 let edit_link = document.getElementById('edit')
 let pass_link = document.getElementById('pass')
+let original_src = image.src
 //let username = document.getElementById('username')
 let user
 
@@ -16,7 +17,7 @@ function null_or_empty(value) {
 function swap_to_edit() {
     fields.outerHTML = '<form class="fields" action="../actions/edit_profile_action.php">' +
         '<input type="hidden" name="userID" value="' + user['userID'] + '">' +
-        '<input type="file" name="img_file" accept="image/.gif,image/.jpg,image/.png,image.jpeg" id="file">' +
+        '<input type="file" name="image" accept="image/.gif,image/.jpg,image/.png,image/.jpeg" id="file">' +
         '<input type="text" name="username" value="' + user['username'] + '">' +
         '<input type="email" name="email" value="' + user['email'] + '">' +
         '<input type="text" name="name" ' + (null_or_empty(user['name'])  ? 'placeholder="NAME"' : ('value="' + user['name'] + '"')) + '">' +
@@ -33,15 +34,33 @@ function swap_to_edit() {
         if(file_input)
             file_input.click()
     })
-    image.addEventListener('hover', function () {
-        image.src = "../images/profile_default.png"
+    image.addEventListener('mouseover', function () {
+        image.style.backgroundImage = "url('" + original_src + "')"
+        image.style.cursor = "pointer"
+        image.src = "../icons/hover_edit.png"
+    })
+    image.addEventListener('mouseout', function () {
+        image.style.backgroundImage = "none"
+        image.src = original_src
     })
     //When an image is loaded it will be previewed in the users profile pic
-    // file_input.addEventListener('change', preview_image);
+    file_input.addEventListener('change', preview_image);
 
     fields = document.getElementsByClassName('fields')[0]
 }
 
+function preview_image(event) {
+    let file = event.target.files[0]
+    
+    image.file = file
+
+    let reader = new FileReader()
+    reader.onload = function(e) { 
+            image.src = e.target.result
+            original_src = e.target.result
+    }
+    reader.readAsDataURL(file)
+}
 
 function swap_to_pass() {
     fields.outerHTML = '<form class="fields" action="../actions/change_password_action.php" method="post">' +
