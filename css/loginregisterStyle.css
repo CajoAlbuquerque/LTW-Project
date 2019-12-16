@@ -10,15 +10,10 @@ body {
 body > div{
     display: flex;
     align-items: center;
-}
-
-#loginDiv, #registerDiv{
-    margin: auto auto 2em auto;
-    width: 75%;
+    margin-top: 2em;
 }
 
 #Main{
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -32,7 +27,6 @@ body > div{
 }
 
 #Main > #firstSentence{
-    padding-left: 1em;
     font-size: 15pt;
 } 
 
@@ -94,4 +88,54 @@ body > div{
 #small > img{
     height: 7em;
     width: 7em;
+}
+
+.error, .success{
+    margin:0.75em;
+    font-size: 0.90em;
+    padding: 0.5em;
+}
+
+@media only screen and (max-width: 800px) {
+    body > div{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+
+    #Main > #firstSentence{
+        padding-left: 1em;
+        font-size: 11pt;
+    } 
+
+    #Main{
+        margin: 1em;
+    }
+    
+    #Main > #firstSentence a{
+        font-size: 13pt;
+    }
+    
+    #Main > #else{
+        font-size: 8pt;
+    } 
+
+    #highlighted > img{
+        height: 10em;
+        width: 10em;
+    }
+    
+    #medium > img{
+        height: 8em;
+        width: 8em;
+    }
+    
+    #small > img{
+        height: 6em;
+        width: 6em;
+    }
+
+    .error, .success{
+        font-size: 0.75em;
+    }
 }

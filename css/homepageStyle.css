@@ -30,7 +30,6 @@ body p{
     height: 100%;
 }
 #innerline{
-    padding: 5em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,6 +52,8 @@ body p{
     display: flex;
     flex-direction: column;
     margin: 2em;
+    padding: 0.5em 0 0.5em 0 ;
+
 
     border-top: solid;
     border-bottom: solid;
@@ -60,6 +61,7 @@ body p{
     border-color: var(--color-lightgrey);
 }
 #middle > p{
+    margin: 0 0 0.5em 0;
     font-size: xx-large;
     color: var(--color-lightgrey);
 }
@@ -106,4 +108,32 @@ footer a{
 
 footer p > span{
     display:block;
+}
+
+@media only screen and (max-width: 800px) {
+    #box{
+        height: 10em;
+        width: 10em;
+        padding: 0.25em;
+    }
+    #outterline{
+        padding: 0.25em;
+    }
+    #innerline > p{
+        font-size: 1.5em;
+    }
+
+    #bottom{
+        flex-direction: column-reverse;
+    }
+    #bottom > section:nth-child(3){
+        display: none;
+    }
+    #bottom img{
+        height: 2em;
+        margin: 0.5em;
+    }
+    #bottom p{
+        font-size: xx-small;
+    }
 }

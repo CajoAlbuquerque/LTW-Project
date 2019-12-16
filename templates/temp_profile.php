@@ -5,8 +5,8 @@
         <section id="main"> 
             <nav id="sidebar">
                 <a href="../pages/profile.php?username=<?=$user['username']?>">Profile</a>
-                <a id="reservations" href="#">Reservations</a>
-                <a id="houses" href="#">Houses</a>
+                <a id="reservations" href="#">My Reservations</a>
+                <a id="houses" href="#">My Houses</a>
                 <?php if($editable) {?>
                     <a id="edit" href="#">Edit Profile</a>
                     <a id="pass" href="#">Change Password</a>
