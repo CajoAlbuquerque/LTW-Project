@@ -39,8 +39,9 @@
     draw_style('profile');
     draw_style('inputStyle');
     draw_style('messages');
+    draw_style('templateHouseStyle');
     
-    draw_script('get_reservations');
+    draw_script('profile_displays');
     if($editable){
         draw_script('edit_user');
     }

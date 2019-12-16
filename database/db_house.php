@@ -39,4 +39,13 @@
         $stmt = $db->prepare('UPDATE House SET title = ?, priceDay = ?, location =  ?, description = ? WHERE houseID = ? ');
         $stmt->execute(array($title, $price, $location, $description, $houseID));
     }
+
+    function getHousesOfUser($userID) {
+        global $db;
+
+        $stmt = $db->prepare('SELECT * FROM House WHERE owner = ?');
+        $stmt->execute(array($userID));
+
+        return $stmt->fetchAll();
+    }
 ?>
