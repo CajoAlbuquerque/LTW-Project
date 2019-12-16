@@ -52,13 +52,6 @@
         $stmt = $db->prepare('UPDATE User SET username = ?, email = ?, name = ?, nationality = ?, age = ? WHERE userID = ?');
         $stmt->execute(array($username, $email, $name, $nationality, $age, $id));
     }
-
-    function updateUserImage($user, $photo) {
-        global $db;
-
-        $stmt = $db->prepare('UPDATE User SET photo = ? WHERE userID = ?');
-        $stmt->execute(array($photo, $user));
-    }
     
     function updatePassword($username, $pass) {
         global $db;
