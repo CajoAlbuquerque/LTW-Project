@@ -70,6 +70,10 @@ body {
     height: 4em;
 }
 
+#secondaryHeader ~ #search-form{
+    top:3.45em;
+}
+
 #footer{
     margin-top: auto;
     padding: 0.7em;

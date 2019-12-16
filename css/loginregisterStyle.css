@@ -90,7 +90,7 @@ body > div{
     width: 7em;
 }
 
-.error{
+.error, .success{
     margin:0.75em;
     font-size: 0.90em;
     padding: 0.5em;
@@ -135,7 +135,7 @@ body > div{
         width: 6em;
     }
 
-    .error{
+    .error, .success{
         font-size: 0.75em;
     }
 }
