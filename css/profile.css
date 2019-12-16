@@ -37,7 +37,7 @@
     border-radius: 50%;
 }
 
-#fields {
+.fields {
     margin: 10px 0;
 
     display: flex;
@@ -46,7 +46,7 @@
     align-items: center;
 }
 
-#fields p {
+.fields p {
     width: 20em;
     overflow: hidden;
 
@@ -64,13 +64,20 @@
     border-right: solid 1px var(--color-red);
 }
 
-#fields .error, #fields .success {
+.fields .error, .fields .success {
     width: 100%;
 
     margin: 1em 0;
     padding: 0.5em;
 }
 
-#fields p:nth-child(1) {
+.fields p:nth-child(1) {
     text-transform: uppercase;
+}
+
+#MyHouses, #MyReservations{
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
