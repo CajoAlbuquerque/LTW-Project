@@ -2,7 +2,7 @@
 
 include_once('../database/db_house.php');
 
-function draw_reservation_card($reservation) { 
+function draw_reservation_card($reservation, $editable) { 
     
     $house = getHouse($reservation['house']);
     
@@ -18,9 +18,11 @@ function draw_reservation_card($reservation) {
                 <li> Price: <?=$reservation['totalPrice']?></li>
             </ul>
         </section>
+        <?php if($editable) { ?>
         <section class="reservation_cancel">
             <a href="../actions/cancel_reservation_action.php?reservationID=<?=$reservation['reservationID']?>"> Cancel </a>
         </section>
+        <?php } ?>
     </article>
 <?php } 
 
