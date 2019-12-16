@@ -15,9 +15,9 @@ function null_or_empty(value) {
 }
 
 function swap_to_edit() {
-    fields.outerHTML = '<form class="fields" action="../actions/edit_profile_action.php">' +
+    fields.outerHTML = '<form class="fields" method="POST" action="../actions/edit_profile_action.php" enctype="multipart/form-data">' +
         '<input type="hidden" name="userID" value="' + user['userID'] + '">' +
-        '<input type="file" name="image" accept="image/.gif,image/.jpg,image/.png,image/.jpeg" id="file">' +
+        '<input type="file" name="img_file" accept="image/.gif,image/.jpg,image/.png,image/.jpeg" id="file">' +
         '<input type="text" name="username" value="' + user['username'] + '">' +
         '<input type="email" name="email" value="' + user['email'] + '">' +
         '<input type="text" name="name" ' + (null_or_empty(user['name'])  ? 'placeholder="NAME"' : ('value="' + user['name'] + '"')) + '">' +

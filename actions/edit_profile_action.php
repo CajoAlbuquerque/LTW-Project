@@ -2,14 +2,18 @@
     include_once('../session.php');
     include_once('../database/connection.php');
     include_once('../database/db_user.php');
+    include_once('../database/db_images.php');
+    include_once('../images/upload.php');
 
+    $id = $_POST['userID'];
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $name = $_POST['name'];
+    $nationality = $_POST['nationality'];
+    $age = $_POST['age'];
+    $image = $_FILES['img_file'];
 
-    $id = $_GET['userID'];
-    $username = $_GET['username'];
-    $email = $_GET['email'];
-    $name = $_GET['name'];
-    $nationality = $_GET['nationality'];
-    $age = $_GET['age'];
+    error_log("IMAGE IS: " . $image['name']);
 
     // Checking for invalid null values
     if($id === '' || $username === '' || $email === ''){
@@ -39,6 +43,11 @@
     }
 
     try {
+        if($image !== null && $image !== '') {
+            $info = insertImage($username);
+            save_profile_photo($image, $info['destination']);
+            updateUserImage($id, $info['photoId']);
+        }
         updateUser($id, $username, $email, $name, $nationality, $age);
         $_SESSION['username'] = $username;
         $_SESSION['messages'][] = array('type' => 'success', 'content' => 'Updated profile succesfully!');
