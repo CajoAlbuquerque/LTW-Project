@@ -33,7 +33,15 @@
 
         $stmt = $db->prepare("INSERT INTO Images VALUES(NULL, ?, ?, ?)");
         $stmt->execute(array($title, $today, $hash));
+    }
 
-        return $hash;
+    function getUserImage($user) {
+        global $db;
+
+        $stmt = $db->prepare("SELECT * FROM User JOIN Images ON User.photo=Images.imageID WHERE username = ?");
+        $stmt->execute(array($user));
+        $image = $stmt->fetch();
+
+        return  $image['hash'];
     }
 ?>
