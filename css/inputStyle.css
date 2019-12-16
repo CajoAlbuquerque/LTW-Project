@@ -13,6 +13,8 @@ form input{
     width: 22em;
     height: 3em;
     border:none;
+
+    box-sizing: border-box;
 }
 
 form input::placeholder{

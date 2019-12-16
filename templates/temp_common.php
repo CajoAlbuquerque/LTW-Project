@@ -53,8 +53,6 @@
 } ?>
 
 <?php function draw_form() { ?>
-    <link href="../css/inputStyle.css" rel="stylesheet" >
-
             <form class="whiteBack" action="../pages/search.php" method="get" id="search-form">
                 <label>Where <input type="text" name="location" placeholder="Choose a city"></label>
                 <label>Check-In <input type="text" name="check_in" placeholder="yyyy-mm-dd"></label>
