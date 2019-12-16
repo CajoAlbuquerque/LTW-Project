@@ -1,10 +1,16 @@
 <?php
     include_once('../session.php');
+    include_once('../database/db_images.php');
     include_once('../templates/temp_message.php');
-    include('../templates/temp_common.php');
-    include('../templates/temp_house.php');
+    include_once('../templates/temp_common.php');
+    include_once('../templates/temp_house.php');
 
-    draw_black_header();
+    $photo = '';
+    if(isset($_SESSION['username'])) {
+        $photo = getUserImage($_SESSION['username']);
+    }
+
+    draw_black_header($photo);
 
     if(isset($_SESSION['messages'])) {
         $type = $_SESSION['messages'][0]['type'];

@@ -50,6 +50,12 @@ body {
     list-style-type: none;
 }
 
+#mainHeader img[alt="Profile"], #secondaryHeader img[alt="Profile"] {
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+
 #mainHeader #logo, #secondaryHeader #logo{
     display:flex;
     flex-basis: 100%;

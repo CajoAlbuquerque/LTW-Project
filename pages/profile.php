@@ -26,6 +26,11 @@
         $username = $_GET['username'];
     }
 
+    $photo = '';
+    if(isset($_SESSION['username'])) {
+        $photo = getUserImage($_SESSION['username']);
+    }
+
     if(isset($_SESSION['messages'])) {
         $message = $_SESSION['messages'][0];
     }
@@ -35,9 +40,7 @@
     $photo = getUserImage($user['username']);
     $editable = $username == $_SESSION['username'];
 
-    error_log("PHOTO IS : " . $photo);
-
-    draw_black_header();
+    draw_black_header($photo);
 
     draw_style('profile');
     draw_style('inputStyle');

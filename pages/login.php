@@ -7,7 +7,7 @@
         die(header('Location: ../pages/profile.php'));
     }
 
-    draw_black_header();
+    draw_black_header('');
     draw_style('messages');
     draw_style('loginregisterStyle');
     draw_style('inputStyle');

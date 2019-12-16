@@ -1,9 +1,16 @@
 <?php
+    include_once('../session.php');
     include_once('../database/db_house.php');
+    include_once('../database/db_images.php');
     include_once('../templates/temp_common.php');
     include_once('../templates/temp_house.php');
 
-    draw_white_header();
+    $photo = '';
+    if(isset($_SESSION['username'])) {
+        $photo = getUserImage($_SESSION['username']);
+    }
+
+    draw_white_header($photo);
     draw_style('homepageStyle');
     draw_style('templateHouseStyle');
     draw_style('inputStyle');
