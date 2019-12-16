@@ -22,6 +22,14 @@ function swap_to_reservations() {
 function swap_to_houses() {
     fields.outerHTML = '<div class="fields">' +
         houses +
+        '<article class="house_card">' +
+        '<img src="https://picsum.photos/400/200">' +
+        '<section>' +
+            '<a href="../pages/add_house.php">' +
+                'Add a new house' +
+            '</a>' +
+        '</section>' +
+        '</article>' +
         '</div>'
 
     image.style.display = "none"
