@@ -26,7 +26,12 @@
     if(isset($_SESSION['username'])){
         $username = $_SESSION['username'];
         $user = getUserByName($username);
-        draw_reservation_form($house, $user);
+        if(isset($_GET['commenting'])) {
+            draw_comment_form($houseID, $user['userID']);
+        }
+        else {
+            draw_reservation_form($house, $user);
+        }
     }
     draw_footer();
 ?>

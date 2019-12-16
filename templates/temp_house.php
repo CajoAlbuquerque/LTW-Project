@@ -80,4 +80,17 @@ function draw_new_house_form() { ?>
             </section>
         </section>
     </article>
+<?php }
+
+function draw_comment_form($houseID, $userID) { ?>
+    <article class="comment_form">
+        <form action="../actions/add_comment_action.php" method="post">
+            <input type="hidden" name="userID" value="<?=$userID?>">
+            <input type="hidden" name="houseID" value="<?=$houseID?>">
+            <label>Stars <input type="range" name="stars" min="1" max="5" step="0.5" placeholder="2.5"></label>
+            <label>Comment <input type="text" name="comment" placeholder="Write your comment here."></label>
+            <input type="submit" value="Submit comment">
+        </form>
+    </article>
+
 <?php } ?>
