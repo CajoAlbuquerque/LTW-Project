@@ -1,7 +1,7 @@
 <?php 
     include_once('../templates/temp_message.php');
 
-    function draw_profile($user, $editable, $message) { ?>
+    function draw_profile($user, $editable, $message, $photo) { ?>
         <section id="main"> 
             <nav id="sidebar">
                 <a href="../pages/profile.php?username=<?=$user['username']?>">Profile</a>
@@ -13,7 +13,11 @@
                 <?php }?>
             </nav>
             <section id="info">
-                <img id="profile_img" src="https://i.pravatar.cc/500" alt="Profile Photo">
+                <img id="profile_img" src="../images/<?php if($photo === false || $photo === '' || $photo === null){
+                                                               echo 'profile_default.png';
+                                                           } else {
+                                                               echo $photo;
+                                                           }?>" alt="Profile Photo">
                 <div id="fields">
                     <p id="username"><?=$user['username']?></p>
                     <p><?=$user['email']?></p>

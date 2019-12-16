@@ -111,3 +111,7 @@
     color: white;
     border:none;
 }
+
+#fields input[type="file"] {
+    display: none;
+}

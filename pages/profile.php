@@ -4,6 +4,7 @@
     include_once('../templates/temp_message.php');
     include_once('../templates/temp_profile.php');
     include_once('../database/db_user.php');
+    include_once('../database/db_images.php');
 
     // Only logged in users can see other users page
     if(!isset($_SESSION['username'])) {
@@ -31,7 +32,10 @@
 
     // User info
     $user = getUserByName($username);
+    $photo = getUserImage($user['username']);
     $editable = $username == $_SESSION['username'];
+
+    error_log("PHOTO IS : " . $photo);
 
     draw_black_header();
     draw_style('profile');
@@ -40,7 +44,7 @@
     if($editable){
         draw_script('edit_user');
     }
-    draw_profile($user, $editable, $message);
+    draw_profile($user, $editable, $message, $photo);
     draw_footer();
 
     unset($_SESSION['messages']);
