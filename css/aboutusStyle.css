@@ -4,6 +4,7 @@ body {
 }
 
 body > div{
+    margin: 0.5em;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -46,6 +47,5 @@ h1{
     height: 10em;
     margin:0;
 }
-
 
 

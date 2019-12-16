@@ -11,7 +11,7 @@ let reservations
 let houses
 
 function swap_to_reservations() {
-    fields.outerHTML = '<div class="fields">' +
+    fields.outerHTML = '<div id="MyReservations" class="fields">' +
         reservations +
         '</div>'
 
@@ -20,7 +20,7 @@ function swap_to_reservations() {
 }
 
 function swap_to_houses() {
-    fields.outerHTML = '<div class="fields">' +
+    fields.outerHTML = '<div id="MyHouses" class="fields">' +
         houses +
         '<article class="house_card">' +
         '<img src="https://picsum.photos/400/200">' +
