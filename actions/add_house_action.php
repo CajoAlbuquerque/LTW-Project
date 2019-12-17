@@ -3,6 +3,8 @@
     include_once('../database/db_house.php');
     include_once('../database/db_user.php');
     include_once('../templates/temp_message.php');
+    include_once('../database/db_images.php');
+    include_once('../images/upload.php');
 
     $username = $_POST['username'];
     $title = $_POST['title'];
@@ -29,7 +31,17 @@
 
     try {
         $user = getUserByName($username);
-        insertHouse($user['userID'], $title, $price, $location, $description);
+        $houseID = insertHouse($user['userID'], $title, $price, $location, $description);
+        $total = count($_FILES['images']['name']);
+        for( $i = 0; $i < $total; $i++) { //FIXME: only gets last image uploaded
+            if($_FILES['images']['tmp_name'][$i] != ""){
+                $filename = $_FILES['images']['tmp_name'][$i];
+                error_log("got file $i with name $filename", 0);
+                $info = insertImage($_FILES['images']['name'][$i]);
+                connectHouseImage($houseID, $info['photoId']);
+                save_house_photo($_FILES['images']['tmp_name'][$i], $info['destination']);
+            }
+        }
         $_SESSION['messages'][] = array('type' => 'success', 'content' => 'Registered house successfully.');
         header('Location: ../pages/homepage.php');
     }

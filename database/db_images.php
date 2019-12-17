@@ -64,4 +64,11 @@
         $stmt = $db->prepare('UPDATE User SET photo = ? WHERE userID = ?');
         $stmt->execute(array($photo, $user));
     }
+
+    function connectHouseImage($houseID, $imageID) {
+        global $db;
+
+        $stmt = $db->prepare('INSERT INTO HouseImages(house, image) VALUES (?,?)');
+        $stmt->execute(array($houseID, $imageID));
+    }
 ?>

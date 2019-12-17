@@ -3,17 +3,17 @@
         if (!file_exists($filename)) {
             return false;
         }
-        switch ( strtolower( pathinfo( $filename, PATHINFO_EXTENSION ))) {
-            case 'jpeg':
-            case 'jpg':
+        switch ( exif_imagetype($filename) /*strtolower( pathinfo( $filename, PATHINFO_EXTENSION ))*/) {
+            /*case 'jpeg':*/
+            case 2 /*'jpg'*/:
                 return imagecreatefromjpeg($filename);
             break;
     
-            case 'png':
+            case 3 /*'png'*/:
                 return imagecreatefrompng($filename);
             break;
     
-            case 'gif':
+            case 1 /*'gif'*/:
                 return imagecreatefromgif($filename);
             break;
     
@@ -37,5 +37,13 @@
         $photo = imagecreatetruecolor(250, 250);
         imagecopyresized($photo, $original, 0, 0, ($width>$square)?($width-$square)/2:0, ($height>$square)?($height-$square)/2:0, 250, 250, $square, $square);
         imagejpeg($photo, $destinationName);
+    }
+
+    function save_house_photo($image_tmp_name, $destination) {
+        $destinationName = "../images/$destination";
+        //move_uploaded_file($image_tmp_name, $destinationName);
+        $image = imagecreatefromfile($image_tmp_name);
+        //TODO: resizing?
+        imagejpeg($image, $destinationName);
     }
 ?>
