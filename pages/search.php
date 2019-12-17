@@ -6,7 +6,7 @@
     draw_style('search');
     draw_style('inputStyle');
     draw_style('templateHouseStyle');
-    draw_script('house_card');
+    draw_script('card');
     draw_script('search_houses');
     draw_search();
     draw_footer();

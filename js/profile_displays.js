@@ -18,20 +18,18 @@ function swap_to_reservations() {
     image.style.display = "none"
     fields = document.getElementsByClassName('fields')[0]
 
-    //add_card_links() -> Uncomment to add the click on card feature
+    add_card_links()
 }
 
 function swap_to_houses() {
     fields.outerHTML = '<div id="MyHouses" class="fields">' +
-        houses +
-        '<article class="house_card">' +
-        '<img src="https://picsum.photos/400/200">' +
-        '<section>' +
-            '<a href="../pages/add_house.php">' +
-                'Add a new house' +
-            '</a>' +
-        '</section>' +
+        '<article id="AddHouse" class="card house_card">' +
+        '<img src="../icons/add_icon.png">' + 
+        '<a href="../pages/add_house.php">' +
+            'Add a new house' +
+        '</a>' +
         '</article>' +
+        houses +
         '</div>'
 
     image.style.display = "none"

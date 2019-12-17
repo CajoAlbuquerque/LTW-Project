@@ -73,7 +73,7 @@ function updateResults() {
 }
 
 function printHouse(house) {
-    return '<article class="house_card">' +
+    return '<article class="card">' +
             //TODO: display main image of the house
             '<img src="https://picsum.photos/400/200">' +
                 '<section>' +

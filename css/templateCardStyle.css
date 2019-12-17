@@ -1,36 +1,34 @@
-.house_card {
+.card {
     background: white;
-    border-radius: 2px;
-    display: inline-block;
-    height: 20em;
+    border-radius: 3px;
     margin: 1rem;
-    position: relative;
     width: 20em;
+    min-height: 20em;
 
     box-shadow: 0 3px 6px rgba(0,0,0,0.12), 0 3px 6px rgba(0,0,0,0.24);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
-.house_card:hover {
+.card:hover {
     cursor: pointer;
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
-.house_card > img{
+.card > img{
     height: 10em;
     background-size: cover;
 }
 
-.house_card > section{
-    padding: 1em 2em;
+.card > section{
+    padding: 1em;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
 }
 
-.house_card > section > a{
+.card > section > a{
+    padding-bottom: 1em;
+    margin: 0;
     text-decoration: none;
-    font-size: x-large;
     font-weight: bold;
     overflow-wrap: break-word;
     color: rgb(61,61,83);
@@ -38,7 +36,7 @@
 
 .info{
     display: flex;
-    justify-content: flex-start;
+    flex-direction: row;
 }
 
 .info > ul{
@@ -48,9 +46,11 @@
 
     height: 100%;
     margin: 0;
+    padding: 0;
     list-style: none;
 }
 
 .info > ul > li{
-    padding: 0.5em 0 0.5em 0;
+    padding: 0;
+    color: rgb(61,61,83);
 }

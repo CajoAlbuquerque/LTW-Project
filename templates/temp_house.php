@@ -65,17 +65,17 @@ function draw_new_house_form() { ?>
  <?php  } ?>
 
 <?php function draw_house_card($house) { ?>
-    <article class="house_card">
+    <article class="card house_card">
         <!-- this is a mock picture -->
         <img src="https://picsum.photos/400/200">
         <section>
             <a href="../pages/house.php?houseID=<?=$house['houseID']?>">
                 <?=$house['title']?>
             </a>
-            <section class="info">
+            <section class="info house_info">
                 <ul>
-                    <li> <?=$house['priceDay']?>€\day </li>
-                    <li> <?=$house['location']?></li>
+                    <li>Price: <?=$house['priceDay']?>€\day </li>
+                    <li>Place: <?=$house['location']?></li>
                 </ul>
             </section>
         </section>

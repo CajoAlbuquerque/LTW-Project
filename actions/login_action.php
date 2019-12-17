@@ -21,7 +21,7 @@
     // Checks if the password matches the saved hash
     if(checkPassword($username, $password)){
         $_SESSION['username'] = $username;
-        $_SESSION['messages'][] = array('type' => 'success', 'content' => 'Loged In successfully!');
+        $_SESSION['messages'][] = array('type' => 'success', 'content' => 'Logged In successfully!');
         header('Location: ../pages/' . $destination);
     } else {
         $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Username or password do not match!');
