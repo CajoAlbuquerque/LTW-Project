@@ -26,7 +26,11 @@ function draw_reservation_card($reservation, $editable) {
                 <a class="reservation_cancel" href="../actions/cancel_reservation_action.php?reservationID=<?=$reservation['reservationID']?>"> Cancel </a>
             <?php } 
             elseif($reservation['endDate'] < date("Y-m-d")){ ?>
-                <a class="reservation_add_comment" href="../pages/house.php?houseID=<?=$reservation['house']?>&commenting=yes"> Comment house </a>
+                <!--<a class="reservation_add_comment" href="../pages/house.php?houseID=<?=$reservation['house']?>&commenting=yes"> Comment house </a> -->
+                <form class="reservation_add_comment" action="../pages/house.php?houseID=<?=$reservation['house']?>" method="POST">
+                    <input type="hidden" name="commenting" value="yes">
+                    <input type="submit" value="Comment house">
+                </form>
             <?php } ?>
         </section>
         <?php } ?>
