@@ -27,6 +27,11 @@
             <a href="../pages/profile.php?username=<?=$owner['username']?>"><?=$owner['name']?> </a>
             <?php if($editable) {?>
                     <a id="edit" href="#">Edit House</a>
+                    <form id="add_img" action="../actions/add_house_img_action.php" method="POST" enctype="multipart/form-data">
+                        <input type="hidden" name="houseID" value="<?=$house['houseID']?>">
+                        <input type="file" name="image" accept="image/.gif,image/.jpg,image/.png,image/.jpeg">
+                        <input type="submit" value="Add">
+                    </form>
             <?php }?>
         </section>
     </section>
