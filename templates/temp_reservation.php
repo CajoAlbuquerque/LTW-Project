@@ -9,32 +9,35 @@ function draw_reservation_card($reservation, $editable) {
     $cancelLimit = date("Y-m-d", $d);
     
     ?>
-    <article class="reservation_card">
-        <a href="../pages/house.php?houseID=<?=$reservation['house']?>">
-            <h2><?=$house['title']?></h2>
-        </a>
-        <section class="reservation_info">
-            <ul>
-                <li> Check-in: <?=$reservation['startDate']?></li>
-                <li> Check-out: <?=$reservation['endDate']?></li>
-                <li> Price: <?=$reservation['totalPrice']?></li>
-            </ul>
-        </section>
-        <?php if($editable) { ?>
-        <section class="reservation_button">
-            <?php if($reservation['startDate'] > $cancelLimit) {?>
-                <a class="reservation_cancel" href="../actions/cancel_reservation_action.php?reservationID=<?=$reservation['reservationID']?>"> Cancel </a>
-            <?php } 
-            elseif($reservation['endDate'] < date("Y-m-d")){ ?>
-                <!--<a class="reservation_add_comment" href="../pages/house.php?houseID=<?=$reservation['house']?>&commenting=yes"> Comment house </a> -->
-                <form class="reservation_add_comment" action="../pages/house.php?houseID=<?=$reservation['house']?>" method="POST">
-                    <input type="hidden" name="commenting" value="yes">
-                    <input type="submit" value="Comment house">
-                </form>
+        <article class="card reservation_card">
+            <!-- this is a mock picture -->
+            <img src="https://picsum.photos/400/200">
+            <section>
+                <a href="../pages/house.php?houseID=<?=$reservation['house']?>">
+                    <?=$house['title']?>
+                </a>
+                <section class="info reservation_info">
+                    <ul>
+                        <li>Check-in: <?=$reservation['startDate']?></li>
+                        <li>Check-out: <?=$reservation['endDate']?></li>
+                        <li>Price: <?=$reservation['totalPrice']?>€</li>
+                    </ul>
+                </section>
+                <?php if($editable) { ?>
+                <section class="reservation_button">
+                    <?php if($reservation['startDate'] > $cancelLimit) {?>
+                        <a class="reservation_cancel" href="../actions/cancel_reservation_action.php?reservationID=<?=$reservation['reservationID']?>"> Cancel </a>
+                    <?php } 
+                    elseif($reservation['endDate'] < date("Y-m-d")){ ?>
+                        <form class="reservation_add_comment" action="../pages/house.php?houseID=<?=$reservation['house']?>" method="POST">
+                            <input type="hidden" name="commenting" value="yes">
+                            <input type="submit" value="Comment house">
+                        </form>
+                    <?php } ?>
+                </section>
             <?php } ?>
-        </section>
-        <?php } ?>
-    </article>
+            </section>
+        </article>
 <?php } 
 
 function draw_reservation_form($house, $user) { ?>

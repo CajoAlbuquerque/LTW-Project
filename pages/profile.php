@@ -42,9 +42,10 @@
     draw_style('profile');
     draw_style('inputStyle');
     draw_style('messages');
-    draw_style('templateHouseStyle');
+    draw_style('templateHouseCardStyle');
+    draw_style('templateReservationCardStyle');
     
-    draw_script('house_card');
+    draw_script('card');
     draw_script('profile_displays');
     if($editable){
         draw_script('edit_user');

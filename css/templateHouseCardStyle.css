@@ -1,0 +1,25 @@
+@import"templateCardStyle.css";
+
+.house_card{
+    height: 20em;
+}
+
+.house_card > section > a{
+    font-size: x-large;
+}
+
+#AddHouse{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#AddHouse > img{
+    height: 10em;
+    margin:1em;
+    opacity: 0.5;
+}
+#AddHouse > a{
+    text-decoration: none;
+    color: rgb(61,61,83);
+}

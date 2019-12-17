@@ -71,17 +71,17 @@ function draw_new_house_form() { ?>
 <?php function draw_house_card($house) { 
     $rating_info = getRatingOfHouse($house['houseID']);
     ?>
-    <article class="house_card">
+    <article class="card house_card">
         <!-- this is a mock picture -->
         <img src="https://picsum.photos/400/200">
         <section>
             <a href="../pages/house.php?houseID=<?=$house['houseID']?>">
                 <?=$house['title']?>
             </a>
-            <section class="info">
+            <section class="info house_info">
                 <ul>
-                    <li> <?=$house['priceDay']?>€\day </li>
-                    <li> <?=$house['location']?></li>
+                    <li>Price: <?=$house['priceDay']?>€\day </li>
+                    <li>Place: <?=$house['location']?></li>
                 </ul>
                 <div id="rating"> <?=$rating_info['rating']?> Stars (<?=$rating_info['count']?> Users) </div><!-- TODO: put rating here -->
             </section>

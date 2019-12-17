@@ -5,9 +5,9 @@
 
     draw_white_header();
     draw_style('homepageStyle');
-    draw_style('templateHouseStyle');
+    draw_style('templateHouseCardStyle');
     draw_style('inputStyle');
-    draw_script('house_card');
+    draw_script('card');
 ?>
 
         <div id="top">
