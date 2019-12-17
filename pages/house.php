@@ -30,6 +30,7 @@
         $username = $_SESSION['username'];
         $user = getUserByName($username);
         if(isset($_POST['commenting'])) {
+            draw_script('add_comment');
             draw_comment_form($houseID, $user['userID']);
         }
         else {
