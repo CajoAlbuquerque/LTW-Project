@@ -9,7 +9,7 @@
     ?>
 
 <article class="house">
-    <section id="house_info">
+    <section class="house_info">
         <a href="../pages/house.php?houseID=<?=$house['houseID']?>">
             <h2><?=$house['title']?></h2>
             <!-- TODO: display all images of the house -->
@@ -20,7 +20,7 @@
                 <li> <?=$house['location']?></li>
                 <li> Add more tags </li>
             </ul>
-            <div id="rating"> <?=$rating_info['rating']?> Stars (<?=$rating_info['count']?> Users) </div><!-- TODO: put rating here -->
+            <div class="rating"> <?=$rating_info['rating']?> Stars (<?=$rating_info['count']?> Users) </div>
         </section>
         <section class="description">
             <p>
@@ -69,6 +69,8 @@ function draw_new_house_form() { ?>
  <?php  } ?>
 
 <?php function draw_house_card($house) { 
+    draw_style('templateHouseCardStyle');
+
     $rating_info = getRatingOfHouse($house['houseID']);
     ?>
     <article class="card house_card">
@@ -78,12 +80,15 @@ function draw_new_house_form() { ?>
             <a href="../pages/house.php?houseID=<?=$house['houseID']?>">
                 <?=$house['title']?>
             </a>
-            <section class="info house_info">
+            <section class="info">
                 <ul>
                     <li>Price: <?=$house['priceDay']?>€\day </li>
                     <li>Place: <?=$house['location']?></li>
                 </ul>
-                <div id="rating"> <?=$rating_info['rating']?> Stars (<?=$rating_info['count']?> Users) </div><!-- TODO: put rating here -->
+                <div class="rating"> 
+                    <p><?=$rating_info['rating']?><img src="../icons/star.png">
+                    <p>(<?=$rating_info['count']?>)</p>
+                </div>
             </section>
         </section>
     </article>

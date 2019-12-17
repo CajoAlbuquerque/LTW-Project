@@ -32,7 +32,7 @@ function getRatingOfHouse($id) {
         return(array('count' => 0, 'rating' => 0));
     }
     else {
-        $rating = $sum/$count;
+        $rating = round($sum/$count, 2);
         return(array('count' => $count, 'rating' => $rating));
     }
 }

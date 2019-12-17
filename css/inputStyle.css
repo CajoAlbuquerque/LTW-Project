@@ -13,6 +13,7 @@ form input{
     width: 22em;
     height: 3em;
     border:none;
+    font-family: 'Montserrat', 'cursive';
 }
 
 form input::placeholder{

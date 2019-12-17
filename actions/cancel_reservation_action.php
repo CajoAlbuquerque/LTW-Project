@@ -3,7 +3,7 @@ include_once('../templates/temp_message.php');
 include_once('../database/db_reservation.php');
 
 $reservationID = $_GET['reservationID'];
-if(!is_numeric($houseID)){
+if(!is_numeric($reservationID)){
     die(header('Location: ../pages/homulessness.php'));
 }
 

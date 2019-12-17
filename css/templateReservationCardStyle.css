@@ -17,8 +17,17 @@
 }
 
 .reservation_button{
-    margin: 1em;
+    margin-top: 0.5em;
     align-self: center;
+}
+
+.reservation_button .reservation_add_comment input[type="submit"]{
+    padding: 5px;
+    align-self: center;
+    width: auto;
+    height: auto;
+    font-size: small;
+    border-radius: 5px;
 }
 
 .reservation_button a{

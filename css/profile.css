@@ -47,7 +47,7 @@
     align-items: center;
 }
 
-.fields p {
+.fields > p {
     width: 15em;
     overflow: hidden;
 
@@ -71,7 +71,7 @@
     padding: 0.5em;
 }
 
-.fields p:nth-child(1) {
+.fields > p:nth-child(1) {
     text-transform: uppercase;
 }
 
