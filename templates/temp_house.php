@@ -8,6 +8,11 @@
     $rating_info = getRatingOfHouse($house['houseID']);
     ?>
 
+
+<section class="images">
+    <!-- this is a mock image -->
+    <img src="https://picsum.photos/400/200">
+</section>
 <article class="house">
     <section class="house_info">
         <a href="../pages/house.php?houseID=<?=$house['houseID']?>">
@@ -20,7 +25,10 @@
                 <li> <?=$house['location']?></li>
                 <li> Add more tags </li>
             </ul>
-            <div class="rating"> <?=$rating_info['rating']?> Stars (<?=$rating_info['count']?> Users) </div>
+            <div class="rating"> 
+                <p><?=$rating_info['rating']?><img src="../icons/star.png">
+                <p>(<?=$rating_info['count']?>)</p>
+            </div>
         </section>
         <section class="description">
             <p>
@@ -28,19 +36,24 @@
             </p>
         </section>
         <section class="owner">
-            <a href="../pages/profile.php?username=<?=$owner['username']?>"><?=$owner['name']?> </a>
-            <?php if($editable) {?>
+            <span> Owner </span>
+            <section class="owner_buttons">
+                <a id="owner_profile"href="../pages/profile.php?username=<?=$owner['username']?>"><?=$owner['name']?> </a>
+                <?php if($editable) {?>
                     <a id="edit" href="#">Edit House</a>
-            <?php }?>
+                <?php }?>
+            </section>
         </section>
     </section>
     <section class="comments">
         <h3> Comments </h3>
         <ul>
             <?php foreach ($comments as $comment) { ?>
-                <li><p><?=$comment['comment']?></p> 
-                    <span class="rating"> <?=$comment['stars']?> stars </span>
-                    <a class="commenter" href="../pages/profile.php?username=<?=$comment['username']?>"> <?=$comment['username']?> </a>
+                <li><p><?=$comment['comment']?></p>
+                    <section class="comment_footer">
+                        <span class="rating"> <?=$comment['stars']?> stars </span>
+                        <span class="commenter">by <a href="../pages/profile.php?username=<?=$comment['username']?>"> <?=$comment['username']?> </a></span>
+                    </section>
                 </li>
             <?php } ?>
                 <!-- TODO: add option to add comment -->

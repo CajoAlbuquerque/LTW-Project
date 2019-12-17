@@ -1,0 +1,167 @@
+#main {
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgb(61,61,83);
+    height: 50vh;
+    flex-basis: 100%;
+}
+
+.house {
+    display:flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex-basis:70%;
+}
+
+.house_info {
+    display: flex;
+    flex-direction: column;
+}
+
+.house_info > a{
+    text-decoration: none;
+    font-weight: bold;
+    overflow-wrap: break-word;
+    color: rgb(61,61,83);
+    text-align: center;
+}
+
+.info {
+    display: flex;
+    justify-content: center;
+}
+
+.info > ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+    width: 50%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.info > ul > li{
+    padding: 0;
+    color: rgb(61,61,83);
+}
+
+.info .rating{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.info .rating > p{
+    margin: 0;
+    color: rgb(61,61,83);
+    font-size: medium;
+}
+
+.info .rating > p:nth-child(2){
+    font-size: small;
+}
+
+.info .rating img{
+    height:1em;
+}
+
+.description {
+    text-align: justify;
+    padding: 1em;
+}
+
+.owner {
+    display: flex;
+    flex-direction: column;
+}
+
+.owner > span {
+    padding: 0 1em;
+}
+
+.owner_buttons {
+    display: flex;
+}
+
+.owner_buttons a{
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+    margin: 0.5em;
+    font-size: small;
+    background-color: rgb(237, 61, 61);
+    border: none;
+    border-radius: 5px;
+}
+
+.comments {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0.5em;
+}
+
+.comments > ul {
+    list-style: none;
+    padding: 0 0.5em;
+    margin: 0;
+}
+
+.comments > ul > li {
+    background: white;
+    border-radius:5px;
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+    margin: 5px 0;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+}
+
+.comments > ul > li > p {
+    margin: 0.5em;
+    width: 100%;
+}
+
+.comment_footer {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.comment_footer > .rating {
+    text-align: left;
+    width: 50%;
+    margin: 0.2em 0.5em;
+}
+
+.comment_footer > .commenter {
+    text-align: right;
+    width:50%;
+    margin: 0.2em 0.5em;
+}
+
+.reservation_form {
+    display: flex;
+    flex-basis: 30%;
+}
+
+.comment_form {
+    display: flex;
+    flex-basis: 30%;
+}

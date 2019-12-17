@@ -23,8 +23,10 @@
     }
 
     draw_black_header();
+    draw_style('houseStyle');
     draw_script('house_reservation');
     draw_script('edit_house');
+    ?> <section id="main"> <?php
     draw_house($house, $owner, $comments, $editable);
     if(isset($_SESSION['username'])){
         $username = $_SESSION['username'];
@@ -33,9 +35,10 @@
             draw_script('add_comment');
             draw_comment_form($houseID, $user['userID']);
         }
-        else {
+        else{
             draw_reservation_form($house, $user);
         }
     }
+    ?> </section> <?php
     draw_footer();
 ?>
