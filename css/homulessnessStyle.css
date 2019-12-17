@@ -4,3 +4,8 @@ body{
     text-align: center;
 }
 
+body > img{
+    image-rendering: smooth;
+    align-self: center;
+}
+

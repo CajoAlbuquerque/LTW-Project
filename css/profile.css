@@ -85,3 +85,26 @@
     align-items: flex-start;
     flex-wrap: wrap;
 }
+
+
+@media only screen and (max-width: 800px) {
+    #main{
+        flex-direction: column;
+    }
+
+    #sidebar > a {
+        font-size: 1em;
+    }
+
+    .fields > p {
+        width: 75vw;
+        font-size: 1.25em;
+    }
+
+    .fields .error, .fields .success {
+        width: 75%;
+    
+        margin: 1em 0;
+        padding: 0.5em;
+    }
+}
