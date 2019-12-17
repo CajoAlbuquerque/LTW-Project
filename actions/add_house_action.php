@@ -33,7 +33,7 @@
         $user = getUserByName($username);
         $houseID = insertHouse($user['userID'], $title, $price, $location, $description);
         $total = count($_FILES['images']['name']);
-        for( $i = 0; $i < $total; $i++) { //FIXME: only gets last image uploaded
+        for( $i = 0; $i < $total; $i++) {
             if($_FILES['images']['tmp_name'][$i] != ""){
                 $filename = $_FILES['images']['tmp_name'][$i];
                 error_log("got file $i with name $filename", 0);
