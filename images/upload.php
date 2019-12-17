@@ -36,7 +36,7 @@
         // Profile pics are 250x250
         $photo = imagecreatetruecolor(250, 250);
         imagecopyresized($photo, $original, 0, 0, ($width>$square)?($width-$square)/2:0, ($height>$square)?($height-$square)/2:0, 250, 250, $square, $square);
-        imagejpeg($photo, $destinationName);
+        imagejpeg($photo, $destinationName, 100);
     }
 
     function save_house_photo($image_tmp_name, $destination) {

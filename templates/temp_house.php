@@ -61,12 +61,13 @@ function draw_new_house_form() { ?>
         <input type="text" name="title" placeholder="TITLE" maxlength="36" required>
         <input type="number" name="price" placeholder="PRICE / DAY" min="0">
         <input type="text" name="location" placeholder="LOCATION">
-        <input type="textarea" name="description" placeholder="DESCRIPTION">
-        <input type="file" name="images[]" accept="image/.png,image/.jpeg,image/.jpg,image/.gif" multiple="multiple">
+        <textarea rows="20" name="description" placeholder="DESCRIPTION" form="new_house_form"></textarea>
+        <input type="file" name="images[]" accept="image/.png,image/.jpeg,image/.jpg,image/.gif" multiple>
         <input type="button" value="Upload Images">
         <input type="submit" value="Add">
     </form>
     <section id="preview">
+        <img src="../images/placeholder.png" alt="Preview Images Placeholder">
     </section>
 </div>
  
