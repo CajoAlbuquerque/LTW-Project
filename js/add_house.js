@@ -1,12 +1,12 @@
 'use strict'
 
 let form = document.getElementById('new_house_form');
-let button = document.querySelector('#new_house_form input[type="button"]');
+let button_input = document.querySelector('#new_house_form input[type="button"]');
 let file_input = document.querySelector('#new_house_form input[type="file"]');
 let preview = document.getElementById('preview');
-let num_images = 0;
+let images = [];
 
-button.addEventListener('click', function (ev) {
+button_input.addEventListener('click', function (ev) {
     ev.preventDefault();
 
     if(file_input) {
@@ -15,57 +15,83 @@ button.addEventListener('click', function (ev) {
 });
 
 file_input.addEventListener('change', previewImages);
-form.addEventListener('submit', () => {
+form.addEventListener('submit', function (evt) {
     let formdata = new FormData(form);
-    let values = formdata.getAll('images[]');
+    let request = new XMLHttpRequest();
 
-    console.log(values);
-    alert('FODASDedaee');
+    images.forEach(function(image, i) {
+        formdata.append('image' + i, image);
+    });
+
+    request.open('POST', form.getAttribute('action'), true);
+    request.send(formdata);
+    
+    evt.preventDefault();
+    window.location.replace('../pages/homepage.php');
 });
 
 function previewImages(event) {
-    let files = event.target.files;
-    let formdata = new FormData(form);
-    let values = formdata.get('images');
+    let file = event.target.files[0];
 
-    console.log(values);
-    if(num_images == 0) {
+    if(event.target.files.length == 0) {
+        return;
+    }
+
+    if(! /^image/g.test(file.type)){
+        return;
+    }
+
+    if(images.length == 0) {
         preview.innerHTML = '';
     }
-    num_images++;
-    if(num_images >= 9) {
-        file_input.setAttribute('disabled', 'true')
+
+    images.push(file);
+
+    if(images.length >= 9) {
+        button_input.setAttribute('disabled', 'true');
     }
     
-    for (let i = 0; i < files.length; i++){
-        let file = files[i];
-        let div = document.createElement('div');
-        div.classList.add('preview_obj');
+    let div = document.createElement('div');
+    div.classList.add('preview_obj');
 
-        let img = document.createElement('img');
-        img.file = file;
-        div.appendChild(img);
+    let img = document.createElement('img');
+    img.file = file;
+    div.appendChild(img);
 
-        let button = document.createElement('button');
-        button.innerHTML = "X";
-        button.setAttribute("data-index", i);
-        div.appendChild(button);
+    let button = document.createElement('button');
+    button.innerHTML = "X";
+    button.setAttribute("data-name", file.name);
+    div.appendChild(button);
 
-        button.addEventListener('click', (evt) => {
-            evt.target.parentNode.remove();
-            num_images--;
-            checkPreviewStatus();
-        });
-        addDivHoverListeners(div);
+    button.addEventListener('click', (evt) => {
+        let name = evt.target.getAttribute("data-name");
+        let index = findFile(name);
+        
+        images.splice(index, 1);
+        evt.target.parentNode.remove();
+        checkPreviewStatus();
+    });
+    addDivHoverListeners(div);
 
-        preview.appendChild(div);
+    preview.appendChild(div);
 
-        let reader = new FileReader()
-        reader.onload = (function(aImg) { return function(e) { aImg.src = e.target.result; }; })(img);
-        reader.readAsDataURL(file);
-    }
+    let reader = new FileReader()
+    reader.onload = function(e) { img.src = e.target.result};
+    reader.readAsDataURL(file);
 }
 
+function findFile(name) {
+    let index = -1;
+
+    for(let i = 0; i < images.length; i++) {
+        if(images[i].name === name){
+            index = i;
+            break;
+        }
+    }
+
+    return index;
+}
 
 function addDivHoverListeners(div) {
     div.addEventListener('mouseover', (evt) => { 
@@ -79,10 +105,10 @@ function addDivHoverListeners(div) {
 }
 
 function checkPreviewStatus() {
-    if(num_images <= 0) {
+    if(images.length <= 0) {
         preview.innerHTML = '<img src="../images/placeholder.png" alt="Preview Images Placeholder">';
     }
-    if(num_images < 9) {
-        file_input.removeAttribute('disabled');
+    if(images.length < 9 ) {
+        button_input.removeAttribute('disabled');
     }
 }

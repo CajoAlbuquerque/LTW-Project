@@ -67,6 +67,11 @@ h2 {
     display: none;
 }
 
+#new_house_form input[disabled="true"] {
+    background-color: var(--color-grey-text);
+    cursor: auto;
+}
+
 #preview {
     margin: 1em 4em;
     
