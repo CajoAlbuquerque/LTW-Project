@@ -47,20 +47,21 @@ h2 {
 }
 
 #preview {
-    justify-self: center;
-    margin: auto 4em;
     width: 60em;
+    min-width: 22em;
     height: 40em;
+    margin: auto 4em;
     padding: 2em 1em;
-
+    
     background-image: url(https://www.anxietyuk.org.uk/wp-content/uploads/2015/11/placeholder.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-
+    border: solid 1px rgba(0, 0, 0, 0.322);
+    
+    justify-self: center;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    border: solid 1px rgba(0, 0, 0, 0.322);
 }
