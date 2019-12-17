@@ -8,6 +8,9 @@
     include('../templates/temp_reservation.php');
 
     $houseID = $_GET['houseID'];
+    if(!is_numeric($houseID)){
+        die(header('Location: ../pages/homulessness.php'));
+    }
 
     $editable = false;
 

@@ -20,13 +20,13 @@
     }
 
     // Validating location
-    if( !preg_match('/^[a-zA-Z0-9 ]+$/', $location) ){
+    if( !preg_match('/^[a-zA-Z0-9 ,.]+$/', $location) ){
         $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Invalid location.');
         die(header("Location: ../pages/house.php?houseID=$houseID"));
     }
 
     // Validating description
-    if( !preg_match('/^[a-zA-Z0-9 ,.]+$/', $description) ){
+    if( !preg_match('/^[a-zA-Z0-9 ,.!]+$/', $description) ){
         $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Invalid description.');
         die(header("Location: ../pages/house.php?houseID=$houseID"));
     }

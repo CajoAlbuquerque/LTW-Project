@@ -24,6 +24,9 @@
     // the profile page of that user is shown instead
     if(isset($_GET['username'])) {
         $username = $_GET['username'];
+        if( !preg_match('/^[a-zA-Z0-9 _-]+$/', $username) ){
+            die(header('Location: ../pages/homulessness.php'));
+        }
     }
 
     if(isset($_SESSION['messages'])) {
