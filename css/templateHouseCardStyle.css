@@ -18,6 +18,10 @@
 .house_card .rating > p{
     margin: 0;
     color: rgb(61,61,83);
+    font-size: medium;
+}
+
+.house_card .rating > p:nth-child(2){
     font-size: small;
 }
 
