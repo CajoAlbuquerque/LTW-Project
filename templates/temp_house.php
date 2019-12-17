@@ -1,9 +1,12 @@
 <?php     
     include_once('../templates/temp_common.php');
+    include_once('../database/db_comments.php');
 ?>
 
 
-<?php function draw_house($house, $owner, $comments, $editable) { ?>
+<?php function draw_house($house, $owner, $comments, $editable) { 
+    $rating_info = getRatingOfHouse($house['houseID']);
+    ?>
 
 <article class="house">
     <section id="house_info">
@@ -17,6 +20,7 @@
                 <li> <?=$house['location']?></li>
                 <li> Add more tags </li>
             </ul>
+            <div id="rating"> <?=$rating_info['rating']?> Stars (<?=$rating_info['count']?> Users) </div><!-- TODO: put rating here -->
         </section>
         <section class="description">
             <p>
@@ -64,7 +68,9 @@ function draw_new_house_form() { ?>
  
  <?php  } ?>
 
-<?php function draw_house_card($house) { ?>
+<?php function draw_house_card($house) { 
+    $rating_info = getRatingOfHouse($house['houseID']);
+    ?>
     <article class="card house_card">
         <!-- this is a mock picture -->
         <img src="https://picsum.photos/400/200">
@@ -77,6 +83,7 @@ function draw_new_house_form() { ?>
                     <li>Price: <?=$house['priceDay']?>€\day </li>
                     <li>Place: <?=$house['location']?></li>
                 </ul>
+                <div id="rating"> <?=$rating_info['rating']?> Stars (<?=$rating_info['count']?> Users) </div><!-- TODO: put rating here -->
             </section>
         </section>
     </article>

@@ -8,7 +8,7 @@
     $comment = $_POST['comment'];
 
     //comment validation
-    if( !preg_match('/^[a-zA-Z0-9 ]+$/', $comment) ){
+    if( !preg_match('/^[a-zA-Z0-9 ,.!?()]+$/', $comment) ){
         $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Comment can only contain letters, numbers and spaces.');
         die(header("Location: ../pages/house.php?houseID=$houseID&commenting=yes"));
     }

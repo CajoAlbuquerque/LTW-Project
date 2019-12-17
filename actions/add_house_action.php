@@ -17,12 +17,12 @@
         die(header('Location: ../pages/add_house.php'));
     }
     //location validation
-    if( !preg_match('/^[a-zA-Z0-9 ]+$/', $location) ){
+    if( !preg_match('/^[a-zA-Z0-9 ,.]+$/', $location) ){
         $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Location can only contain letters, numbers and spaces.');
         die(header('Location: ../pages/add_house.php'));
     }
     //description validation
-    if( !preg_match('/^[a-zA-Z0-9 ]+$/', $description) ){
+    if( !preg_match('/^[a-zA-Z0-9 ,.!]+$/', $description) ){
         $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Description can only contain letters, numbers and spaces.');
         die(header('Location: ../pages/add_house.php'));
     }

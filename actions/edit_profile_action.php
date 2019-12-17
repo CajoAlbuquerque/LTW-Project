@@ -22,6 +22,25 @@
         $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Username can only contain letters, numbers, spaces or underscores!');
         die(header('Location: ../pages/profile.php'));
     }
+
+    // Validating name
+    if( !preg_match('/^[a-zA-Z0-9 -]+$/', $name) ){
+        $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Name can only contain letters, numbers and spaces!');
+        die(header('Location: ../pages/profile.php'));
+    }
+
+    // Validating nationality
+    if( !preg_match('/^[a-zA-Z -]+$/', $nationality) ){
+        $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Nationality can only contain letters and spaces!');
+        die(header('Location: ../pages/profile.php'));
+    }
+
+    // Validating age
+    if(!is_numeric($age) ){
+        $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Age numbers!');
+        die(header('Location: ../pages/profile.php'));
+    }
+
     // Checking if username or email already exist
     if ( getUserByEmail($email) !== false) {
         // If they exist then they have to be from the current user

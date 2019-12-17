@@ -8,6 +8,9 @@
     include('../templates/temp_reservation.php');
 
     $houseID = $_GET['houseID'];
+    if(!is_numeric($houseID)){
+        die(header('Location: ../pages/homulessness.php'));
+    }
 
     $editable = false;
 
@@ -26,7 +29,7 @@
     if(isset($_SESSION['username'])){
         $username = $_SESSION['username'];
         $user = getUserByName($username);
-        if(isset($_GET['commenting'])) {
+        if(isset($_POST['commenting'])) {
             draw_comment_form($houseID, $user['userID']);
         }
         else {
