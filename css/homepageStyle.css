@@ -123,17 +123,17 @@ footer p > span{
         font-size: 1.5em;
     }
 
-    #bottom{
+    footer{
         flex-direction: column-reverse;
     }
-    #bottom > section:nth-child(3){
+    footer > section:nth-child(3){
         display: none;
     }
-    #bottom img{
+    footer img{
         height: 2em;
         margin: 0.5em;
     }
-    #bottom p{
+    footer p{
         font-size: xx-small;
     }
 }

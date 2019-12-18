@@ -58,3 +58,11 @@
     padding: 0;
     color: rgb(61,61,83);
 }
+
+@media only screen and (max-width: 360px) {
+    .card {
+        margin: 0.5em;
+        width: 18em;
+        min-height: 20em;
+    }
+}
