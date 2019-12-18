@@ -81,7 +81,6 @@ function draw_new_house_form() { ?>
 
 <?php function draw_house_card($house, $rating_info, $photo) { ?>
     <article class="card house_card">
-        <!-- this is a mock picture -->
         <img src="../images/<?php if($photo === false || $photo === '' || $photo === null){
                                         echo 'house_default.jpg';
                                     } else {
