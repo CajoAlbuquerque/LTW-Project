@@ -11,11 +11,11 @@
     align-items: center;
 
     background-color: rgb(61,61,83);
-    height: 30em;
+    height: auto;
     flex-basis: 100%;
 }
 
-.images img {
+.images > img {
     height: 90%;
 }
 
@@ -326,10 +326,16 @@
 
     .house{
         margin: 0.5em;
+        flex-basis: 100%;
+    }
+
+    .images{
+        height: auto;
     }
 
     .images > img{
-        width: 100vw;
+        width: 70%;
+        height: auto;
     }
 
     .house > .house_info{
