@@ -18,10 +18,16 @@
         unset($_SESSION['redirect']);
     }
 
+    // Validating username
+    if( !preg_match('/^[a-zA-Z0-9 _-]+$/', $username) ){
+        $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Invalid username.');
+        die(header('Location: ../pages/login.php'));
+    }
+
     // Checks if the password matches the saved hash
     if(checkPassword($username, $password)){
         $_SESSION['username'] = $username;
-        $_SESSION['messages'][] = array('type' => 'success', 'content' => 'Loged In successfully!');
+        $_SESSION['messages'][] = array('type' => 'success', 'content' => 'Logged In successfully!');
         header('Location: ../pages/' . $destination);
     } else {
         $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Username or password do not match!');

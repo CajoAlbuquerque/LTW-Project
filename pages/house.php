@@ -9,6 +9,9 @@
     include('../templates/temp_reservation.php');
 
     $houseID = $_GET['houseID'];
+    if(!is_numeric($houseID)){
+        die(header('Location: ../pages/homulessness.php'));
+    }
 
     $editable = false;
 
@@ -23,13 +26,22 @@
     }
 
     draw_black_header($photo);
+    draw_style('houseStyle');
     draw_script('house_reservation');
     draw_script('edit_house');
+    ?> <section id="main"> <?php
     draw_house($house, $owner, $comments, $editable);
     if(isset($_SESSION['username'])){
         $username = $_SESSION['username'];
         $user = getUserByName($username);
-        draw_reservation_form($house, $user);
+        if(isset($_POST['commenting'])) {
+            draw_script('add_comment');
+            draw_comment_form($houseID, $user['userID']);
+        }
+        else{
+            draw_reservation_form($house, $user);
+        }
     }
+    ?> </section> <?php
     draw_footer();
 ?>

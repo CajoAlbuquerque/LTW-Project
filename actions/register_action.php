@@ -26,6 +26,13 @@
         $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Username can only contain letters, numbers, spaces or underscores!');
         die(header('Location: ../pages/register.php'));
     }
+
+    // Validating name
+    if( !preg_match('/^[a-zA-Z0-9 -]+$/', $name) ){
+        $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Name can only contain letters, numbers and spaces!');
+        die(header('Location: ../pages/register.php'));
+    }
+
     // Checking if username or email already exist
     if ( getUserByEmail($email) !== false || getUserByName($username) !== false ) {
         $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Email or username already exist!');

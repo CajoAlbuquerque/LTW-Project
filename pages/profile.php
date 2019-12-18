@@ -24,6 +24,9 @@
     // the profile page of that user is shown instead
     if(isset($_GET['username'])) {
         $username = $_GET['username'];
+        if( !preg_match('/^[a-zA-Z0-9 _-]+$/', $username) ){
+            die(header('Location: ../pages/homulessness.php'));
+        }
     }
 
     $photo = '';
@@ -45,8 +48,10 @@
     draw_style('profile');
     draw_style('inputStyle');
     draw_style('messages');
-    draw_style('templateHouseStyle');
+    draw_style('templateHouseCardStyle');
+    draw_style('templateReservationCardStyle');
     
+    draw_script('card');
     draw_script('profile_displays');
     if($editable){
         draw_script('edit_user');

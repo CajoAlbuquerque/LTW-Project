@@ -17,15 +17,25 @@ function swap_to_reservations() {
 
     image.style.display = "none"
     fields = document.getElementsByClassName('fields')[0]
+
+    add_card_links()
 }
 
 function swap_to_houses() {
     fields.outerHTML = '<div id="MyHouses" class="fields">' +
+        '<article id="AddHouse" class="card house_card">' +
+        '<img src="../icons/add_icon.png">' + 
+        '<a href="../pages/add_house.php">' +
+            'Add a new house' +
+        '</a>' +
+        '</article>' +
         houses +
         '</div>'
 
     image.style.display = "none"
     fields = document.getElementsByClassName('fields')[0]
+
+    add_card_links()
 }
 
 function reservations_received() {

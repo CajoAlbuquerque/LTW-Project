@@ -14,8 +14,13 @@ if( !preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/', $startDate) || !preg_match('/^
     die(header("Location: ../pages/house.php?houseID=$houseID"));
 }
 
+if(!(is_numeric($userID) || is_numeric($houseID) || is_numeric($priceDay))) {
+    $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Invalid values were found.');
+    die(header("Location: ../pages/homepage.php"));
+}
+
 try {
-    insertReservation($userID, $houseID, $startDate, $endDate, $priceDay); //TODO: calculate total price
+    insertReservation($userID, $houseID, $startDate, $endDate, $priceDay);
     $_SESSION['messages'][] = array('type' => 'success', 'content' => 'Reserved house successfully.');
     header("Location: ../pages/house.php?houseID=$houseID");
 }

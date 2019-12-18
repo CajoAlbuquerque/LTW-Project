@@ -1,0 +1,41 @@
+@import"templateCardStyle.css";
+
+.card{
+    display: flex;
+    flex-direction: column;
+}
+
+.reservation_card > section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.reservation_card > section > a{
+    padding-bottom: 0.5em;
+}
+
+.reservation_button{
+    margin-top: 0.5em;
+    align-self: center;
+}
+
+.reservation_button .reservation_add_comment input[type="submit"]{
+    padding: 5px;
+    align-self: center;
+    width: auto;
+    height: auto;
+    font-size: small;
+    border-radius: 5px;
+}
+
+.reservation_button a{
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+    margin: 0;
+    font-size: small;
+    background-color: rgb(237, 61, 61);
+    border: none;
+    border-radius: 5px;
+}  

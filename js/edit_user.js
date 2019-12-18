@@ -4,10 +4,10 @@
 
 //let fields = document.getElementsByClassName('fields')[0]
 //let image = document.getElementById('profile_img')
+//let username = document.getElementById('username')
 let edit_link = document.getElementById('edit')
 let pass_link = document.getElementById('pass')
 let original_src = image.src
-//let username = document.getElementById('username')
 let user
 
 function null_or_empty(value) {

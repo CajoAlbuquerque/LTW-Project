@@ -14,7 +14,9 @@ form input{
     height: 3em;
     border:none;
 
+
     box-sizing: border-box;
+    font-family: 'Montserrat', 'cursive';
 }
 
 form input::placeholder{
@@ -46,7 +48,7 @@ form input[type="submit"]{
 
     background-color: white;
     box-shadow: 0 6px 10px rgba(0,0,0,0.19), 0 2px 6px rgba(0,0,0,0.23);
-    /* border: solid 1px black; */
+
     padding: 1.5em;
 }
 
@@ -80,7 +82,7 @@ input[type="date"]::-webkit-inner-spin-button{
 
 @media only screen and (max-width: 800px) {
     form input{
-        width: 18em;
+        width: 75vw;
         height: 2.5em;
     }
 }

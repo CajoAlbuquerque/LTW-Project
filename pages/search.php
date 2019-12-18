@@ -12,7 +12,8 @@
     draw_black_header($photo);
     draw_style('search');
     draw_style('inputStyle');
-    draw_style('templateHouseStyle');
+    draw_style('templateHouseCardStyle');
+    draw_script('card');
     draw_script('search_houses');
     draw_search();
     draw_footer();
