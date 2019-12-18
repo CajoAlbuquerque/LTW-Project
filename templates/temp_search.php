@@ -1,7 +1,4 @@
-<?php
-    include_once('../templates/temp_house.php');
-
-function draw_search() {?>
+<?php function draw_search() {?>
     <section id="main">
         <section id="filters">
             <form>

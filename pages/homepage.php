@@ -2,6 +2,7 @@
     include_once('../session.php');
     include_once('../database/db_house.php');
     include_once('../database/db_images.php');
+    include_once('../database/db_comments.php');
     include_once('../templates/temp_common.php');
     include_once('../templates/temp_house.php');
 
@@ -40,8 +41,9 @@
                         }
                         
                         $i = $i + 1;
-                        
-                        draw_house_card($house);
+                        $rating_info = getRatingOfHouse($house['houseID']);
+                        $house_photo = getHouseThumbnail($house['houseID']);
+                        draw_house_card($house, $rating_info, $house_photo);
                     }
                 ?>
             </div>

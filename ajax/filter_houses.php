@@ -1,5 +1,7 @@
 <?php
     include_once('../database/db_house.php');
+    include_once('../database/db_comments.php');
+    include_once('../database/db_images.php');
     include_once('../database/db_reservation.php');
 
     function checkDates($house, $check_in, $check_out) {
@@ -37,7 +39,11 @@
 
     foreach($houses as $house){
         if(checkDates($house['houseID'], $check_in, $check_out) && checkPrice($house['priceDay'], $min_price, $max_price)){
-            array_push($filtered_houses, $house);
+            $rating_info = getRatingOfHouse($house['houseID']);
+            $house_photo = getHouseThumbnail($house['houseID']);
+            $photo = array('photo' => $house_photo);
+            $info = array_merge($house, $rating_info, $photo);
+            array_push($filtered_houses, $info);
         }
     }
 

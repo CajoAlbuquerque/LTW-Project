@@ -71,4 +71,22 @@
         $stmt = $db->prepare('INSERT INTO HouseImages(house, image) VALUES (?,?)');
         $stmt->execute(array($houseID, $imageID));
     }
+
+    function getHouseThumbnail($houseID) {
+        global $db;
+
+        $stmt = $db->prepare('SELECT * FROM HouseImages JOIN Images ON image=imageID WHERE house = ? ORDER BY image ASC');
+        $stmt->execute(array($houseID));
+        $images = $stmt->fetchAll();
+
+        return $images ? $images[0]['hash'] : false;
+    }
+
+    function getImagesOfHouse($houseID) {
+        global $db;
+        $stmt = $db->prepare('SELECT * FROM HouseImages JOIN Images ON HouseImages.image = Images.imageID WHERE house = ?');
+        $stmt->execute(array($houseID));
+
+        return $stmt->fetchAll();
+    }
 ?>

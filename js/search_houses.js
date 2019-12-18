@@ -11,6 +11,8 @@ let get_url = window.location.search.substr(1);
 let get_url_parsed = get_url.split('&');
 let get_params = {};
 let filter_values = {};
+let expected_requests = 0, current_requests = 0;
+let last_request;
 
 get_url_parsed.forEach(function (key_value) {
     let temp = key_value.split("=");
@@ -73,21 +75,35 @@ function updateResults() {
 }
 
 function printHouse(house) {
-    return '<article class="card">' +
-            //TODO: display main image of the house
-            '<img src="https://picsum.photos/400/200">' +
-                '<section>' +
-                    '<a href="../pages/house.php?houseID=' + house['houseID'] + '">' +
-                        house['title'] +
-                    '</a>' +
-                    '<section class="info">' +
-                        '<ul>' +
-                            '<li>' + house['priceDay'] + '€\\day </li>' +
-                            '<li>' + house['location'] + '</li>' +
-                        '</ul>' +
-                    '</section>' +
+    let content = '<article class="card house_card">' +
+                    '<img src="../images/';
+
+    if(house['photo'] === false || house['photo'] === '' || house['photo'] === null){
+        content += 'house_default.jpg';
+    }
+    else {
+        content += house['photo'];
+    }
+
+    content += '">' +
+            '<section>' +
+                '<a href="../pages/house.php?houseID=' + house['houseID'] +'">' +
+                    house['title'] +
+                '</a>' +
+                '<section class="info">' +
+                    '<ul>' +
+                        '<li>Price:' + house['priceDay'] + '€\\day </li>' +
+                        '<li>Place:' + house['location'] + '</li>' +
+                    '</ul>' +
+                    '<div class="rating">' +
+                        '<p>' + house['rating'] + '<img src="../icons/star.png">' +
+                        '<p>(' + house['count'] + ')</p>' +
+                    '</div>' +
                 '</section>' +
-            '</article>';
+            '</section>' +
+        '</article>';
+
+    return content;
 }
 
 function setupFilters() {

@@ -2,7 +2,7 @@
 
 include_once('../database/db_house.php');
 
-function draw_reservation_card($reservation, $editable) { 
+function draw_reservation_card($reservation, $photo, $editable) { 
     
     $house = getHouse($reservation['house']);
     $d = strtotime("+2 days");
@@ -10,8 +10,11 @@ function draw_reservation_card($reservation, $editable) {
     
     ?>
         <article class="card reservation_card">
-            <!-- this is a mock picture -->
-            <img src="https://picsum.photos/400/200">
+            <img src="../images/<?php if($photo === false || $photo === '' || $photo === null){
+                                        echo 'house_default.jpg';
+                                    } else {
+                                        echo $photo;
+                                    }?>">
             <section>
                 <a href="../pages/house.php?houseID=<?=$reservation['house']?>">
                     <?=$house['title']?>
