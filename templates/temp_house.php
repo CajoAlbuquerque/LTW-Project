@@ -1,13 +1,10 @@
 <?php function draw_house($house, $owner, $comments, $rating_info, $editable) { ?>
 <section class="images">
-    <!-- this is a mock image -->
-    <img src="https://picsum.photos/400/200">
 </section>
 <article class="house">
     <section class="house_info">
         <a href="../pages/house.php?houseID=<?=$house['houseID']?>">
             <h2><?=$house['title']?></h2>
-            <!-- TODO: display all images of the house -->
         </a>
         <section class="info">
             <ul>

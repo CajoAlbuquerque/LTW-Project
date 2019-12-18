@@ -14,6 +14,32 @@
     flex-basis: 100%;
 }
 
+.images img {
+    height: 90%;
+}
+
+.images button {
+    margin: auto 0;
+    height: 90%;
+    padding: 0 0.5em;
+    align-self: stretch;
+
+    font-size: 2em;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: rgba(0, 0, 0, 0.9);
+}
+
+#left_button {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius:  20px;
+}
+
+#right_button {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
 .house {
     display:flex;
     flex-direction: column;

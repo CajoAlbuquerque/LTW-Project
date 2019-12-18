@@ -90,10 +90,6 @@ h2 {
     align-items: center;
 }
 
-#preview > img{
-    width: 100%;
-} 
-
 .preview_obj {
     position: relative;
 
@@ -151,4 +147,8 @@ h2 {
         justify-content: center;
         align-items: center;
     }
+
+    #preview > img{
+        width: 100%;
+    } 
 }

@@ -45,11 +45,21 @@ function right_button_click() {
 function set_up_gallery() {
     image_elements = document.getElementsByClassName('house_image')
     image_number = image_elements.length
-    left_button = document.getElementById('left_button')
-    right_button = document.getElementById('right_button')
 
     if(image_number > 1){
         //add swap listeners
+        left_button = document.createElement('button')
+        left_button.id = "left_button"
+        left_button.setAttribute('type' , 'button');
+        left_button.innerHTML = '&lt'
+        right_button = document.createElement('button')
+        right_button.id = "right_button"
+        right_button.setAttribute('type' , 'button');
+        right_button.innerHTML = '&gt'
+
+        section_images.prepend(left_button)
+        section_images.append(right_button)
+
         left_button.addEventListener('click', left_button_click)
         right_button.addEventListener('click', right_button_click)
         for(let i = 1; i < image_number; i++){
@@ -60,11 +70,7 @@ function set_up_gallery() {
 
 function images_received() {
     images_html = this.responseText
-    section_images.outerHTML = '<section class="images">' +
-                                '<button id="left_button" type="button"> left </button>' +
-                                images_html +
-                                '<button id="right_button" type="button"> right </button>' +
-                                '</section>'
+    section_images.outerHTML = '<section class="images">' + images_html + '</section>'
     
     section_images = document.getElementsByClassName('images')[0]
     set_up_gallery()
