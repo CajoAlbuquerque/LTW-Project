@@ -60,6 +60,7 @@
 .info > ul > li{
     padding: 0;
     color: rgb(61,61,83);
+    font-size: larger;
 }
 
 .info .rating{
@@ -73,11 +74,11 @@
 .info .rating > p{
     margin: 0;
     color: rgb(61,61,83);
-    font-size: medium;
+    font-size: larger;
 }
 
 .info .rating > p:nth-child(2){
-    font-size: small;
+    font-size: large;
 }
 
 .info .rating img{
