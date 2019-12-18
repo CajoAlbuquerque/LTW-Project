@@ -1,6 +1,7 @@
 #main {
     display:flex;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .images {
@@ -33,20 +34,25 @@
     text-align: center;
 }
 
+.house_info > a > h2 {
+    font-size: xx-large;
+}
+
 .info {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .info > ul{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: start;
 
     height: 100%;
     width: 50%;
     margin: 0;
+    margin-left: 1em;
     padding: 0;
     list-style: none;
 }
@@ -54,24 +60,25 @@
 .info > ul > li{
     padding: 0;
     color: rgb(61,61,83);
+    font-size: larger;
 }
 
 .info .rating{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: end;
     width: 50%;
 }
 
 .info .rating > p{
     margin: 0;
     color: rgb(61,61,83);
-    font-size: medium;
+    font-size: larger;
 }
 
 .info .rating > p:nth-child(2){
-    font-size: small;
+    font-size: large;
 }
 
 .info .rating img{
@@ -90,6 +97,7 @@
 
 .owner > span {
     padding: 0 1em;
+    font-weight: bold;
 }
 
 .owner_buttons {
@@ -105,6 +113,32 @@
     background-color: rgb(237, 61, 61);
     border: none;
     border-radius: 5px;
+}
+
+.owner_buttons > #add_img {
+    display: flex;
+    flex-direction: row;
+    margin-top: 0;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5px;
+}
+
+.owner_buttons > #add_img > input {
+    padding: 5px;
+    margin: 0;
+    width: auto;
+    height: auto;
+}
+
+.owner_buttons > #add_img > input[type="submit"] {
+    text-decoration: none;
+    color: white;
+    font-size: small;
+    background-color: rgb(237, 61, 61);
+    border: none;
+    border-radius: 5px;
+    margin: 0.5em;
 }
 
 .comments {
@@ -156,12 +190,33 @@
     margin: 0.2em 0.5em;
 }
 
-.reservation_form {
+.reservation_form , .comment_form{
     display: flex;
     flex-basis: 30%;
+    justify-content: center;
 }
 
-.comment_form {
+.reservation_form > form , .comment_form > form {
     display: flex;
-    flex-basis: 30%;
+    justify-content: center;
+}
+
+.reservation_form label, .comment_form label {
+    text-align: left;
+    border-radius:5px;
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+    margin: 5px;
+    padding: 3px;
+}
+
+.reservation_form input:not([type="submit"]), .comment_form input:not([type="submit"]) {
+    width: auto;
+}
+
+.reservation_form input[type="submit"], .comment_form input[type="submit"] {
+    margin: 0 5px;
+    width: auto;
+    border-radius:5px;
 }

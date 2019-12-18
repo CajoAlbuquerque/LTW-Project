@@ -21,9 +21,8 @@
         </a>
         <section class="info">
             <ul>
-                <li> <?=$house['priceDay']?>€\day </li>
-                <li> <?=$house['location']?></li>
-                <li> Add more tags </li>
+                <li>Price: <?=$house['priceDay']?>€\day </li>
+                <li>Place: <?=$house['location']?></li>
             </ul>
             <div class="rating"> 
                 <p><?=$rating_info['rating']?><img src="../icons/star.png">

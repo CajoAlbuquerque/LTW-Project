@@ -34,6 +34,7 @@
             <meta http-equiv="X-UA-Compatible" content="ie=edge">
             <link href="https://fonts.googleapis.com/css?family=Montserrat|Pacifico&display=swap" rel="stylesheet"> 
             <link href="../css/templateStyle.css" rel="stylesheet" >
+            <link href="../css/inputStyle.css" rel="stylesheet" >
             <script src="../js/search_form.js" defer></script>
             <title>hömu - Find your place</title>
         </head>
