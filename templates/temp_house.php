@@ -13,7 +13,7 @@
             </ul>
             <div class="rating"> 
                 <p><?=$rating_info['rating']?><img src="../icons/star.png">
-                <p>(<?=$rating_info['count']?>)</p>
+                <p>(<?=$rating_info['count']?> users)</p>
             </div>
         </section>
         <section class="description">
@@ -41,7 +41,7 @@
             <?php foreach ($comments as $comment) { ?>
                 <li><p><?=$comment['comment']?></p>
                     <section class="comment_footer">
-                        <span class="rating"> <?=$comment['stars']?> stars </span>
+                        <span class="rating"> <?=$comment['stars']?><img src="../icons/star.png"></span>
                         <span class="commenter">by <a href="../pages/profile.php?username=<?=$comment['username']?>"> <?=$comment['username']?> </a></span>
                     </section>
                 </li>
@@ -93,7 +93,7 @@ function draw_new_house_form() { ?>
                 </ul>
                 <div class="rating"> 
                     <p><?=$rating_info['rating']?><img src="../icons/star.png">
-                    <p>(<?=$rating_info['count']?>)</p>
+                    <p>(<?=$rating_info['count']?> users)</p>
                 </div>
             </section>
         </section>

@@ -15,7 +15,7 @@ let house
 
 function swap_to_edit() {
     house_info.outerHTML = '<section class="house_info">' +
-        '<form id="house_edit" action="../actions/edit_house_action.php">' +
+        '<form class="house_edit" action="../actions/edit_house_action.php">' +
         '<input type="hidden" name="houseID" value="' + house['houseID'] + '">' +
         '<input type="text" name="title" value="' + house['title'] + '">' +
         '<input type="number" name="price" value="' + house['priceDay'] + '">' +
@@ -27,6 +27,9 @@ function swap_to_edit() {
         'Discard Changes' + '</a>' +
         '</section>'
     
+        let reservation_form = document.getElementsByClassName('reservation_form')[0]
+        reservation_form.style.display = "none";
+
     house_info = document.getElementsByClassName('house_info')
 }
 
