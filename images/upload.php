@@ -48,7 +48,7 @@
         $height = imagesy($original);
         $mediumwidth = $width;
         $mediumheight = $height;
-        if ($mediumheight > 432) {
+        if ($mediumheight != 432) {
             $mediumheight = 432;
             $mediumwidth = $mediumwidth * ( $mediumheight / $height );
         }

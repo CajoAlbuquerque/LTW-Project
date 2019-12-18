@@ -50,7 +50,7 @@ CREATE TABLE Comment (
 );
 
 CREATE TABLE HouseImages (
-    house INTEGER REFERENCS House(houseID),
+    house INTEGER REFERENCES House(houseID),
     image INTEGER REFERENCES Images(imageID),
     PRIMARY KEY (house, image)
 );

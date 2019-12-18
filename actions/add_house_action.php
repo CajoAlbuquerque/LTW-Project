@@ -24,7 +24,7 @@
         die(header('Location: ../pages/add_house.php'));
     }
     //description validation
-    if( !preg_match('/^[a-zA-Z0-9 ,.!]+$/', $description) ){
+    if( !preg_match('/^[a-zA-Z0-9 ,.!-]+$/', $description) ){
         $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Description can only contain letters, numbers and spaces.');
         die(header('Location: ../pages/add_house.php'));
     }
@@ -50,17 +50,6 @@
             connectHouseImage($houseID, $info['photoId']);
             save_house_photo($_FILES[$image_name]['tmp_name'], $info['destination']);
         }
-        
-        // $total = count($_FILES['images']['name']);
-        // for( $i = 0; $i < $total; $i++) {
-        //     if($_FILES['images']['tmp_name'][$i] != ""){
-        //         $filename = $_FILES['images']['tmp_name'][$i];
-        //         error_log("got file $i with name $filename", 0);
-        //         $info = insertImage($_FILES['images']['name'][$i]);
-        //         connectHouseImage($houseID, $info['photoId']);
-        //         save_house_photo($_FILES['images']['tmp_name'][$i], $info['destination']);
-        //     }
-        // }
         $_SESSION['messages'][] = array('type' => 'success', 'content' => 'Registered house successfully.');
         header('Location: ../pages/homepage.php');
     }

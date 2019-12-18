@@ -14,6 +14,7 @@
 
     draw_black_header($photo);
     draw_style('inputStyle');
+    draw_style('messages');
     draw_style('addHouse');
     draw_script('add_house');
 

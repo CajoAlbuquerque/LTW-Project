@@ -32,13 +32,13 @@
     }
 
     // Validating nationality
-    if( !preg_match('/^[a-zA-Z -]+$/', $nationality) ){
+    if( !preg_match('/^[a-zA-Z -]*$/', $nationality) ){
         $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Nationality can only contain letters and spaces!');
         die(header('Location: ../pages/profile.php'));
     }
 
     // Validating age
-    if(!is_numeric($age) ){
+    if(!is_numeric($age) && $age !== '' && $age !== null){
         $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Age numbers!');
         die(header('Location: ../pages/profile.php'));
     }

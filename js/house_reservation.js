@@ -48,6 +48,5 @@ check_out_reservation.addEventListener('input', function () {
         let in_date = new Date(check_in_reservation.value);
         let out_date = new Date(check_out_reservation.value);
         output.value = date_diff(out_date, in_date) * price;
-        output.value += '€';
     }
 });
