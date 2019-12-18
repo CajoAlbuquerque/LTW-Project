@@ -33,14 +33,14 @@
         </section>
         <section id="Images">
             <div id="highlighted">
-                <img src="../icons/housemock.jpg">
+                <img src="../icons/housemock.jpg" alt="Image of a house">
             </div>
             <div id="lessImportant">
                 <div id="small">
-                    <img src="../icons/housemock1.jpeg">
+                    <img src="../icons/housemock1.jpeg" alt="Image of a house">
                 </div>
                 <div id="medium">
-                    <img src="../icons/housemock2.jpg">
+                    <img src="../icons/housemock2.jpg" alt="Image of a house">
                 </div>
             </div>
         </section>

@@ -31,7 +31,6 @@ function left_button_click() {
     if(index == 0){index = image_number - 1}
     else{index--}
     image_elements[index].style.display = "inline"
-        console.log("index is " + index)
 }
 
 function right_button_click() {
@@ -39,7 +38,6 @@ function right_button_click() {
     index++
     if(index == image_number){index = 0}
     image_elements[index].style.display = "inline"
-    console.log("index is " + index)
 }
 
 function set_up_gallery() {

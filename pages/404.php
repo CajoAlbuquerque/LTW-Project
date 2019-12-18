@@ -8,7 +8,7 @@
         <section id="OutBorder">
             <section id="InnerBorder">
                 <div id="logo">
-                    <img src="../icons/404_cat.png">
+                    <img src="../icons/404_cat.png" alt="A sad cat">
                 </div>
                 <p>Seems you took a wrong turn somewhere...</p>
                 <p>Try heading back to the homepage by clicking the "hömu" logo up top to get back on track, maybe?</p>

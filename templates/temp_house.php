@@ -12,7 +12,7 @@
                 <li>Place: <?=$house['location']?></li>
             </ul>
             <div class="rating"> 
-                <p><?=$rating_info['rating']?><img src="../icons/star.png">
+                <p><?=$rating_info['rating']?><img src="../icons/star.png" alt="Star icon">
                 <p>(<?=$rating_info['count']?> users)</p>
             </div>
         </section>
@@ -41,7 +41,7 @@
             <?php foreach ($comments as $comment) { ?>
                 <li><p><?=$comment['comment']?></p>
                     <section class="comment_footer">
-                        <span class="rating"> <?=$comment['stars']?><img src="../icons/star.png"></span>
+                        <span class="rating"> <?=$comment['stars']?><img src="../icons/star.png" alt="Star icon"></span>
                         <span class="commenter">by <a href="../pages/profile.php?username=<?=$comment['username']?>"> <?=$comment['username']?> </a></span>
                     </section>
                 </li>
@@ -81,7 +81,7 @@ function draw_new_house_form() { ?>
                                         echo 'house_default.jpg';
                                     } else {
                                         echo $photo;
-                                    }?>">
+                                    }?> alt="Main image of the house">
         <section>
             <a href="../pages/house.php?houseID=<?=$house['houseID']?>">
                 <?=$house['title']?>
@@ -92,7 +92,7 @@ function draw_new_house_form() { ?>
                     <li>Place: <?=$house['location']?></li>
                 </ul>
                 <div class="rating"> 
-                    <p><?=$rating_info['rating']?><img src="../icons/star.png">
+                    <p><?=$rating_info['rating']?><img src="../icons/star.png" alt="Star icon">
                     <p>(<?=$rating_info['count']?> users)</p>
                 </div>
             </section>

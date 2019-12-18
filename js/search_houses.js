@@ -85,7 +85,7 @@ function printHouse(house) {
         content += house['photo'];
     }
 
-    content += '">' +
+    content += '" alt="Main image of the house">' +
             '<section>' +
                 '<a href="../pages/house.php?houseID=' + house['houseID'] +'">' +
                     house['title'] +
@@ -96,7 +96,7 @@ function printHouse(house) {
                         '<li>Place:' + house['location'] + '</li>' +
                     '</ul>' +
                     '<div class="rating">' +
-                        '<p>' + house['rating'] + '<img src="../icons/star.png">' +
+                        '<p>' + house['rating'] + '<img src="../icons/star.png" alt="Star icon">' +
                         '<p>(' + house['count'] + ')</p>' +
                     '</div>' +
                 '</section>' +

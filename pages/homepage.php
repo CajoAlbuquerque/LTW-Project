@@ -51,17 +51,17 @@
 
         <footer>
             <section id="help">
-                <img src="../icons/help_icon.png">
+                <img src="../icons/help_icon.png" alt="Encircled question mark icon">
                 <section>
                     <p>Is this your first time? Do not worry!<span>Our sellers' and services' are 100% legit.</span></p>
                     <p>For any doubt or existencial question, contact us:<span>thisisafake@email.com</span></p>
                 </section>
             </section>
             <section id="aboutus">
-                <a href="aboutus.php"><img src="../icons/brand_white.png"></a>
+                <a href="aboutus.php"><img src="../icons/brand_white.png" alt="Hömu logo"></a>
             </section>
             <section id="login">
-                <a href="login.php"><img src="../icons/profile_white.png"></a>
+                <a href="login.php"><img src="../icons/profile_white.png" alt="Profile icon"></a>
                 <p><a href="register.php">Register</a> or <a href="login.php">login</a> to start your demand for the vacation of your dreams.</p>
             </section>
         </footer>

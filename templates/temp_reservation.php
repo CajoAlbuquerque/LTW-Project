@@ -14,7 +14,7 @@ function draw_reservation_card($reservation, $photo, $editable) {
                                         echo 'house_default.jpg';
                                     } else {
                                         echo $photo;
-                                    }?>">
+                                    }?>" alt="Main image of the house">
             <section>
                 <a href="../pages/house.php?houseID=<?=$reservation['house']?>">
                     <?=$house['title']?>

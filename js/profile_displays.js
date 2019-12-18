@@ -24,7 +24,7 @@ function swap_to_reservations() {
 function swap_to_houses() {
     fields.outerHTML = '<div id="MyHouses" class="fields">' +
         '<article id="AddHouse" class="card house_card">' +
-        '<img src="../icons/add_icon.png">' + 
+        '<img src="../icons/add_icon.png" alt="Add icon">' + 
         '<a href="../pages/add_house.php">' +
             'Add a new house' +
         '</a>' +
