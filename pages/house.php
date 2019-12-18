@@ -2,6 +2,7 @@
     include_once('../database/db_house.php');
     include_once('../database/db_user.php');
     include_once('../database/db_comments.php');
+    include_once('../database/db_images.php');
     include_once('../session.php');
     include('../templates/temp_common.php');
     include('../templates/temp_house.php');
@@ -17,12 +18,14 @@
     $house = getHouse($houseID);
     $owner = getUser($house['owner']);
     $comments = getAllCommentsOfHouse($houseID);
+    $photo = '';
 
     if(isset($_SESSION['username'])){
         $editable = $owner['username'] == $_SESSION['username'];
+        $photo = getUserImage($_SESSION['username']);
     }
 
-    draw_black_header();
+    draw_black_header($photo);
     draw_style('houseStyle');
     draw_script('house_reservation');
     draw_script('edit_house');

@@ -3,6 +3,8 @@
     include_once('../database/db_house.php');
     include_once('../database/db_user.php');
     include_once('../templates/temp_message.php');
+    include_once('../database/db_images.php');
+    include_once('../images/upload.php');
 
     $username = $_POST['username'];
     $title = $_POST['title'];
@@ -29,7 +31,36 @@
 
     try {
         $user = getUserByName($username);
-        insertHouse($user['userID'], $title, $price, $location, $description);
+        $houseID = insertHouse($user['userID'], $title, $price, $location, $description); 
+        
+        for($i = 0; ; $i++){
+            $image_name = 'image' . $i;
+            if(!isset($_FILES[$image_name])){
+                break;
+            }
+
+            $filename = $_FILES[$image_name]['tmp_name'];
+
+            if($_FILES[$image_name]['tmp_name'] == "") {
+                error_log('tmp_name is EMPTY');
+            }
+
+            error_log("got file $i with name $filename", 0);
+            $info = insertImage($_FILES[$image_name]['name']);
+            connectHouseImage($houseID, $info['photoId']);
+            save_house_photo($_FILES[$image_name]['tmp_name'], $info['destination']);
+        }
+        
+        // $total = count($_FILES['images']['name']);
+        // for( $i = 0; $i < $total; $i++) {
+        //     if($_FILES['images']['tmp_name'][$i] != ""){
+        //         $filename = $_FILES['images']['tmp_name'][$i];
+        //         error_log("got file $i with name $filename", 0);
+        //         $info = insertImage($_FILES['images']['name'][$i]);
+        //         connectHouseImage($houseID, $info['photoId']);
+        //         save_house_photo($_FILES['images']['tmp_name'][$i], $info['destination']);
+        //     }
+        // }
         $_SESSION['messages'][] = array('type' => 'success', 'content' => 'Registered house successfully.');
         header('Location: ../pages/homepage.php');
     }

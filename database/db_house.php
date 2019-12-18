@@ -22,6 +22,9 @@
 
         $stmt = $db->prepare('INSERT INTO House(title, priceDay, location, description, owner) VALUES (?,?,?,?,?)');
         $stmt->execute(array($title, $price, $location, $description, $userID));
+
+        $id = $db->lastInsertId();
+        return $id;
     }
 
     function filterHouse($location) {

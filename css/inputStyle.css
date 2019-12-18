@@ -13,6 +13,9 @@ form input{
     width: 22em;
     height: 3em;
     border:none;
+
+
+    box-sizing: border-box;
     font-family: 'Montserrat', 'cursive';
 }
 
@@ -25,6 +28,7 @@ form input[type="submit"]{
     background-color: var(--color-red);
     color: white;
     border:none;
+    cursor: pointer;
 }
 
 
