@@ -23,11 +23,11 @@ form.addEventListener('submit', function (evt) {
         formdata.append('image' + i, image);
     });
 
+    request.onload = () => window.location.replace('../pages/homepage.php');
     request.open('POST', form.getAttribute('action'), true);
     request.send(formdata);
     
     evt.preventDefault();
-    window.location.replace('../pages/homepage.php');
 });
 
 function previewImages(event) {

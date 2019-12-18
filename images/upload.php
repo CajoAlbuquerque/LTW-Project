@@ -26,8 +26,8 @@
     function save_profile_photo($image, $destination) {
         $destinationName = "../images/$destination";
         //Temporarily move the image to its destination
-        move_uploaded_file($image['tmp_name'], $destinationName);
-        $original = imagecreatefromfile($destinationName);
+
+        $original = imagecreatefromfile($image['tmp_name']);
 
         $width = imagesx($original);
         $height = imagesy($original);
@@ -41,9 +41,21 @@
 
     function save_house_photo($image_tmp_name, $destination) {
         $destinationName = "../images/$destination";
-        //move_uploaded_file($image_tmp_name, $destinationName);
-        $image = imagecreatefromfile($image_tmp_name);
-        //TODO: resizing?
-        imagejpeg($image, $destinationName);
+        
+        $original = imagecreatefromfile($image_tmp_name);
+
+        $width = imagesx($original);
+        $height = imagesy($original);
+        $mediumwidth = $width;
+        $mediumheight = $height;
+        if ($mediumheight > 432) {
+            $mediumheight = 432;
+            $mediumwidth = $mediumwidth * ( $mediumheight / $height );
+        }
+
+        // Create and save a medium image
+        $photo = imagecreatetruecolor($mediumwidth, $mediumheight);
+        imagecopyresized($photo, $original, 0, 0, 0, 0, $mediumwidth, $mediumheight, $width, $height);
+        imagejpeg($photo, $destinationName);
     }
 ?>
