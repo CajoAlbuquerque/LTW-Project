@@ -24,7 +24,7 @@
         <section class="owner">
             <span> Owner </span>
             <section class="owner_buttons">
-                <a id="owner_profile"href="../pages/profile.php?username=<?=$owner['username']?>"><?=$owner['name']?> </a>
+                <a id="owner_profile" href="../pages/profile.php?username=<?=$owner['username']?>"><?=$owner['name']?> </a>
                 <?php if($editable) {?>
                     <a id="edit" href="#">Edit House</a>
                     <form id="add_img" action="../actions/add_house_img_action.php" method="POST" enctype="multipart/form-data">
@@ -35,6 +35,7 @@
                 <?php }?>
             </section>
         </section>
+    </section>
     <section class="comments">
         <h3> Comments </h3>
         <ul>
@@ -81,7 +82,7 @@ function draw_new_house_form() { ?>
                                         echo 'house_default.jpg';
                                     } else {
                                         echo $photo;
-                                    }?> alt="Main image of the house">
+                                    }?>" alt="Main image of the house">
         <section>
             <a href="../pages/house.php?houseID=<?=$house['houseID']?>">
                 <?=$house['title']?>
