@@ -9,25 +9,25 @@ get_url_parsed.forEach(function (key_value) {
     get_params[decodeURIComponent(temp[0])] = decodeURIComponent(temp[1])
 })
 
-let house_info = document.getElementById('house_info')
+let house_info = document.getElementsByClassName('house_info')[0]
 let edit_link = document.getElementById('edit')
 let house
 
 function swap_to_edit() {
-    house_info.outerHTML = '<section id="house_info">' +
+    house_info.outerHTML = '<section class="house_info">' +
         '<form id="house_edit" action="../actions/edit_house_action.php">' +
         '<input type="hidden" name="houseID" value="' + house['houseID'] + '">' +
         '<input type="text" name="title" value="' + house['title'] + '">' +
         '<input type="number" name="price" value="' + house['priceDay'] + '">' +
         '<input type="text" name="location" value="' + house['location'] + '">' +
-        '<input type="text" name="description" value="' + house['description'] + '">' +
+        '<input type="text" name="description" id="house_desc" value="' + house['description'] + '">' +
         '<input type="submit" value="Confirm">' +
         '</form>' +
         '<a id="discard" href="../pages/house.php?houseID=' + house['houseID'] + '">' +
         'Discard Changes' + '</a>' +
         '</section>'
     
-    house_info = document.getElementById('house_info')
+    house_info = document.getElementsByClassName('house_info')
 }
 
 function house_received() {

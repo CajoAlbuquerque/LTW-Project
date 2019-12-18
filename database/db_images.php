@@ -81,4 +81,12 @@
 
         return $images ? $images[0]['hash'] : false;
     }
+
+    function getImagesOfHouse($houseID) {
+        global $db;
+        $stmt = $db->prepare('SELECT * FROM HouseImages JOIN Images ON HouseImages.image = Images.imageID WHERE house = ?');
+        $stmt->execute(array($houseID));
+
+        return $stmt->fetchAll();
+    }
 ?>

@@ -29,7 +29,10 @@
     draw_black_header($photo);
     draw_style('houseStyle');
     draw_script('house_reservation');
+    draw_script('display_image_gallery');
+    if($editable){
     draw_script('edit_house');
+    }
     ?> <section id="main"> <?php
     draw_house($house, $owner, $comments, $rating_info, $editable);
     if(isset($_SESSION['username'])){
