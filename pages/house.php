@@ -18,6 +18,7 @@
     $house = getHouse($houseID);
     $owner = getUser($house['owner']);
     $comments = getAllCommentsOfHouse($houseID);
+    $rating_info = getRatingOfHouse($houseID);
     $photo = '';
 
     if(isset($_SESSION['username'])){
@@ -33,7 +34,7 @@
     draw_script('edit_house');
     }
     ?> <section id="main"> <?php
-    draw_house($house, $owner, $comments, $editable);
+    draw_house($house, $owner, $comments, $rating_info, $editable);
     if(isset($_SESSION['username'])){
         $username = $_SESSION['username'];
         $user = getUserByName($username);
