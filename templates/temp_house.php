@@ -77,7 +77,7 @@ function draw_new_house_form() { ?>
         <input type="text" name="title" placeholder="TITLE" maxlength="36" required>
         <input type="number" name="price" placeholder="PRICE / DAY" min="0">
         <input type="text" name="location" placeholder="LOCATION">
-        <textarea rows="20" name="description" placeholder="DESCRIPTION" form="new_house_form"></textarea>
+        <textarea rows="10" name="description" placeholder="DESCRIPTION" form="new_house_form"></textarea>
         <input type="file" name="img" accept="image/png,image/jpeg,image/jpg,image/gif">
         <input type="button" value="Upload Images">
         <input type="submit" value="Add">
