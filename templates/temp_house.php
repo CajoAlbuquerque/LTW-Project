@@ -1,14 +1,4 @@
-<?php     
-    include_once('../templates/temp_common.php');
-    include_once('../database/db_comments.php');
-?>
-
-
-<?php function draw_house($house, $owner, $comments, $editable) { 
-    $rating_info = getRatingOfHouse($house['houseID']);
-    ?>
-
-
+<?php function draw_house($house, $owner, $comments, $rating_info, $editable) { ?>
 <section class="images">
     <!-- this is a mock image -->
     <img src="https://picsum.photos/400/200">
@@ -89,14 +79,14 @@ function draw_new_house_form() { ?>
  
  <?php  } ?>
 
-<?php function draw_house_card($house) { 
-    draw_style('templateHouseCardStyle');
-
-    $rating_info = getRatingOfHouse($house['houseID']);
-    ?>
+<?php function draw_house_card($house, $rating_info, $photo) { ?>
     <article class="card house_card">
         <!-- this is a mock picture -->
-        <img src="https://picsum.photos/400/200">
+        <img src="../images/<?php if($photo === false || $photo === '' || $photo === null){
+                                        echo 'house_default.jpg';
+                                    } else {
+                                        echo $photo;
+                                    }?>">
         <section>
             <a href="../pages/house.php?houseID=<?=$house['houseID']?>">
                 <?=$house['title']?>

@@ -71,4 +71,14 @@
         $stmt = $db->prepare('INSERT INTO HouseImages(house, image) VALUES (?,?)');
         $stmt->execute(array($houseID, $imageID));
     }
+
+    function getHouseThumbnail($houseID) {
+        global $db;
+
+        $stmt = $db->prepare('SELECT * FROM HouseImages WHERE house = ? ORDER BY image DESC');
+        $stmt->execute(array($houseID));
+        $images = $stmt->fetchAll();
+
+        return $images ? $images[0]['hash'] : false;
+    }
 ?>
