@@ -47,8 +47,8 @@
                         <input type="submit" value="Add">
                     </form>
                 <?php }?>
-             </section>
-    </section>
+            </section>
+        </section>
     <section class="comments">
         <h3> Comments </h3>
         <ul>
