@@ -2,7 +2,7 @@
 
 include_once('../database/db_house.php');
 
-function draw_reservation_card($reservation, $editable) { 
+function draw_reservation_card($reservation, $photo, $editable) { 
     
     $house = getHouse($reservation['house']);
     $d = strtotime("+2 days");

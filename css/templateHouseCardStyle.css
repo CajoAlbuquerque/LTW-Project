@@ -32,6 +32,7 @@
     align-items: center;
 }
 #AddHouse > img{
+    width: auto;
     height: 10em;
     margin:1em;
     opacity: 0.5;

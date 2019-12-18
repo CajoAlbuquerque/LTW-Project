@@ -75,7 +75,7 @@
     function getHouseThumbnail($houseID) {
         global $db;
 
-        $stmt = $db->prepare('SELECT * FROM HouseImages WHERE house = ? ORDER BY image DESC');
+        $stmt = $db->prepare('SELECT * FROM HouseImages JOIN Images ON image=imageID WHERE house = ? ORDER BY image ASC');
         $stmt->execute(array($houseID));
         $images = $stmt->fetchAll();
 
