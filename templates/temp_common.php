@@ -13,9 +13,9 @@
         <body>
             <nav id="mainHeader">
                 <ul>
-                    <li id="logo"><a href="homepage.php"><img src="../icons/logo.png" alt="Hömu logo"></a></li>
+                    <li id="logo"><a href="../pages/homepage.php"><img src="../icons/logo.png" alt="Hömu logo"></a></li>
                     <li id="search"><a href="#"><img src="../icons/search_black.png" alt="Search"></a></li>
-                    <li><a href="profile.php"><img src="<?php if($photo === false || $photo === '' || $photo === null){
+                    <li><a href="../pages/profile.php"><img src="<?php if($photo === false || $photo === '' || $photo === null){
                                                                echo '../icons/profile_black.png';
                                                            } else {
                                                                echo "../images/$photo";
@@ -41,9 +41,9 @@
         <body>
             <nav id="secondaryHeader">
                 <ul>
-                    <li id="logo"><a href="homepage.php"><img src="../icons/brand_white.png" alt="Hömu"></a></li>
+                    <li id="logo"><a href="../pages/homepage.php"><img src="../icons/brand_white.png" alt="Hömu"></a></li>
                     <li id="search"><a href="#"><img src="../icons/search_white.png" alt="Search"></a></li>
-                    <li><a href="profile.php"><img src="<?php if($photo === false || $photo === '' || $photo === null){
+                    <li><a href="../pages/profile.php"><img src="<?php if($photo === false || $photo === '' || $photo === null){
                                                                echo '../icons/profile_white.png';
                                                            } else {
                                                                echo "../images/$photo";
